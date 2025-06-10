@@ -23,6 +23,76 @@ function Write-Info {
     Write-Host "ℹ️  $Message" -ForegroundColor Cyan 
 }
 
+function Update-GUI {
+    param($Form, $StatusLabel, $Message)
+    
+    if ($StatusLabel) {
+        $StatusLabel.Text = $Message
+    }
+    if ($Form) {
+        $Form.Refresh()
+    }
+    [System.Windows.Forms.Application]::DoEvents()
+    Start-Sleep -Milliseconds 100
+}
+
+# Helper function for background operations
+function Start-BackgroundOperation {
+    param(
+        $ScriptBlock,
+        $Form,
+        $StatusLabel,
+        $ProgressBar,
+        $CompletionCallback
+    )
+    
+    # Disable relevant controls during operation
+    $Form.Enabled = $false
+    
+    # Create a runspace for background execution
+    $runspace = [runspacefactory]::CreateRunspace()
+    $runspace.Open()
+    
+    # Create PowerShell instance
+    $powershell = [powershell]::Create()
+    $powershell.Runspace = $runspace
+    $powershell.AddScript($ScriptBlock)
+    
+    # Start the operation
+    $asyncResult = $powershell.BeginInvoke()
+    
+    # Monitor progress
+    $timer = New-Object System.Windows.Forms.Timer
+    $timer.Interval = 500
+    $timer.Add_Tick({
+        if ($asyncResult.IsCompleted) {
+            $timer.Stop()
+            $timer.Dispose()
+            
+            try {
+                $result = $powershell.EndInvoke($asyncResult)
+                if ($CompletionCallback) {
+                    & $CompletionCallback $result
+                }
+            } catch {
+                [System.Windows.Forms.MessageBox]::Show("Operation failed: $_", "Error", "OK", "Error")
+            } finally {
+                $powershell.Dispose()
+                $runspace.Close()
+                $runspace.Dispose()
+                $Form.Enabled = $true
+            }
+        } else {
+            # Update progress
+            if ($ProgressBar) {
+                $ProgressBar.Style = "Marquee"
+            }
+            Update-GUI -Form $Form -StatusLabel $StatusLabel -Message "Operation in progress..."
+        }
+    })
+    $timer.Start()
+}
+
 function Test-VSCodeInstalled {
     [CmdletBinding()]
     param()
@@ -203,8 +273,9 @@ function Test-NodeJSInstallation {
         try {
             winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements
             
-            $machinePath = [System.Environment]::GetEnvironmentVariable("PATH", "Machine")
-            $userPath = [System.Environment]::GetEnvironmentVariable("PATH", "User")
+            # Refresh PATH - Fixed syntax
+            $machinePath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine')
+            $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User')
             $env:PATH = "$machinePath;$userPath"
             
             Start-Sleep -Seconds 5
@@ -216,7 +287,7 @@ function Test-NodeJSInstallation {
             }
         }
         catch {
-            Write-Warning "winget installation failed, trying manual download..."
+            Write-Warning "winget installation failed, trying fallback method..."
         }
         
         try {
@@ -244,10 +315,11 @@ function Test-NodeJSInstallation {
                 
                 Copy-Item -Path $extractedDir.FullName -Destination $installDir -Recurse -Force
                 
-                $currentPath = [System.Environment]::GetEnvironmentVariable("PATH", "Machine")
+                # Fixed PATH update syntax
+                $currentPath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine')
                 if ($currentPath -notlike "*$installDir*") {
                     $newPath = "$currentPath;$installDir"
-                    [System.Environment]::SetEnvironmentVariable("PATH", $newPath, "Machine")
+                    [System.Environment]::SetEnvironmentVariable('PATH', $newPath, 'Machine')
                     $env:PATH = "$env:PATH;$installDir"
                 }
                 
@@ -342,17 +414,17 @@ function Test-SystemRequirements {
         Write-Success "Sufficient disk space available"
     }
     
+    # FIXED: Replace hanging Test-NetConnection with faster Test-Connection
     try {
-        $testConnection = Test-NetConnection -ComputerName "www.google.com" -Port 80 -InformationLevel Quiet -WarningAction SilentlyContinue
-        if ($testConnection) {
+        Write-Info "Testing internet connectivity..."
+        $connectionTest = Test-Connection -ComputerName "8.8.8.8" -Count 1 -Quiet -TimeoutSeconds 5
+        if ($connectionTest) {
             Write-Success "Internet connectivity is available"
-        }
-        else {
+        } else {
             Write-Warning "Internet connectivity test failed"
         }
-    }
-    catch {
-        Write-Warning "Could not test internet connectivity"
+    } catch {
+        Write-Warning "Could not test internet connectivity (this is not critical)"
     }
     
     return $true
