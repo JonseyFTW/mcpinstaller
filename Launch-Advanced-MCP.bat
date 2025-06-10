@@ -1,6 +1,6 @@
 @echo off
 :: Advanced MCP Server Auto-Installer Launcher for Windows 11
-:: Now includes System Compatibility Checker
+:: Now includes Automatic System Compatibility Checker
 
 title Advanced MCP Server Auto-Installer
 
@@ -50,6 +50,11 @@ if not exist "%~dp0mcp-dashboard.html" (
     set "files_missing=1"
 )
 
+if not exist "%~dp0System-Checker.ps1" (
+    echo [ERROR] System-Checker.ps1 not found
+    set "files_missing=1"
+)
+
 if "%files_missing%"=="1" (
     echo [ERROR] Required files are missing. Please ensure all files are in the same directory.
     pause
@@ -66,15 +71,40 @@ if not exist "C:\mcp-tools\backups" mkdir "C:\mcp-tools\backups"
 echo [INFO] Setting PowerShell execution policy for current session...
 powershell -Command "Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force"
 
-:: Show menu options
+:: Automatically run system compatibility check first
 echo.
+echo [INFO] Running automatic system compatibility check...
+echo [INFO] This ensures your system has all required prerequisites
+echo.
+
+powershell -Command "& '%~dp0System-Checker.ps1' -AutoFix; exit $LASTEXITCODE"
+set "system_check_result=%errorLevel%"
+
+if %system_check_result% neq 0 (
+    echo.
+    echo [ERROR] System compatibility check failed!
+    echo [ERROR] Please resolve the issues above before continuing.
+    echo.
+    echo Would you like to try the manual fix options?
+    choice /C YN /M "Continue to manual options (Y) or Exit (N)"
+    if errorlevel 2 goto :end
+    goto :manual_options
+) else (
+    echo.
+    echo [SUCCESS] System compatibility check passed!
+    echo [INFO] Your system is ready for MCP installation.
+    echo.
+)
+
+:: Show main menu after successful system check
+:show_main_menu
 echo Choose your preferred option:
 echo.
-echo [1] System Compatibility Check (RECOMMENDED FIRST)
-echo [2] Launch GUI Installer
-echo [3] Open Web Dashboard Only
-echo [4] Launch Both GUI and Web Dashboard
-echo [5] System Check with Auto-Fix
+echo [1] Launch GUI Installer
+echo [2] Open Web Dashboard Only  
+echo [3] Launch Both GUI and Web Dashboard
+echo [4] Re-run System Compatibility Check
+echo [5] System Check with Manual Auto-Fix Options
 echo [6] Command Line Help
 echo [7] Troubleshooting Guide
 echo [8] Exit
@@ -84,35 +114,25 @@ choice /C 12345678 /M "Select option"
 if errorlevel 8 goto :end
 if errorlevel 7 goto :troubleshooting
 if errorlevel 6 goto :help
-if errorlevel 5 goto :autofix
-if errorlevel 4 goto :both
-if errorlevel 3 goto :web_only
-if errorlevel 2 goto :gui_only
-if errorlevel 1 goto :system_check
+if errorlevel 5 goto :manual_options
+if errorlevel 4 goto :system_check
+if errorlevel 3 goto :both
+if errorlevel 2 goto :web_only
+if errorlevel 1 goto :gui_only
+
+:manual_options
+echo [INFO] Running system compatibility check with manual options...
+echo.
+powershell -Command "& '%~dp0System-Checker.ps1'"
+pause
+goto :show_main_menu
 
 :system_check
 echo [INFO] Running system compatibility check...
 echo.
-if exist "%~dp0System-Checker.ps1" (
-    powershell -File "%~dp0System-Checker.ps1"
-) else (
-    echo [ERROR] System-Checker.ps1 not found
-    echo Please ensure all files are in the same directory
-)
+powershell -Command "& '%~dp0System-Checker.ps1' -AutoFix -CheckIDEs; exit $LASTEXITCODE"
 pause
-goto :menu
-
-:autofix
-echo [INFO] Running system compatibility check with auto-fix...
-echo.
-if exist "%~dp0System-Checker.ps1" (
-    powershell -File "%~dp0System-Checker.ps1" -AutoFix
-) else (
-    echo [ERROR] System-Checker.ps1 not found
-    echo Please ensure all files are in the same directory
-)
-pause
-goto :menu
+goto :show_main_menu
 
 :gui_only
 echo [INFO] Launching GUI Installer...
@@ -146,11 +166,11 @@ echo.
 echo COMMON ISSUES AND SOLUTIONS:
 echo.
 echo 1. "winget is not recognized":
-echo    - Run option 5 (System Check with Auto-Fix)
+echo    - Run option 4 or 5 (System Check with Auto-Fix)
 echo    - Or install manually from Microsoft Store
 echo.
 echo 2. "Node.js not found" or npm errors:
-echo    - Run option 5 (System Check with Auto-Fix)
+echo    - Run option 4 or 5 (System Check with Auto-Fix)
 echo    - Or download from https://nodejs.org
 echo    - Restart command prompt after installation
 echo.
@@ -178,13 +198,18 @@ echo    - Run installer as Administrator
 echo    - Check antivirus software interference
 echo    - Temporarily disable real-time protection
 echo.
+echo 8. System compatibility check failures:
+echo    - Use option 4 or 5 to re-run with fixes
+echo    - Check internet connectivity
+echo    - Ensure sufficient disk space (2GB+)
+echo.
 echo LOG LOCATIONS:
 echo    - Installation logs: C:\mcp-tools\logs\
 echo    - Configuration backups: C:\mcp-tools\backups\
 echo    - Health status: health-status.json
 echo.
 pause
-goto :menu
+goto :show_main_menu
 
 :help
 echo.
@@ -193,6 +218,7 @@ echo                  COMMAND LINE HELP
 echo ========================================================
 echo.
 echo FEATURES:
+echo   - Automatic system compatibility checking with auto-fix
 echo   - Auto-detection of IDEs (VS Code, Cursor, Claude Desktop, etc.)
 echo   - 21+ MCP servers across 9 categories
 echo   - Configuration profiles for different development scenarios
@@ -228,48 +254,20 @@ echo.
 echo SYSTEM REQUIREMENTS:
 echo   - Windows 10/11
 echo   - PowerShell 5.0+
+echo   - Node.js 18+ (auto-installed if missing)
+echo   - Windows Package Manager (auto-installed if missing)
 echo   - 2GB+ free disk space
 echo   - Internet connection
 echo   - Administrator privileges (recommended)
 echo.
+echo AUTOMATIC FEATURES:
+echo   - System compatibility check runs automatically on startup
+echo   - Missing prerequisites are detected and installed
+echo   - Execution policy is automatically configured if needed
+echo   - PATH environment variables are updated automatically
+echo.
 pause
-goto :menu
-
-:menu
-echo.
-echo Return to main menu? (Y/N)
-choice /C YN /M "Your choice"
-if errorlevel 2 goto :end
-cls
-goto :show_menu
-
-:show_menu
-:: Redirect to the main menu display
-goto :begin_menu
-
-:begin_menu
-echo.
-echo Choose your preferred option:
-echo.
-echo [1] System Compatibility Check (RECOMMENDED FIRST)
-echo [2] Launch GUI Installer
-echo [3] Open Web Dashboard Only
-echo [4] Launch Both GUI and Web Dashboard
-echo [5] System Check with Auto-Fix
-echo [6] Command Line Help
-echo [7] Troubleshooting Guide
-echo [8] Exit
-echo.
-choice /C 12345678 /M "Select option"
-
-if errorlevel 8 goto :end
-if errorlevel 7 goto :troubleshooting
-if errorlevel 6 goto :help
-if errorlevel 5 goto :autofix
-if errorlevel 4 goto :both
-if errorlevel 3 goto :web_only
-if errorlevel 2 goto :gui_only
-if errorlevel 1 goto :system_check
+goto :show_main_menu
 
 :cleanup
 echo.
@@ -288,25 +286,32 @@ exit /b
 ::
 :: NEW FEATURES IN ADVANCED VERSION:
 ::
-:: 1. WEB DASHBOARD:
+:: 1. AUTOMATIC SYSTEM COMPATIBILITY CHECKING:
+::    - Runs automatically when the launcher starts
+::    - Detects and fixes missing prerequisites automatically
+::    - Checks PowerShell version, execution policy, disk space
+::    - Installs Node.js and winget if missing
+::    - Only proceeds if system is ready for installation
+::
+:: 2. WEB DASHBOARD:
 ::    - Modern browser-based interface for monitoring
 ::    - Real-time server status and performance metrics
 ::    - Update management and health monitoring
 ::    - Mobile-responsive design with dark theme
 ::
-:: 2. CONFIGURATION PROFILES:
+:: 3. CONFIGURATION PROFILES:
 ::    - Pre-configured server combinations for specific use cases
 ::    - Web Development, Data Science, DevOps, Enterprise profiles
 ::    - One-click application of entire server stacks
 ::    - Customizable profiles for team environments
 ::
-:: 3. AUTO-UPDATE SYSTEM:
+:: 4. AUTO-UPDATE SYSTEM:
 ::    - Automatic detection of server updates
 ::    - Version comparison and update notifications
 ::    - Batch update capabilities for multiple servers
 ::    - Rollback support for failed updates
 ::
-:: 4. HEALTH MONITORING:
+:: 5. HEALTH MONITORING:
 ::    - Real-time server status monitoring
 ::    - Performance metrics (CPU, memory, response time)
 ::    - Automatic restart for failed servers
@@ -317,17 +322,17 @@ exit /b
 ::    ├── MCP-Auto-Installer.ps1      # Enhanced PowerShell GUI
 ::    ├── mcp-servers-config.json     # Extended server definitions
 ::    ├── mcp-dashboard.html           # Web-based dashboard
+::    ├── System-Checker.ps1           # System compatibility checker
 ##    ├── Launch-Advanced-MCP.bat      # This enhanced launcher
 ##    └── health-status.json           # Generated health status file
 ::
 :: USAGE WORKFLOWS:
 ::
-:: 1. FIRST-TIME SETUP:
+:: 1. FIRST-TIME SETUP (AUTOMATIC):
 ::    - Run Launch-Advanced-MCP.bat
-::    - Choose option 3 (both GUI and Web)
-::    - Select a configuration profile
-::    - Install selected servers
-::    - Monitor via web dashboard
+::    - System compatibility check runs automatically
+::    - Missing prerequisites are installed automatically
+::    - Choose installation method once system is ready
 ::
 :: 2. DAILY MONITORING:
 ::    - Open web dashboard (option 2)
@@ -349,6 +354,8 @@ exit /b
 ::
 :: ADVANCED FEATURES:
 ::
+:: - Automatic System Checking: Runs compatibility check on startup
+:: - Auto-Fix Prerequisites: Installs missing components automatically
 :: - Profile Management: Create custom server combinations
 :: - Bulk Operations: Install/update multiple servers at once
 :: - Health Dashboard: Visual server status indicators

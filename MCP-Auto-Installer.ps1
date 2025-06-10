@@ -134,7 +134,7 @@ function Create-DefaultConfig {
                     }
                 }
                 prerequisites = @("node18+")
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             },
             @{
                 id = "context7"
@@ -148,7 +148,7 @@ function Create-DefaultConfig {
                     args = @("-y", "@upstash/context7-mcp")
                 }
                 prerequisites = @("node18+")
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             },
             @{
                 id = "memory-service"
@@ -166,7 +166,7 @@ function Create-DefaultConfig {
                 }
                 prerequisites = @("python38+", "git")
                 git_repo = "https://github.com/doobidoo/mcp-memory-service.git"
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             },
             @{
                 id = "filesystem"
@@ -180,7 +180,7 @@ function Create-DefaultConfig {
                     args = @("-y", "@modelcontextprotocol/server-filesystem", "C:\Projects")
                 }
                 prerequisites = @("node18+")
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             },
             @{
                 id = "git"
@@ -194,7 +194,7 @@ function Create-DefaultConfig {
                     args = @("mcp-server-git", "--repository", "C:\Projects")
                 }
                 prerequisites = @("python38+", "git")
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             },
             @{
                 id = "postgres-pro"
@@ -212,7 +212,7 @@ function Create-DefaultConfig {
                     }
                 }
                 prerequisites = @("node18+", "postgresql")
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             },
             @{
                 id = "github"
@@ -229,7 +229,7 @@ function Create-DefaultConfig {
                     }
                 }
                 prerequisites = @("docker")
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             },
             @{
                 id = "docker-mcp"
@@ -243,7 +243,7 @@ function Create-DefaultConfig {
                     args = @("mcp-server-docker")
                 }
                 prerequisites = @("python38+", "docker")
-                supported_ides = @("claude-desktop", "cursor", "vscode")
+                supported_ides = @("claude-desktop", "cursor", "vscode", "vscode-cline", "vscode-roo")
             }
         )
         ides = @(
@@ -256,6 +256,7 @@ function Create-DefaultConfig {
                 )
                 config_path = "$env:APPDATA\Claude\claude_desktop_config.json"
                 config_key = "mcpServers"
+                extensions = @()
             },
             @{
                 id = "cursor"
@@ -266,6 +267,7 @@ function Create-DefaultConfig {
                 )
                 config_path = "$env:USERPROFILE\.cursor\mcp.json"
                 config_key = "mcpServers"
+                extensions = @()
             },
             @{
                 id = "vscode"
@@ -276,6 +278,20 @@ function Create-DefaultConfig {
                 )
                 config_path = "$env:APPDATA\Code\User\settings.json"
                 config_key = "mcp.servers"
+                extensions = @(
+                    @{
+                        id = "saoudrizwan.claude-dev"
+                        name = "Cline"
+                        config_path = "$env:APPDATA\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json"
+                        config_key = "mcpServers"
+                    },
+                    @{
+                        id = "rooveterinaryinc.roo-cline"
+                        name = "Roo"
+                        config_path = "$env:APPDATA\Code\User\globalStorage\rooveterinaryinc.roo-cline\settings\mcp_settings.json"
+                        config_key = "mcpServers"
+                    }
+                )
             },
             @{
                 id = "windsurf"
@@ -286,12 +302,132 @@ function Create-DefaultConfig {
                 )
                 config_path = "$env:APPDATA\Windsurf\User\settings.json"
                 config_key = "mcp.servers"
+                extensions = @()
             }
         )
+        extension_profiles = @{
+            "vscode-full" = @{
+                name = "VS Code with Extensions"
+                description = "Configure VS Code main settings plus Cline and Roo extensions"
+                targets = @("vscode", "vscode-cline", "vscode-roo")
+            }
+            "cline-only" = @{
+                name = "Cline Extension Only"
+                description = "Configure only the Cline extension in VS Code"
+                targets = @("vscode-cline")
+            }
+            "roo-only" = @{
+                name = "Roo Extension Only" 
+                description = "Configure only the Roo extension in VS Code"
+                targets = @("vscode-roo")
+            }
+        }
     }
     
     $defaultConfig | ConvertTo-Json -Depth 10 | Set-Content $Path
     Write-Host "Created default configuration file at: $Path" -ForegroundColor Green
+}
+
+# Enhanced VS Code Detection Functions
+function Test-VSCodeInstalled {
+    [CmdletBinding()]
+    param()
+
+    # 1) Check common installation paths
+    $possiblePaths = @(
+        "$Env:LOCALAPPDATA\Programs\Microsoft VS Code\Code.exe",
+        "$Env:ProgramFiles\Microsoft VS Code\Code.exe",
+        "$Env:ProgramFiles(x86)\Microsoft VS Code\Code.exe"
+    )
+    foreach ($path in $possiblePaths) {
+        if (Test-Path $path) {
+            return @{
+                installed = $true
+                path = $path
+            }
+        }
+    }
+
+    # 2) Look for it in the Uninstall registry keys
+    $registryRoots = @(
+        'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall',
+        'HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall',
+        'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall'
+    )
+    foreach ($root in $registryRoots) {
+        try {
+            Get-ChildItem $root -ErrorAction SilentlyContinue | ForEach-Object {
+                try {
+                    $displayName = (Get-ItemProperty $_.PSPath -ErrorAction SilentlyContinue).DisplayName
+                    if ($displayName -like '*Visual Studio Code*') {
+                        return @{
+                            installed = $true
+                            path = "Registry detected"
+                        }
+                    }
+                } catch { }
+            }
+        } catch { }
+    }
+
+    # 3) Fallback: see if 'code' is on the PATH
+    $codeCommand = Get-Command code.exe -ErrorAction SilentlyContinue
+    if ($codeCommand) {
+        return @{
+            installed = $true
+            path = $codeCommand.Source
+        }
+    }
+
+    return @{
+        installed = $false
+        path = $null
+    }
+}
+
+function Test-VSCodeExtension {
+    [CmdletBinding()]
+    param(
+        [string]$ExtensionId,
+        [string]$ExtensionName
+    )
+    
+    $extensionPath = "$env:USERPROFILE\.vscode\extensions"
+    $extensionFound = $false
+    $extensionVersion = $null
+    
+    if (Test-Path $extensionPath) {
+        $extensions = Get-ChildItem $extensionPath -Directory | Where-Object { $_.Name -like "$ExtensionId*" }
+        if ($extensions) {
+            $extensionFound = $true
+            $extensionVersion = ($extensions | Sort-Object Name -Descending | Select-Object -First 1).Name
+        }
+    }
+    
+    return @{
+        name = $ExtensionName
+        id = $ExtensionId
+        installed = $extensionFound
+        version = $extensionVersion
+        configPath = Get-ExtensionConfigPath -ExtensionId $ExtensionId
+    }
+}
+
+function Get-ExtensionConfigPath {
+    [CmdletBinding()]
+    param([string]$ExtensionId)
+    
+    switch ($ExtensionId) {
+        "saoudrizwan.claude-dev" {
+            return "$env:APPDATA\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json"
+        }
+        "rooveterinaryinc.roo-cline" {
+            return "$env:APPDATA\Code\User\globalStorage\rooveterinaryinc.roo-cline\settings\mcp_settings.json"
+        }
+        default {
+            return $null
+        }
+    }
 }
 
 # Auto-Update System
@@ -561,6 +697,7 @@ function Start-HealthMonitoring {
     Write-Host "Health monitoring started (Job ID: $($job.Id))" -ForegroundColor Green
     return $job
 }
+
 function Detect-InstalledIDEs {
     param($IDEList)
     
@@ -569,30 +706,61 @@ function Detect-InstalledIDEs {
     foreach ($ide in $IDEList) {
         $isInstalled = $false
         $foundPath = ""
+        $extensions = @()
         
-        foreach ($path in $ide.detection_paths) {
-            # Expand environment variables
-            $expandedPath = [System.Environment]::ExpandEnvironmentVariables($path)
-            
-            # Also try manual expansion for common variables
-            $expandedPath = $expandedPath -replace '%APPDATA%', $env:APPDATA
-            $expandedPath = $expandedPath -replace '%LOCALAPPDATA%', $env:LOCALAPPDATA
-            $expandedPath = $expandedPath -replace '%PROGRAMFILES%', $env:PROGRAMFILES
-            $expandedPath = $expandedPath -replace '%PROGRAMFILES\(X86\)%', ${env:PROGRAMFILES(X86)}
-            $expandedPath = $expandedPath -replace '%USERPROFILE%', $env:USERPROFILE
-            
-            Write-Host "Checking path for $($ide.name): $expandedPath" -ForegroundColor Gray
-            
-            if (Test-Path $expandedPath) {
+        if ($ide.id -eq "vscode") {
+            # Use enhanced VS Code detection
+            $vscodeResult = Test-VSCodeInstalled
+            if ($vscodeResult.installed) {
                 $isInstalled = $true
-                $foundPath = $expandedPath
-                Write-Host "Found $($ide.name) at: $foundPath" -ForegroundColor Green
-                break
+                $foundPath = $vscodeResult.path
+                
+                Write-Host "Found VS Code at: $foundPath" -ForegroundColor Green
+                
+                # Check for MCP extensions
+                $clineExtension = Test-VSCodeExtension -ExtensionId "saoudrizwan.claude-dev" -ExtensionName "Cline"
+                $rooExtension = Test-VSCodeExtension -ExtensionId "rooveterinaryinc.roo-cline" -ExtensionName "Roo"
+                
+                if ($clineExtension.installed) {
+                    Write-Host "  ✅ Cline extension detected: $($clineExtension.version)" -ForegroundColor Green
+                    $extensions += $clineExtension
+                }
+                
+                if ($rooExtension.installed) {
+                    Write-Host "  ✅ Roo extension detected: $($rooExtension.version)" -ForegroundColor Green
+                    $extensions += $rooExtension
+                }
+                
+                if ($extensions.Count -eq 0) {
+                    Write-Host "  ℹ️  No MCP extensions detected (Cline, Roo)" -ForegroundColor Cyan
+                }
+            }
+        } else {
+            # Use original detection logic for other IDEs
+            foreach ($path in $ide.detection_paths) {
+                $expandedPath = [System.Environment]::ExpandEnvironmentVariables($path)
+                $expandedPath = $expandedPath -replace '%APPDATA%', $env:APPDATA
+                $expandedPath = $expandedPath -replace '%LOCALAPPDATA%', $env:LOCALAPPDATA
+                $expandedPath = $expandedPath -replace '%PROGRAMFILES%', $env:PROGRAMFILES
+                $expandedPath = $expandedPath -replace '%PROGRAMFILES\(X86\)%', ${env:PROGRAMFILES(X86)}
+                $expandedPath = $expandedPath -replace '%USERPROFILE%', $env:USERPROFILE
+                
+                Write-Host "Checking path for $($ide.name): $expandedPath" -ForegroundColor Gray
+                
+                if (Test-Path $expandedPath) {
+                    $isInstalled = $true
+                    $foundPath = $expandedPath
+                    Write-Host "Found $($ide.name) at: $foundPath" -ForegroundColor Green
+                    break
+                }
+            }
+            
+            if (-not $isInstalled) {
+                Write-Host "Did not find $($ide.name)" -ForegroundColor Yellow
             }
         }
         
         if ($isInstalled) {
-            # Expand environment variables in config path too
             $configPath = [System.Environment]::ExpandEnvironmentVariables($ide.config_path)
             $configPath = $configPath -replace '%APPDATA%', $env:APPDATA
             $configPath = $configPath -replace '%LOCALAPPDATA%', $env:LOCALAPPDATA
@@ -604,16 +772,14 @@ function Detect-InstalledIDEs {
                 config_key = $ide.config_key
                 installed = $true
                 found_at = $foundPath
+                extensions = $extensions
             }
-        } else {
-            Write-Host "Did not find $($ide.name)" -ForegroundColor Yellow
         }
     }
     
     return $detected
 }
 
-# Prerequisites Management
 # Prerequisites Management
 function Test-WingetAvailable {
     try {
@@ -1158,72 +1324,144 @@ function Update-IDEConfiguration {
     )
     
     try {
-        $configPath = $IDE.config_path
-        $configKey = $IDE.config_key
+        # Update main IDE configuration
+        Update-MainIDEConfig -IDE $IDE -Server $Server
         
-        # Ensure config directory exists
-        $configDir = Split-Path $configPath -Parent
-        if (-not (Test-Path $configDir)) {
-            New-Item -ItemType Directory -Path $configDir -Force | Out-Null
-        }
-        
-        # Load existing configuration - compatible with PowerShell 5.1
-        $config = @{}
-        if (Test-Path $configPath) {
-            $jsonContent = Get-Content $configPath -Raw
-            if ($jsonContent.Trim()) {
-                try {
-                    # Try with -AsHashtable first (PowerShell 6+)
-                    if ($PSVersionTable.PSVersion.Major -ge 6) {
-                        $config = $jsonContent | ConvertFrom-Json -AsHashtable
-                    } else {
-                        # Fallback for PowerShell 5.1
-                        $configObj = $jsonContent | ConvertFrom-Json
-                        $config = Convert-PSObjectToHashtable -InputObject $configObj
-                    }
-                } catch {
-                    Write-Host "Warning: Could not parse existing config file. Creating new configuration." -ForegroundColor Yellow
-                    $config = @{}
-                }
+        # Update extension configurations if VS Code with extensions
+        if ($IDE.extensions -and $IDE.extensions.Count -gt 0) {
+            foreach ($extension in $IDE.extensions) {
+                Update-ExtensionConfig -Extension $extension -Server $Server -IDE $IDE
             }
         }
-        
-        # Initialize MCP servers section if it doesn't exist
-        $configParts = $configKey.Split('.')
-        $currentSection = $config
-        
-        for ($i = 0; $i -lt $configParts.Length - 1; $i++) {
-            if (-not $currentSection.ContainsKey($configParts[$i])) {
-                $currentSection[$configParts[$i]] = @{}
-            }
-            $currentSection = $currentSection[$configParts[$i]]
-        }
-        
-        $finalKey = $configParts[-1]
-        if (-not $currentSection.ContainsKey($finalKey)) {
-            $currentSection[$finalKey] = @{}
-        }
-        
-        # Add server configuration
-        $serverConfig = @{
-            command = $Server.installation.command
-            args = $Server.installation.args
-            enabled = $true
-        }
-        
-        if ($Server.installation.env) {
-            $serverConfig.env = $Server.installation.env
-        }
-        
-        $currentSection[$finalKey][$Server.id] = $serverConfig
-        
-        # Save configuration
-        $config | ConvertTo-Json -Depth 10 | Set-Content $configPath
-        
-        Write-Host "Updated $($IDE.name) configuration for $($Server.name)" -ForegroundColor Green
     } catch {
         Write-Host "Failed to update $($IDE.name) configuration: $_" -ForegroundColor Red
     }
+}
+
+function Update-MainIDEConfig {
+    param($IDE, $Server)
+    
+    $configPath = $IDE.config_path
+    $configKey = $IDE.config_key
+    
+    # Ensure config directory exists
+    $configDir = Split-Path $configPath -Parent
+    if (-not (Test-Path $configDir)) {
+        New-Item -ItemType Directory -Path $configDir -Force | Out-Null
+    }
+    
+    # Load existing configuration
+    $config = @{}
+    if (Test-Path $configPath) {
+        $jsonContent = Get-Content $configPath -Raw
+        if ($jsonContent.Trim()) {
+            try {
+                if ($PSVersionTable.PSVersion.Major -ge 6) {
+                    $config = $jsonContent | ConvertFrom-Json -AsHashtable
+                } else {
+                    $configObj = $jsonContent | ConvertFrom-Json
+                    $config = Convert-PSObjectToHashtable -InputObject $configObj
+                }
+            } catch {
+                Write-Host "Warning: Could not parse existing config file. Creating new configuration." -ForegroundColor Yellow
+                $config = @{}
+            }
+        }
+    }
+    
+    # Initialize MCP servers section
+    $configParts = $configKey.Split('.')
+    $currentSection = $config
+    
+    for ($i = 0; $i -lt $configParts.Length - 1; $i++) {
+        if (-not $currentSection.ContainsKey($configParts[$i])) {
+            $currentSection[$configParts[$i]] = @{}
+        }
+        $currentSection = $currentSection[$configParts[$i]]
+    }
+    
+    $finalKey = $configParts[-1]
+    if (-not $currentSection.ContainsKey($finalKey)) {
+        $currentSection[$finalKey] = @{}
+    }
+    
+    # Add server configuration
+    $serverConfig = @{
+        command = $Server.installation.command
+        args = $Server.installation.args
+        enabled = $true
+    }
+    
+    if ($Server.installation.env) {
+        $serverConfig.env = $Server.installation.env
+    }
+    
+    $currentSection[$finalKey][$Server.id] = $serverConfig
+    
+    # Save configuration
+    $config | ConvertTo-Json -Depth 10 | Set-Content $configPath
+    
+    Write-Host "Updated $($IDE.name) main configuration for $($Server.name)" -ForegroundColor Green
+}
+
+function Update-ExtensionConfig {
+    param($Extension, $Server, $IDE)
+    
+    if (-not $Extension.configPath) {
+        Write-Host "No config path defined for extension $($Extension.name)" -ForegroundColor Yellow
+        return
+    }
+    
+    $configPath = $Extension.configPath
+    $configDir = Split-Path $configPath -Parent
+    
+    # Ensure config directory exists
+    if (-not (Test-Path $configDir)) {
+        New-Item -ItemType Directory -Path $configDir -Force | Out-Null
+        Write-Host "Created config directory for $($Extension.name): $configDir" -ForegroundColor Green
+    }
+    
+    # Load existing extension configuration
+    $config = @{}
+    if (Test-Path $configPath) {
+        try {
+            $jsonContent = Get-Content $configPath -Raw
+            if ($jsonContent.Trim()) {
+                if ($PSVersionTable.PSVersion.Major -ge 6) {
+                    $config = $jsonContent | ConvertFrom-Json -AsHashtable
+                } else {
+                    $configObj = $jsonContent | ConvertFrom-Json
+                    $config = Convert-PSObjectToHashtable -InputObject $configObj
+                }
+            }
+        } catch {
+            Write-Host "Warning: Could not parse existing $($Extension.name) config. Creating new." -ForegroundColor Yellow
+            $config = @{}
+        }
+    }
+    
+    # Initialize mcpServers section if it doesn't exist
+    if (-not $config.ContainsKey('mcpServers')) {
+        $config['mcpServers'] = @{}
+    }
+    
+    # Add server configuration for extension
+    $serverConfig = @{
+        command = $Server.installation.command
+        args = $Server.installation.args
+        enabled = $true
+    }
+    
+    if ($Server.installation.env) {
+        $serverConfig.env = $Server.installation.env
+    }
+    
+    $config['mcpServers'][$Server.id] = $serverConfig
+    
+    # Save extension configuration
+    $config | ConvertTo-Json -Depth 10 | Set-Content $configPath
+    
+    Write-Host "Updated $($Extension.name) extension configuration for $($Server.name)" -ForegroundColor Green
 }
 
 # Helper function to convert PSObject to Hashtable (PowerShell 5.1 compatibility)
@@ -1507,6 +1745,7 @@ function Show-MainGUI {
                         installed = $true
                         found_at = $pathTextBox.Text
                         manually_added = $true
+                        extensions = @()
                     }
                     
                     # Update the main form's IDE list
@@ -1668,10 +1907,15 @@ function Show-MainGUI {
             # Detect IDEs
             $Global:DetectedIDEs = Detect-InstalledIDEs -IDEList $Global:ConfigData.ides
             
-            # Populate IDE list
+            # Populate IDE list with extension information
             $ideListBox.Items.Clear()
             foreach ($ide in $Global:DetectedIDEs.GetEnumerator()) {
-                $ideListBox.Items.Add("$($ide.Value.name) (Detected)", $true)
+                $ideText = "$($ide.Value.name) (Detected)"
+                if ($ide.Value.extensions -and $ide.Value.extensions.Count -gt 0) {
+                    $extensionNames = ($ide.Value.extensions | ForEach-Object { $_.name }) -join ", "
+                    $ideText += " + Extensions: $extensionNames"
+                }
+                $ideListBox.Items.Add($ideText, $true)
             }
             
             # Populate server list
