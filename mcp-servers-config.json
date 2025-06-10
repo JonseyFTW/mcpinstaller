@@ -1,0 +1,254 @@
+{
+    "ides":  [
+                 {
+                     "detection_paths":  [
+                                             "C:\\Users\\cjones\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\Claude\\Claude.exe"
+                                         ],
+                     "config_key":  "mcpServers",
+                     "config_path":  "C:\\Users\\cjones\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+                     "name":  "Claude Desktop",
+                     "id":  "claude-desktop"
+                 },
+                 {
+                     "detection_paths":  [
+                                             "C:\\Users\\cjones\\.cursor\\mcp.json",
+                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\cursor\\Cursor.exe"
+                                         ],
+                     "config_key":  "mcpServers",
+                     "config_path":  "C:\\Users\\cjones\\.cursor\\mcp.json",
+                     "name":  "Cursor",
+                     "id":  "cursor"
+                 },
+                 {
+                     "detection_paths":  [
+                                             "C:\\Users\\cjones\\AppData\\Roaming\\Code\\User\\settings.json",
+                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+                                         ],
+                     "config_key":  "mcp.servers",
+                     "config_path":  "C:\\Users\\cjones\\AppData\\Roaming\\Code\\User\\settings.json",
+                     "name":  "Visual Studio Code",
+                     "id":  "vscode"
+                 },
+                 {
+                     "detection_paths":  [
+                                             "C:\\Users\\cjones\\AppData\\Roaming\\Windsurf\\User\\settings.json",
+                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\Windsurf\\Windsurf.exe"
+                                         ],
+                     "config_key":  "mcp.servers",
+                     "config_path":  "C:\\Users\\cjones\\AppData\\Roaming\\Windsurf\\User\\settings.json",
+                     "name":  "Windsurf",
+                     "id":  "windsurf"
+                 }
+             ],
+    "servers":  [
+                    {
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode"
+                                           ],
+                        "id":  "browser-tools",
+                        "type":  "npm",
+                        "installation":  {
+                                             "args":  [
+                                                          "@agentdeskai/browser-tools-mcp@latest"
+                                                      ],
+                                             "env":  {
+                                                         "BROWSER_TOOLS_PORT":  "3025"
+                                                     },
+                                             "command":  "npx"
+                                         },
+                        "category":  "Development",
+                        "description":  "Browser automation and debugging",
+                        "prerequisites":  [
+                                              "node18+"
+                                          ],
+                        "name":  "Browser Tools MCP",
+                        "requires_docker":  false,
+                        "requires_chrome_extension":  true,
+                        "requires_middleware":  true
+                    },
+                    {
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode"
+                                           ],
+                        "id":  "context7",
+                        "type":  "npm",
+                        "installation":  {
+                                             "args":  [
+                                                          "-y",
+                                                          "@upstash/context7-mcp"
+                                                      ],
+                                             "command":  "npx"
+                                         },
+                        "category":  "Documentation",
+                        "description":  "Real-time documentation for coding",
+                        "prerequisites":  [
+                                              "node18+"
+                                          ],
+                        "name":  "Context7 Documentation",
+                        "requires_docker":  false
+                    },
+                    {
+                        "git_repo":  "https://github.com/doobidoo/mcp-memory-service.git",
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode"
+                                           ],
+                        "id":  "memory-service",
+                        "type":  "python",
+                        "installation":  {
+                                             "args":  [
+                                                          "C:\\mcp-tools\\memory-service\\memory_wrapper.py"
+                                                      ],
+                                             "env":  {
+                                                         "MCP_MEMORY_CHROMA_PATH":  "C:\\Users\\cjones\\AppData\\Local\\mcp-memory\\chroma_db"
+                                                     },
+                                             "command":  "python"
+                                         },
+                        "category":  "Memory",
+                        "description":  "Persistent semantic memory with ChromaDB",
+                        "prerequisites":  [
+                                              "python38+",
+                                              "git"
+                                          ],
+                        "name":  "MCP Memory Service",
+                        "requires_docker":  false
+                    },
+                    {
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode"
+                                           ],
+                        "id":  "filesystem",
+                        "type":  "npm",
+                        "installation":  {
+                                             "args":  [
+                                                          "-y",
+                                                          "@modelcontextprotocol/server-filesystem",
+                                                          "C:\\Projects"
+                                                      ],
+                                             "command":  "npx"
+                                         },
+                        "category":  "Core",
+                        "description":  "File and directory management",
+                        "prerequisites":  [
+                                              "node18+"
+                                          ],
+                        "name":  "Filesystem Operations",
+                        "requires_docker":  false
+                    },
+                    {
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode"
+                                           ],
+                        "id":  "git",
+                        "type":  "python",
+                        "installation":  {
+                                             "args":  [
+                                                          "mcp-server-git",
+                                                          "--repository",
+                                                          "C:\\Projects"
+                                                      ],
+                                             "command":  "uvx"
+                                         },
+                        "category":  "Development",
+                        "description":  "Version control management",
+                        "prerequisites":  [
+                                              "python38+",
+                                              "git"
+                                          ],
+                        "name":  "Git Operations",
+                        "requires_docker":  false
+                    },
+                    {
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode"
+                                           ],
+                        "id":  "postgres-pro",
+                        "type":  "npm",
+                        "installation":  {
+                                             "args":  [
+                                                          "postgresql://localhost:5432/mydb"
+                                                      ],
+                                             "env":  {
+                                                         "PGUSER":  "username",
+                                                         "PGPASSWORD":  "password"
+                                                     },
+                                             "command":  "postgres-mcp-pro"
+                                         },
+                        "category":  "Database",
+                        "description":  "Advanced PostgreSQL management",
+                        "prerequisites":  [
+                                              "node18+",
+                                              "postgresql"
+                                          ],
+                        "name":  "PostgreSQL Professional",
+                        "requires_docker":  false
+                    },
+                    {
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode"
+                                           ],
+                        "id":  "github",
+                        "type":  "docker",
+                        "installation":  {
+                                             "args":  [
+                                                          "run",
+                                                          "-i",
+                                                          "--rm",
+                                                          "-e",
+                                                          "GITHUB_PERSONAL_ACCESS_TOKEN",
+                                                          "ghcr.io/github/github-mcp-server"
+                                                      ],
+                                             "env":  {
+                                                         "GITHUB_PERSONAL_ACCESS_TOKEN":  "your-token-here"
+                                                     },
+                                             "command":  "docker"
+                                         },
+                        "category":  "Development",
+                        "description":  "GitHub repository management",
+                        "prerequisites":  [
+                                              "docker"
+                                          ],
+                        "name":  "GitHub Integration",
+                        "requires_docker":  true
+                    },
+                    {
+                        "supported_ides":  [
+                                               "claude-desktop",
+                                               "cursor",
+                                               "vscode",
+                                               "vscode-cline",
+                                               "vscode-roo"
+                                           ],
+                        "id":  "docker-mcp",
+                        "type":  "python",
+                        "installation":  {
+                                             "args":  [
+                                                          "mcp-server-docker"
+                                                      ],
+                                             "command":  "uvx"
+                                         },
+                        "category":  "DevOps",
+                        "description":  "Container and image management",
+                        "prerequisites":  [
+                                              "python38+",
+                                              "docker"
+                                          ],
+                        "name":  "Docker Management",
+                        "requires_docker":  false
+                    }
+                ]
+}

@@ -273,16 +273,16 @@ function Test-NodeJSInstallation {
         try {
             winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements
             
-            # Refresh PATH - Fixed syntax
+            # Fixed PATH refresh - use proper string concatenation
             $machinePath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine')
             $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User')
-            $env:PATH = "$machinePath;$userPath"
+            $env:PATH = $machinePath + ";" + $userPath
             
             Start-Sleep -Seconds 5
             
             $nodeVersion = node --version 2>$null
             if ($nodeVersion) {
-                Write-Success "Node.js installed successfully: $nodeVersion"
+                Write-Success ("Node.js installed successfully: " + $nodeVersion)
                 return $true
             }
         }
@@ -315,12 +315,12 @@ function Test-NodeJSInstallation {
                 
                 Copy-Item -Path $extractedDir.FullName -Destination $installDir -Recurse -Force
                 
-                # Fixed PATH update syntax
+                # Fixed PATH update with proper string handling
                 $currentPath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine')
                 if ($currentPath -notlike "*$installDir*") {
-                    $newPath = "$currentPath;$installDir"
+                    $newPath = $currentPath + ";" + $installDir
                     [System.Environment]::SetEnvironmentVariable('PATH', $newPath, 'Machine')
-                    $env:PATH = "$env:PATH;$installDir"
+                    $env:PATH = $env:PATH + ";" + $installDir
                 }
                 
                 Write-Success "Node.js installed successfully"
@@ -392,7 +392,7 @@ function Test-SystemRequirements {
     Write-Info "Windows version: $($osVersion.ToString())"
     
     if ($osVersion.Major -lt 10) {
-        Write-Error "Windows 10 or higher is required"
+        Write-Error "Windows version is not supported"
         return $false
     }
     else {
@@ -414,10 +414,10 @@ function Test-SystemRequirements {
         Write-Success "Sufficient disk space available"
     }
     
-    # FIXED: Replace hanging Test-NetConnection with faster Test-Connection
+    # Fixed: Replace Test-NetConnection with faster Test-Connection
     try {
         Write-Info "Testing internet connectivity..."
-        $connectionTest = Test-Connection -ComputerName "8.8.8.8" -Count 1 -Quiet -TimeoutSeconds 5
+        $connectionTest = Test-Connection -ComputerName "8.8.8.8" -Count 2 -Quiet
         if ($connectionTest) {
             Write-Success "Internet connectivity is available"
         } else {
@@ -429,7 +429,6 @@ function Test-SystemRequirements {
     
     return $true
 }
-
 function Test-IDEInstallations {
     Write-Host "`n🔍 Checking IDE installations..." -ForegroundColor Blue
     

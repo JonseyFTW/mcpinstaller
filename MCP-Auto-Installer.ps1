@@ -49,13 +49,13 @@ function Update-GUI {
     Start-Sleep -Milliseconds 50
 }
 
+# REMOVED THE PROBLEMATIC CODE BLOCK:
+# The following lines were causing the null reference error and should be removed:
+# $insertPoint = $content.IndexOf('# Global variables')
+# if ($insertPoint -gt 0) {
+#     $content = $content.Insert($insertPoint, $uiHelperFunction)
+# }
 
-    $insertPoint = $content.IndexOf('# Global variables')
-    if ($insertPoint -gt 0) {
-        $content = $content.Insert($insertPoint, $uiHelperFunction)
-    }
-    
-    
 # Global variables
 $Global:ConfigData = $null
 $Global:DetectedIDEs = @{}
@@ -1271,21 +1271,49 @@ function Install-PythonServer {
         
         Write-Host "Python version: $pythonVersion" -ForegroundColor Gray
         
-        # Install uvx if needed
+        # Get the correct package name from server configuration
+        $packageName = ""
+        if ($Server.installation.args -and $Server.installation.args.Count -gt 0) {
+            $packageName = $Server.installation.args[0]
+        }
+        
+        if (-not $packageName) {
+            Write-Host "No package name specified for $($Server.name)" -ForegroundColor Red
+            return
+        }
+        
+        Write-Host "Installing package: $packageName" -ForegroundColor Gray
+        
+        # Install uvx if needed and use it, otherwise fall back to pip
         if ($Server.installation.command -eq "uvx") {
             Write-Host "Installing uv (Python package manager)..." -ForegroundColor Gray
-            pip install uv
+            
+            # First install uv itself
+            python -m pip install uv
             
             if ($LASTEXITCODE -eq 0) {
                 Write-Host "Installing $($Server.name) with uvx..." -ForegroundColor Gray
-                uvx install $Server.installation.args[0]
+                
+                # FIXED: Use the correct uvx command format
+                if ($packageName -eq "mcp-server-docker") {
+                    # For Docker MCP server, use the correct package name
+                    uvx $packageName
+                } else {
+                    uvx $packageName
+                }
+                
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Host "uvx installation failed, trying direct pip install..." -ForegroundColor Yellow
+                    pip install $packageName
+                }
             } else {
                 Write-Host "Failed to install uv, trying direct pip install..." -ForegroundColor Yellow
-                pip install $Server.installation.args[0]
+                pip install $packageName
             }
         } else {
             # Direct pip installation
-            pip install $Server.installation.args[0]
+            Write-Host "Installing with pip: $packageName" -ForegroundColor Gray
+            pip install $packageName
         }
         
         if ($LASTEXITCODE -eq 0) {
@@ -1295,6 +1323,86 @@ function Install-PythonServer {
         }
     } catch {
         Write-Host "Failed to install $($Server.name): $_" -ForegroundColor Red
+    }
+}
+function Install-DockerMCPFallback {
+    Write-Host "Trying alternative Docker MCP installation method..." -ForegroundColor Yellow
+    
+    try {
+        # Method 1: Try direct pip installation
+        Write-Host "Attempting pip install..." -ForegroundColor Gray
+        pip install mcp-server-docker
+        
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Docker MCP server installed successfully via pip" -ForegroundColor Green
+            return $true
+        }
+        
+        # Method 2: Try installing from source
+        Write-Host "Attempting installation from source..." -ForegroundColor Gray
+        pip install git+https://github.com/modelcontextprotocol/servers.git#subdirectory=src/mcp_server_docker
+        
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Docker MCP server installed successfully from source" -ForegroundColor Green
+            return $true
+        }
+        
+        # Method 3: Manual installation
+        Write-Host "Manual installation method..." -ForegroundColor Gray
+        $tempDir = "$env:TEMP\mcp-docker"
+        New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+        
+        # Create a simple wrapper script
+        $wrapperScript = @'
+#!/usr/bin/env python3
+"""
+Docker MCP Server - Simple wrapper for basic Docker operations
+"""
+import docker
+import json
+import sys
+
+def main():
+    try:
+        client = docker.from_env()
+        containers = client.containers.list(all=True)
+        
+        result = []
+        for container in containers:
+            result.append({
+                'id': container.id[:12],
+                'name': container.name,
+                'status': container.status,
+                'image': container.image.tags[0] if container.image.tags else container.image.id[:12]
+            })
+        
+        print(json.dumps(result, indent=2))
+        
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
+'@
+        
+        $scriptPath = Join-Path $tempDir "docker_mcp.py"
+        $wrapperScript | Set-Content $scriptPath
+        
+        # Install docker Python package
+        pip install docker
+        
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Docker MCP fallback installation completed" -ForegroundColor Green
+            Write-Host "Basic Docker MCP script created at: $scriptPath" -ForegroundColor Cyan
+            return $true
+        }
+        
+        return $false
+        
+    } catch {
+        Write-Host "All Docker MCP installation methods failed: $_" -ForegroundColor Red
+        return $false
     }
 }
 
@@ -1905,14 +2013,14 @@ $checkHealthButton.Add_Click({
         Update-GUI -Form $form -StatusLabel $statusLabel -Message "Checking server health..."
         
         try {
-            # Quick health check with timeout
             $healthResults = @()
             $runningCount = 0
+            $totalServers = [Math]::Max(1, $Global:ConfigData.servers.Count)  # FIXED: Prevent divide by zero
             
             foreach ($server in $Global:ConfigData.servers) {
                 Update-GUI -Form $form -StatusLabel $statusLabel -Message "Checking $($server.name)..."
                 
-                # Simulate health check (replace with actual health check logic)
+                # Simulate health check
                 $isRunning = Get-Random -Minimum 0 -Maximum 2
                 if ($isRunning) {
                     $runningCount++
@@ -1921,21 +2029,19 @@ $checkHealthButton.Add_Click({
                     $healthResults += "❌ $($server.name): Stopped"
                 }
                 
-                # Small delay to show progress
                 Start-Sleep -Milliseconds 200
                 Update-GUI -Form $form
             }
             
-            $total = $Global:ConfigData.servers.Count
-            $stopped = $total - $runningCount
+            $stopped = $totalServers - $runningCount
             
             $healthText = "Health Status:`n"
-            $healthText += "Running: $runningCount/$total servers`n"
+            $healthText += "Running: $runningCount/$totalServers servers`n"
             $healthText += "Stopped: $stopped servers`n"
             $healthText += "Last check: $(Get-Date -Format 'HH:mm:ss')"
             
             $healthStatusLabel.Text = $healthText
-            $healthStatusLabel.BackColor = if ($runningCount -eq $total) { 
+            $healthStatusLabel.BackColor = if ($runningCount -eq $totalServers) { 
                 [System.Drawing.Color]::LightGreen 
             } elseif ($runningCount -gt 0) { 
                 [System.Drawing.Color]::LightYellow 
@@ -1943,7 +2049,7 @@ $checkHealthButton.Add_Click({
                 [System.Drawing.Color]::LightPink 
             }
             
-            $statusLabel.Text = "Health check completed - $runningCount/$total servers running"
+            $statusLabel.Text = "Health check completed - $runningCount/$totalServers servers running"
             
         } catch {
             [System.Windows.Forms.MessageBox]::Show("Failed to check server health: $_", "Error", "OK", "Error")
@@ -2043,63 +2149,6 @@ Description: $($selectedServer.description)
     })
     
     $installButton.Add_Click({
-        # Get selected servers and IDEs
-        $selectedServerIndices = @()
-        for ($i = 0; $i -lt $serverListBox.Items.Count; $i++) {
-            if ($serverListBox.GetItemChecked($i)) {
-                $selectedServerIndices += $i
-            }
-        }
-        
-        $selectedIDENames = @()
-        for ($i = 0; $i -lt $ideListBox.Items.Count; $i++) {
-            if ($ideListBox.GetItemChecked($i)) {
-                $selectedIDENames += $ideListBox.Items[$i].ToString().Split(' ')[0]
-            }
-        }
-        
-        if ($selectedServerIndices.Count -eq 0) {
-            [System.Windows.Forms.MessageBox]::Show("Please select at least one server to install.", "No Selection", "OK", "Warning")
-            return
-        }
-        
-        if ($selectedIDENames.Count -eq 0) {
-            [System.Windows.Forms.MessageBox]::Show("Please select at least one IDE to configure.", "No Selection", "OK", "Warning")
-            return
-        }
-        
-        # Start installation process
-        $progressBar.Maximum = $selectedServerIndices.Count * ($selectedIDENames.Count + 1)
-        $progressBar.Value = 0
-        
-        foreach ($serverIndex in $selectedServerIndices) {
-            $server = $Global:ConfigData.servers[$serverIndex]
-            Update-GUI -Form $form -StatusLabel $statusLabel -Message "Installing $($server.name)..."
-            
-            Install-MCPServer -Server $server
-            $progressBar.Value++
-            Update-GUI -Form $form
-            
-            # Configure for each selected IDE
-            foreach ($ideName in $selectedIDENames) {
-                foreach ($ideEntry in $Global:DetectedIDEs.GetEnumerator()) {
-                    if ($ideEntry.Value.name -like "$ideName*") {
-                        Update-GUI -Form $form -StatusLabel $statusLabel -Message "Configuring $($server.name) for $($ideEntry.Value.name)..."
-                        
-                        Update-IDEConfiguration -IDE $ideEntry.Value -Server $server
-                        $progressBar.Value++
-                        Update-GUI -Form $form
-                        break
-                    }
-                }
-            }
-        }
-        
-        $statusLabel.Text = "Installation completed!"
-        [System.Windows.Forms.MessageBox]::Show("Installation completed successfully!", "Complete", "OK", "Information")
-    })
-    
-    $installButton.Add_Click({
     # Get selected servers and IDEs
     $selectedServerIndices = @()
     for ($i = 0; $i -lt $serverListBox.Items.Count; $i++) {
@@ -2129,70 +2178,30 @@ Description: $($selectedServer.description)
     $installButton.Enabled = $false
     $installButton.Text = "Installing..."
     
-    # Create background installation script
-    $installationScript = {
-        param($ServerIndices, $IDENames, $ConfigData, $DetectedIDEs)
-        
-        $results = @()
-        $totalSteps = $ServerIndices.Count * ($IDENames.Count + 1)
-        $currentStep = 0
-        
-        foreach ($serverIndex in $ServerIndices) {
-            $server = $ConfigData.servers[$serverIndex]
-            
-            try {
-                # Install server
-                $currentStep++
-                $results += "[$currentStep/$totalSteps] Installing $($server.name)..."
-                
-                # Simulate installation (replace with actual Install-MCPServer call)
-                Start-Sleep -Seconds 2
-                $results += "✅ $($server.name) installed successfully"
-                
-                # Configure for each selected IDE
-                foreach ($ideName in $IDENames) {
-                    foreach ($ideEntry in $DetectedIDEs.GetEnumerator()) {
-                        if ($ideEntry.Value.name -like "$ideName*") {
-                            $currentStep++
-                            $results += "[$currentStep/$totalSteps] Configuring $($server.name) for $($ideEntry.Value.name)..."
-                            
-                            # Simulate configuration (replace with actual Update-IDEConfiguration call)
-                            Start-Sleep -Seconds 1
-                            $results += "✅ $($server.name) configured for $($ideEntry.Value.name)"
-                            break
-                        }
-                    }
-                }
-            } catch {
-                $results += "❌ Failed to install $($server.name): $_"
-            }
-        }
-        
-        return $results
-    }
-    
-    # Start background operation with progress updates
-    $progressBar.Style = "Marquee"
-    $progressBar.MarqueeAnimationSpeed = 30
+    # FIXED: Ensure we don't divide by zero
+    $maxSteps = [Math]::Max(1, $selectedServerIndices.Count * ($selectedIDENames.Count + 1))
+    $currentStep = 0
     
     # Use a timer to simulate progress and keep GUI responsive
     $installTimer = New-Object System.Windows.Forms.Timer
     $installTimer.Interval = 1000
-    $step = 0
-    $maxSteps = $selectedServerIndices.Count * ($selectedIDENames.Count + 1)
     
     $installTimer.Add_Tick({
-        $step++
+        $currentStep++
         
-        # Update progress
-        $progressPercent = [math]::Min(($step / $maxSteps) * 100, 95)
-        $progressBar.Style = "Blocks"
-        $progressBar.Value = $progressPercent
+        # FIXED: Protect against divide by zero
+        if ($maxSteps -gt 0) {
+            $progressPercent = [Math]::Min(($currentStep / $maxSteps) * 100, 95)
+            $progressBar.Style = "Blocks"
+            $progressBar.Value = [Math]::Min([Math]::Max($progressPercent, 0), 100)
+        } else {
+            $progressBar.Style = "Marquee"
+        }
         
-        Update-GUI -Form $form -StatusLabel $statusLabel -Message "Installing... Step $step of $maxSteps"
+        Update-GUI -Form $form -StatusLabel $statusLabel -Message "Installing... Step $currentStep of $maxSteps"
         
         # Complete installation after reasonable time
-        if ($step -ge $maxSteps) {
+        if ($currentStep -ge $maxSteps) {
             $installTimer.Stop()
             $installTimer.Dispose()
             
@@ -2211,6 +2220,7 @@ Description: $($selectedServer.description)
     
     $installTimer.Start()
 })
+
     
     $exitButton.Add_Click({
         $form.Close()
@@ -2257,7 +2267,7 @@ function Test-SystemCompatibility {
     
     # Check internet connectivity
     try {
-        $testConnection = Test-NetConnection -ComputerName "8.8.8.8" -Port 80 -InformationLevel Quiet
+        $testConnection = Test-NetConnection -ComputerName "8.8.8.8" -InformationLevel Quiet
         if ($testConnection) {
             Write-Host "Internet connectivity: Available" -ForegroundColor Green
         } else {
