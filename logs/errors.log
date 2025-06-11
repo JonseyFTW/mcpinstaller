@@ -1,0 +1,79 @@
+2025-06-10 18:56:14 | ERROR    | error      | error                | All winget installation attempts failed
+2025-06-10 18:56:26 | ERROR    | error      | error                | [X] Critical checks failed: node_js
+2025-06-10 18:58:14 | ERROR    | error      | error                | All winget installation attempts failed
+2025-06-10 18:58:25 | ERROR    | error      | error                | [X] Critical checks failed: internet, node_js
+2025-06-11 07:56:37 | ERROR    | error      | error                | Test installation error | Exception: Test error
+2025-06-11 08:02:11 | ERROR    | error      | error                | Test installation error | Exception: Test error
+2025-06-11 09:21:52 | ERROR    | error      | error                | Failed to create server entry 0 | Exception: cannot access local variable 'install_btn' where it is not associated with a value
+2025-06-11 09:22:07 | ERROR    | error      | error                | Failed to create server entry 0 | Exception: cannot access local variable 'install_btn' where it is not associated with a value
+2025-06-11 09:31:06 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Installation error: [WinError 2] The system cannot find the file specified
+2025-06-11 09:31:45 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Installation error: [WinError 2] The system cannot find the file specified
+2025-06-11 09:35:11 | ERROR    | error      | error                | COMMAND: npm install -g @modelcontextprotocol/server-browser | Exit Code: 1 | Error: npm error code E404
+npm error 404 Not Found - GET https://registry.npmjs.org/@modelcontextprotocol%2fserver-browser - Not found
+npm error 404
+npm error 404  '@modelcontextprotocol/server-browser@*' is not in this registry.
+npm error 404
+npm error 404 Note that you can also install from a
+npm error 404 tarball, folder, http url, or git url.
+npm error A complete log of this run can be found in: /home/jonsey/.npm/_logs/2025-06-11T14_35_11_330Z-debug-0.log
+
+2025-06-11 10:07:58 | ERROR    | error      | error                | Node.js installation failed: 
+2025-06-11 10:07:58 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 10:16:24 | ERROR    | error      | error                | Node.js installation failed: 
+2025-06-11 10:16:24 | ERROR    | error      | error                | Installation failed for Filesystem MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 10:20:14 | ERROR    | error      | error                | COMMAND: docker build -f docker/Dockerfile.filesystem -t mcp-filesystem:latest docker | Exit Code: 1 | Error: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.filesystem
+#1 transferring dockerfile: 786B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/node:20-alpine
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:20-alpine
+#2 DONE 1.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B 0.0s done
+#4 DONE 0.1s
+
+#5 [1/5] FROM
+2025-06-11 10:25:59 | ERROR    | error      | error                | COMMAND: docker build -f docker/Dockerfile.filesystem -t mcp-filesystem:latest docker | Exit Code: 0 | Error: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.filesystem
+#1 transferring dockerfile: 778B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/node:20-alpine
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:20-alpine
+#2 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B 0.0s done
+#4 DONE 0.0s
+
+#5 [1/5] FROM
+2025-06-11 10:38:59 | ERROR    | error      | error                | Failed to read Cline configuration | Exception: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+2025-06-11 10:38:59 | ERROR    | error      | error                | Failed to read Roo configuration | Exception: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+2025-06-11 12:53:33 | ERROR    | error      | error                | Node.js installation failed: 
+2025-06-11 12:53:33 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 12:57:52 | ERROR    | error      | error                | Node.js installation failed: 
+2025-06-11 12:57:52 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 14:07:41 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: No Docker image specified
+2025-06-11 14:30:25 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: No Docker image specified
+2025-06-11 14:30:38 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: No Docker image specified
+2025-06-11 14:39:01 | ERROR    | error      | error                | Node.js installation failed: 
+2025-06-11 14:39:01 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 15:01:59 | ERROR    | error      | error                | Node.js installation failed: 
+2025-06-11 15:01:59 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 15:03:18 | ERROR    | error      | error                | Node.js installation failed: 
+2025-06-11 15:03:18 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 15:09:20 | ERROR    | error      | error                | Installation failed for Browser Automation MCP Server: Installation error: [WinError 2] The system cannot find the file specified

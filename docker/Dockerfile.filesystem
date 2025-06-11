@@ -1,0 +1,27 @@
+# Dockerfile for Filesystem MCP Server
+FROM node:20-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install Filesystem MCP server
+RUN npm install -g @modelcontextprotocol/server-filesystem@latest
+
+# Create directories for mounting
+RUN mkdir -p /mcp/workspace /mcp/data
+
+# Create non-root user for security
+RUN adduser -D mcpuser && \
+    chown -R mcpuser:mcpuser /app /mcp
+
+USER mcpuser
+
+# Expose MCP server port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD npx @modelcontextprotocol/server-filesystem --help || exit 1
+
+# Default command - mount workspace directory
+CMD ["npx", "@modelcontextprotocol/server-filesystem", "/mcp/workspace"]

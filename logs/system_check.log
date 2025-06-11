@@ -1,0 +1,875 @@
+2025-06-10 14:17:11 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 14:17:11 | INFO     | system     | info                 | Running check: python
+2025-06-10 14:17:11 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 14:17:11 | INFO     | system     | info                 | Running check: platform
+2025-06-10 14:17:11 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 14:17:11 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 14:17:11 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.5 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 14:17:11 | INFO     | system     | info                 | Running check: internet
+2025-06-10 14:17:12 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Test URL responded with status 200
+2025-06-10 14:17:12 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 14:17:12 | INFO     | system     | info                 | Attempting to install Node.js automatically
+2025-06-10 14:17:14 | WARNING  | system     | warning              | winget installation failed: 
+2025-06-10 14:17:14 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: FAIL | Details: Please install manually from https://nodejs.org (version 18 or higher)
+2025-06-10 14:17:14 | INFO     | system     | info                 | Running check: winget
+2025-06-10 14:17:14 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 14:17:14 | INFO     | system     | info                 | Running check: ides
+2025-06-10 14:17:25 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (Unknown)
+2025-06-10 14:17:25 | INFO     | system     | info                 | Running check: docker
+2025-06-10 14:17:26 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Docker version 27.5.1, build 9f9e405
+2025-06-10 14:27:46 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 14:27:46 | INFO     | system     | info                 | Running check: python
+2025-06-10 14:27:46 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 14:27:46 | INFO     | system     | info                 | Running check: platform
+2025-06-10 14:27:46 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 14:27:46 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 14:27:46 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.5 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 14:27:46 | INFO     | system     | info                 | Running check: internet
+2025-06-10 14:27:46 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Test URL responded with status 200
+2025-06-10 14:27:46 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 14:27:46 | INFO     | system     | info                 | Attempting to install Node.js automatically
+2025-06-10 14:27:46 | INFO     | system     | info                 | Installing Node.js via winget...
+2025-06-10 14:27:46 | INFO     | system     | info                 | Trying: winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 14:27:48 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found an existing package already installed. Trying to upgrade the installed package...
+No available upgrade found.
+No newer package versions are available from the configured sources.
+
+2025-06-10 14:27:48 | WARNING  | system     | warning              | winget command failed with code 2316632107
+2025-06-10 14:27:48 | INFO     | system     | info                 | Trying: winget install OpenJS.NodeJS --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 14:28:54 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found Node.js [OpenJS.NodeJS] Version 24.2.0
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://nodejs.org/dist/v24.2.0/node-v24.2.0-x64.msi
+
+   - 
+   \ 
+   | 
+                                                                                                                        
+
+  ██████████████████████████████  30.5 MB / 30.5 MB
+Successfully verified installer hash
+Starting package install...
+The installer will request to run as administrator, expect a prompt.
+
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+   \ 
+   | 
+   / 
+   - 
+                                                                                                                        
+Successfully installed
+
+2025-06-10 14:28:59 | INFO     | system     | info                 | Environment PATH refreshed
+2025-06-10 14:28:59 | INFO     | system     | info                 | Node.js installed successfully: v24.2.0
+2025-06-10 14:28:59 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Installed via Windows Package Manager (winget)
+2025-06-10 14:28:59 | INFO     | system     | info                 | Running check: winget
+2025-06-10 14:29:00 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 14:29:00 | INFO     | system     | info                 | Running check: ides
+2025-06-10 14:29:10 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (Unknown)
+2025-06-10 14:29:10 | INFO     | system     | info                 | Running check: docker
+2025-06-10 14:29:10 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Docker version 27.5.1, build 9f9e405
+2025-06-10 18:56:02 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 18:56:02 | INFO     | system     | info                 | Running check: python
+2025-06-10 18:56:02 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 18:56:02 | INFO     | system     | info                 | Running check: platform
+2025-06-10 18:56:02 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 18:56:02 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 18:56:02 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.5 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 18:56:02 | INFO     | system     | info                 | Running check: internet
+2025-06-10 18:56:03 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Test URL responded with status 200
+2025-06-10 18:56:03 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 18:56:03 | INFO     | system     | info                 | Attempting to install Node.js automatically
+2025-06-10 18:56:03 | INFO     | system     | info                 | Installing Node.js via winget...
+2025-06-10 18:56:03 | INFO     | system     | info                 | Trying: winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 18:56:08 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+  ███████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  1024 KB / 1.94 MB
+  ██████████████████████████████  1.94 MB / 1.94 MB
+                                                                                                                        
+
+  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  0%
+  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  0%
+  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  1%
+  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  2%
+  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  3%
+  █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  4%
+  █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  5%
+  █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  6%
+  ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  8%
+  ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  9%
+  ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  11%
+  ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  12%
+  ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  13%
+  ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  14%
+  ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  16%
+  █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  17%
+  █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  19%
+  ██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  20%
+  ██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  21%
+  ██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  22%
+  ██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  23%
+  ███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  24%
+  ███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  25%
+  ███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  26%
+  ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  27%
+  ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  28%
+  ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  28%
+  █████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  30%
+  █████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  31%
+  █████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  32%
+  █████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  33%
+  ██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  34%
+  ██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  35%
+  ██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  36%
+  ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  37%
+  ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  38%
+  ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  39%
+  ████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  40%
+  ████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  41%
+  ████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  42%
+  ████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  43%
+  █████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  44%
+  █████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  45%
+  █████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  46%
+  ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  47%
+  ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  48%
+  ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  49%
+  ███████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  50%
+  ███████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  51%
+  ███████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  52%
+  ███████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  53%
+  ████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒  54%
+  ██████████████████▒▒▒▒▒▒▒▒▒▒▒▒  60%
+  ███████████████████▒▒▒▒▒▒▒▒▒▒▒  64%
+  ███████████████████████▒▒▒▒▒▒▒  77%
+  █████████████████████████████▒  99%
+  █████████████████████████████▒  99%
+  ██████████████████████████████  100%
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found an existing package already installed. Trying to upgrade the installed package...
+No available upgrade found.
+No newer package versions are available from the configured sources.
+
+2025-06-10 18:56:08 | WARNING  | system     | warning              | winget command failed with code 2316632107
+2025-06-10 18:56:08 | INFO     | system     | info                 | Trying: winget install OpenJS.NodeJS --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 18:56:11 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found an existing package already installed. Trying to upgrade the installed package...
+No available upgrade found.
+No newer package versions are available from the configured sources.
+
+2025-06-10 18:56:11 | WARNING  | system     | warning              | winget command failed with code 2316632107
+2025-06-10 18:56:11 | INFO     | system     | info                 | Trying: winget install nodejs --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 18:56:14 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found an existing package already installed. Trying to upgrade the installed package...
+No available upgrade found.
+No newer package versions are available from the configured sources.
+
+2025-06-10 18:56:14 | WARNING  | system     | warning              | winget command failed with code 2316632107
+2025-06-10 18:56:14 | ERROR    | system     | error                | All winget installation attempts failed
+2025-06-10 18:56:14 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: FAIL | Details: Please install manually: 1) Go to https://nodejs.org 2) Download LTS version 3) Run installer 4) Restart this application
+2025-06-10 18:56:14 | INFO     | system     | info                 | Running check: winget
+2025-06-10 18:56:14 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 18:56:14 | INFO     | system     | info                 | Running check: ides
+2025-06-10 18:56:26 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (Unknown)
+2025-06-10 18:56:26 | INFO     | system     | info                 | Running check: docker
+2025-06-10 18:56:26 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Docker version 27.5.1, build 9f9e405
+2025-06-10 18:58:06 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 18:58:06 | INFO     | system     | info                 | Running check: python
+2025-06-10 18:58:06 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 18:58:06 | INFO     | system     | info                 | Running check: platform
+2025-06-10 18:58:06 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 18:58:06 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 18:58:06 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 18:58:06 | INFO     | system     | info                 | Running check: internet
+2025-06-10 18:58:06 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: FAIL | Details: Test URL returned status 403
+2025-06-10 18:58:06 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 18:58:06 | INFO     | system     | info                 | Attempting to install Node.js automatically
+2025-06-10 18:58:06 | INFO     | system     | info                 | Installing Node.js via winget...
+2025-06-10 18:58:06 | INFO     | system     | info                 | Trying: winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 18:58:10 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found an existing package already installed. Trying to upgrade the installed package...
+No available upgrade found.
+No newer package versions are available from the configured sources.
+
+2025-06-10 18:58:10 | WARNING  | system     | warning              | winget command failed with code 2316632107
+2025-06-10 18:58:10 | INFO     | system     | info                 | Trying: winget install OpenJS.NodeJS --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 18:58:12 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found an existing package already installed. Trying to upgrade the installed package...
+No available upgrade found.
+No newer package versions are available from the configured sources.
+
+2025-06-10 18:58:12 | WARNING  | system     | warning              | winget command failed with code 2316632107
+2025-06-10 18:58:12 | INFO     | system     | info                 | Trying: winget install nodejs --silent --accept-package-agreements --accept-source-agreements
+2025-06-10 18:58:14 | INFO     | system     | info                 | Command output: 
+   - 
+                                                                                                                        
+
+   - 
+   \ 
+                                                                                                                        
+Found an existing package already installed. Trying to upgrade the installed package...
+No available upgrade found.
+No newer package versions are available from the configured sources.
+
+2025-06-10 18:58:14 | WARNING  | system     | warning              | winget command failed with code 2316632107
+2025-06-10 18:58:14 | ERROR    | system     | error                | All winget installation attempts failed
+2025-06-10 18:58:14 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: FAIL | Details: Please install manually: 1) Go to https://nodejs.org 2) Download LTS version 3) Run installer 4) Restart this application
+2025-06-10 18:58:14 | INFO     | system     | info                 | Running check: winget
+2025-06-10 18:58:14 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 18:58:14 | INFO     | system     | info                 | Running check: ides
+2025-06-10 18:58:25 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (Unknown)
+2025-06-10 18:58:25 | INFO     | system     | info                 | Running check: docker
+2025-06-10 18:58:25 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:02:13 | INFO     | system     | info                 | Found Node.js with 'node': v22.16.0
+2025-06-10 19:02:13 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:02:13 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:02:13 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.12.3, Executable: /usr/bin/python3
+2025-06-10 19:02:13 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:02:13 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Linux 5.15.167.4-microsoft-standard-WSL2, Version: #1 SMP Tue Nov 5 00:21:55 UTC 2024
+2025-06-10 19:02:13 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:02:13 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 951.8 GB, Total: 1006.9 GB, Required: 2.0 GB
+2025-06-10 19:02:13 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:02:13 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:02:13 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:02:13 | INFO     | system     | info                 | Found Node.js with 'node': v22.16.0
+2025-06-10 19:02:14 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Command: node, Version: v22.16.0, npm: 10.9.2
+2025-06-10 19:02:14 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:02:14 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Windows Package Manager is Windows-specific
+2025-06-10 19:02:14 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:02:14 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: FAIL | Details: Install VS Code, Cursor, or Claude Desktop for MCP support
+2025-06-10 19:02:14 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:02:14 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:07:58 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:08:00 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:08:00 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:08:00 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:08:01 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:08:01 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:08:01 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.12.3, Executable: /usr/bin/python3
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:08:01 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Linux 5.15.167.4-microsoft-standard-WSL2, Version: #1 SMP Tue Nov 5 00:21:55 UTC 2024
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:08:01 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 951.8 GB, Total: 1006.9 GB, Required: 2.0 GB
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:08:01 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:08:01 | INFO     | system     | info                 | Found Node.js with 'node': v22.16.0
+2025-06-10 19:08:01 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Command: node, Version: v22.16.0, npm: 10.9.2
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:08:01 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Windows Package Manager is Windows-specific
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:08:01 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: FAIL | Details: Install VS Code, Cursor, or Claude Desktop for MCP support
+2025-06-10 19:08:01 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:08:01 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:08:02 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:08:50 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:08:50 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:08:50 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:08:50 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:08:50 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:08:50 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-10 19:08:50 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:08:50 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:08:50 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-10 19:08:50 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3)
+2025-06-10 19:08:50 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:08:51 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:08:52 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:13:48 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.12.3, Executable: /usr/bin/python3
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Linux 5.15.167.4-microsoft-standard-WSL2, Version: #1 SMP Tue Nov 5 00:21:55 UTC 2024
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 951.8 GB, Total: 1006.9 GB, Required: 2.0 GB
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:13:48 | INFO     | system     | info                 | Found Node.js with 'node': v22.16.0
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Command: node, Version: v22.16.0, npm: 10.9.2
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Windows Package Manager is Windows-specific
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: FAIL | Details: Install VS Code, Cursor, Windsurf, Claude Desktop, or Claude Code for MCP support
+2025-06-10 19:13:48 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:13:48 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:13:48 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:14:39 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:14:39 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:14:39 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 19:14:39 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:14:39 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 19:14:39 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:14:39 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 19:14:39 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:14:39 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:14:39 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:14:39 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-10 19:14:39 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-10 19:14:39 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:14:39 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 19:14:39 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:14:39 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-10 19:14:39 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:14:39 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:14:39 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:14:39 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:14:45 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3); Windsurf (Unknown)
+2025-06-10 19:14:45 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:14:45 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:14:51 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:20:15 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:20:15 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:20:15 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 19:20:15 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:20:15 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 19:20:15 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:20:15 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 19:20:15 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:20:15 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:20:15 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:20:15 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-10 19:20:16 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-10 19:20:16 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:20:16 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 19:20:16 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:20:16 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-10 19:20:16 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:20:16 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:20:16 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:20:16 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:20:16 | INFO     | system     | info                 | Windsurf detected at C:\Users\mrcha\AppData\Local\Programs\Windsurf\Windsurf.exe (avoiding executable)
+2025-06-10 19:20:16 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3); Windsurf (Installed)
+2025-06-10 19:20:16 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:20:16 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:20:21 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:21:18 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:21:18 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:21:18 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 19:21:18 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:21:18 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 19:21:18 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:21:18 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 19:21:18 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:21:18 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:21:18 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:21:18 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-10 19:21:18 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-10 19:21:18 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:21:18 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 19:21:18 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:21:18 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-10 19:21:18 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:21:18 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:21:18 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:21:18 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:21:18 | INFO     | system     | info                 | Windsurf detected at C:\Users\mrcha\AppData\Local\Programs\Windsurf\Windsurf.exe (avoiding executable)
+2025-06-10 19:21:19 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3); Windsurf (Installed)
+2025-06-10 19:21:19 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:21:19 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:21:22 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:21:22 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:21:22 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 19:21:22 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:21:22 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 19:21:22 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:21:22 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 19:21:22 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:21:22 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:21:22 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:21:22 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-10 19:21:23 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-10 19:21:23 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:21:23 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 19:21:23 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:21:23 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-10 19:21:23 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:21:23 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:21:23 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:21:23 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:21:23 | INFO     | system     | info                 | Windsurf detected at C:\Users\mrcha\AppData\Local\Programs\Windsurf\Windsurf.exe (avoiding executable)
+2025-06-10 19:21:23 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3); Windsurf (Installed)
+2025-06-10 19:21:23 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:21:23 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:21:24 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:21:28 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:36:29 | INFO     | system     | info                 | Found Node.js with 'node': v22.16.0
+2025-06-10 19:36:29 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:36:29 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:36:29 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.12.3, Executable: /usr/bin/python3
+2025-06-10 19:36:29 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:36:29 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Linux 5.15.167.4-microsoft-standard-WSL2, Version: #1 SMP Tue Nov 5 00:21:55 UTC 2024
+2025-06-10 19:36:29 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:36:29 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 951.8 GB, Total: 1006.9 GB, Required: 2.0 GB
+2025-06-10 19:36:29 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:36:29 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:36:29 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:36:29 | INFO     | system     | info                 | Found Node.js with 'node': v22.16.0
+2025-06-10 19:36:29 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Command: node, Version: v22.16.0, npm: 10.9.2
+2025-06-10 19:36:29 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:36:29 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Windows Package Manager is Windows-specific
+2025-06-10 19:36:29 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:36:30 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: FAIL | Details: Install VS Code, Cursor, Windsurf, Claude Desktop, or Claude Code for MCP support
+2025-06-10 19:36:30 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:36:30 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:36:32 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:48:31 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-10 19:48:31 | INFO     | system     | info                 | Running check: python
+2025-06-10 19:48:31 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-10 19:48:31 | INFO     | system     | info                 | Running check: platform
+2025-06-10 19:48:31 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-10 19:48:31 | INFO     | system     | info                 | Running check: disk_space
+2025-06-10 19:48:31 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-10 19:48:31 | INFO     | system     | info                 | Running check: internet
+2025-06-10 19:48:31 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-10 19:48:31 | INFO     | system     | info                 | Running check: node_js
+2025-06-10 19:48:31 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-10 19:48:31 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-10 19:48:31 | INFO     | system     | info                 | Running check: winget
+2025-06-10 19:48:32 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-10 19:48:32 | INFO     | system     | info                 | Running check: ides
+2025-06-10 19:48:32 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-10 19:48:32 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:48:32 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:48:32 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-10 19:48:32 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-10 19:48:32 | INFO     | system     | info                 | Windsurf detected at C:\Users\mrcha\AppData\Local\Programs\Windsurf\Windsurf.exe (avoiding executable)
+2025-06-10 19:48:42 | INFO     | system     | info                 | Claude found via winget: Claude v0.10.14
+2025-06-10 19:48:46 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3); Windsurf (Installed); Claude Desktop (0.10.14)
+2025-06-10 19:48:46 | INFO     | system     | info                 | Running check: docker
+2025-06-10 19:48:46 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:48:52 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-10 19:49:05 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:11 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:16 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:22 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:28 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:33 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:39 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:44 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:50 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:49:56 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:01 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:07 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:13 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:18 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:24 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:30 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:35 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:41 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:46 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:52 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:50:58 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:03 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:09 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:15 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:20 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:26 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:32 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:38 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:43 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:49 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:51:54 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:00 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:06 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:11 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:17 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:22 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:28 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:34 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:39 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:45 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:51 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:52:56 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:02 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:07 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:13 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:19 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:24 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:30 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:35 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:41 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:47 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:52 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:53:58 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:54:04 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:54:09 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:54:15 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:54:20 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:54:26 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:54:32 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:16 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:22 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:27 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:33 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:38 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:44 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:50 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:55:55 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:56:01 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:56:06 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 19:58:36 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-10 21:10:45 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 07:56:37 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 07:56:37 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 07:58:13 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 08:02:11 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 08:02:11 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 09:17:33 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 09:18:21 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 09:21:03 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 09:21:03 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 09:21:51 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 09:22:07 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 09:23:18 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 09:23:18 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 09:27:22 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 09:27:22 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 09:30:58 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 09:31:17 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-11 09:31:17 | INFO     | system     | info                 | Running check: python
+2025-06-11 09:31:17 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-11 09:31:17 | INFO     | system     | info                 | Running check: platform
+2025-06-11 09:31:17 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-11 09:31:17 | INFO     | system     | info                 | Running check: disk_space
+2025-06-11 09:31:17 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-11 09:31:17 | INFO     | system     | info                 | Running check: internet
+2025-06-11 09:31:17 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-11 09:31:17 | INFO     | system     | info                 | Running check: node_js
+2025-06-11 09:31:18 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-11 09:31:18 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-11 09:31:18 | INFO     | system     | info                 | Running check: winget
+2025-06-11 09:31:18 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-11 09:31:18 | INFO     | system     | info                 | Running check: ides
+2025-06-11 09:31:18 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-11 09:31:18 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-11 09:31:18 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-11 09:31:18 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-11 09:31:18 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-11 09:31:18 | INFO     | system     | info                 | Windsurf detected at C:\Users\mrcha\AppData\Local\Programs\Windsurf\Windsurf.exe (avoiding executable)
+2025-06-11 09:31:21 | INFO     | system     | info                 | Claude found via Get-Package: Claude v0.10.14
+2025-06-11 09:31:27 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3); Windsurf (Installed); Claude Desktop (0.10.14)
+2025-06-11 09:31:27 | INFO     | system     | info                 | Running check: docker
+2025-06-11 09:31:28 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 09:31:33 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 14
+2025-06-11 09:31:40 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 09:36:26 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 09:36:26 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 10:07:44 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:13:09 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:16:18 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:20:05 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:25:53 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:29:43 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:29:54 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:38:20 | INFO     | system     | info                 | Starting comprehensive system check
+2025-06-11 10:38:20 | INFO     | system     | info                 | Running check: python
+2025-06-11 10:38:20 | INFO     | system     | info                 | SYSTEM CHECK: python | Status: PASS | Details: Version: 3.11.9, Executable: C:\Users\mrcha\AppData\Local\Programs\Python\Python311\python.exe
+2025-06-11 10:38:20 | INFO     | system     | info                 | Running check: platform
+2025-06-11 10:38:20 | INFO     | system     | info                 | SYSTEM CHECK: platform | Status: PASS | Details: OS: Windows 10, Version: 10.0.26100
+2025-06-11 10:38:20 | INFO     | system     | info                 | Running check: disk_space
+2025-06-11 10:38:20 | INFO     | system     | info                 | SYSTEM CHECK: disk_space | Status: PASS | Details: Free: 435.1 GB, Total: 1863.0 GB, Required: 2.0 GB
+2025-06-11 10:38:20 | INFO     | system     | info                 | Running check: internet
+2025-06-11 10:38:20 | INFO     | system     | info                 | SYSTEM CHECK: internet | Status: PASS | Details: Successfully connected to https://api.github.com (HTTP 200)
+2025-06-11 10:38:20 | INFO     | system     | info                 | Running check: node_js
+2025-06-11 10:38:21 | INFO     | system     | info                 | Found Node.js with 'node': v24.2.0
+2025-06-11 10:38:21 | INFO     | system     | info                 | SYSTEM CHECK: node_js | Status: PASS | Details: Path: C:\Program Files\nodejs\node.exe, Version: v24.2.0 (not in PATH)
+2025-06-11 10:38:21 | INFO     | system     | info                 | Running check: winget
+2025-06-11 10:38:21 | INFO     | system     | info                 | SYSTEM CHECK: winget | Status: PASS | Details: Version: v1.10.390
+2025-06-11 10:38:21 | INFO     | system     | info                 | Running check: ides
+2025-06-11 10:38:21 | INFO     | system     | info                 | VS Code version from package.json: 1.100.3
+2025-06-11 10:38:21 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-11 10:38:21 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-11 10:38:21 | INFO     | system     | info                 | Found VS Code extension: Cline v3.17.12
+2025-06-11 10:38:21 | INFO     | system     | info                 | Found VS Code extension: Roo v3.19.6
+2025-06-11 10:38:21 | INFO     | system     | info                 | Windsurf detected at C:\Users\mrcha\AppData\Local\Programs\Windsurf\Windsurf.exe (avoiding executable)
+2025-06-11 10:38:24 | INFO     | system     | info                 | Claude found via Get-Package: Claude v0.10.14
+2025-06-11 10:38:35 | INFO     | system     | info                 | SYSTEM CHECK: ides | Status: PASS | Details: VS Code (1.100.3); Windsurf (Installed); Claude Desktop (0.10.14)
+2025-06-11 10:38:35 | INFO     | system     | info                 | Running check: docker
+2025-06-11 10:38:35 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:38:40 | INFO     | system     | info                 | SYSTEM CHECK: docker | Status: PASS | Details: Version: Docker version 27.5.1, build 9f9e405, Containers: 9, Images: 16
+2025-06-11 10:38:45 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 10:38:51 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 12:53:23 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 12:57:46 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:07:35 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:09:19 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:09:24 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:09:57 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 14:09:57 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 14:30:20 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:32:38 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:32:43 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:35:33 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 14:35:33 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 14:35:38 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 14:35:38 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 14:38:52 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:51:33 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:51:37 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 14:54:47 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 14:54:47 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 14:54:51 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 14:54:51 | INFO     | system     | info                 | Loaded Roo MCP configuration
+2025-06-11 15:01:51 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 15:03:12 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 15:09:12 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 15:12:59 | INFO     | system     | info                 | Docker version detected: Docker version 27.5.1, build 9f9e405
+2025-06-11 15:13:10 | INFO     | system     | info                 | Loaded Cline MCP configuration
+2025-06-11 15:13:10 | INFO     | system     | info                 | Loaded Roo MCP configuration

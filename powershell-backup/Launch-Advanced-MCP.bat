@@ -93,37 +93,67 @@ if %system_check_result% neq 0 (
     echo.
     echo [SUCCESS] System compatibility check passed!
     echo [INFO] Your system is ready for MCP installation.
+    echo [INFO] Launching Advanced GUI Installer automatically...
     echo.
+    goto :gui_only
 )
 
-:: Show main menu after successful system check
+:: Show main menu after successful system check (fallback)
 :show_main_menu
 echo Choose your preferred option:
 echo.
-echo [1] Launch GUI Installer
-echo [2] Open Web Dashboard Only  
-echo [3] Launch Both GUI and Web Dashboard
-echo [4] Re-run System Compatibility Check
-echo [5] System Check with Manual Auto-Fix Options
-echo [6] Command Line Help
-echo [7] Troubleshooting Guide
-echo [8] Exit
+echo [1] [*] Setup Wizard (Recommended for first-time users)
+echo [2] [^>] Launch Advanced GUI Installer
+echo [3] [=] Open Web Dashboard Only  
+echo [4] [?] Discover New MCP Servers
+echo [5] [+] Create Custom MCP Server
+echo [6] [D] Docker Container Manager
+echo [7] [!] System Compatibility Check
+echo [8] [i] Command Line Help
+echo [9] [#] Troubleshooting Guide
+echo [10] Exit
 echo.
-choice /C 12345678 /M "Select option"
+choice /C 1234567890 /M "Select option (1-10)"
 
-if errorlevel 8 goto :end
-if errorlevel 7 goto :troubleshooting
-if errorlevel 6 goto :help
-if errorlevel 5 goto :manual_options
-if errorlevel 4 goto :system_check
-if errorlevel 3 goto :both
-if errorlevel 2 goto :web_only
-if errorlevel 1 goto :gui_only
+if errorlevel 10 goto :end
+if errorlevel 9 goto :troubleshooting
+if errorlevel 8 goto :help
+if errorlevel 7 goto :system_check
+if errorlevel 6 goto :docker_manager
+if errorlevel 5 goto :create_server
+if errorlevel 4 goto :discover_servers
+if errorlevel 3 goto :web_only
+if errorlevel 2 goto :gui_only
+if errorlevel 1 goto :setup_wizard
 
-:manual_options
-echo [INFO] Running system compatibility check with manual options...
+:setup_wizard
+echo [INFO] [*] Starting Setup Wizard for first-time users...
+echo This will guide you through the entire process step by step.
 echo.
-powershell -Command "& '%~dp0System-Checker.ps1'"
+powershell -File "%~dp0Setup-Wizard.ps1"
+goto :cleanup
+
+:discover_servers
+echo [INFO] [?] Launching MCP Server Discovery Tool...
+echo This will help you find and add new MCP servers to your collection.
+echo.
+powershell -File "%~dp0MCP-Discovery.ps1" -Interactive
+pause
+goto :show_main_menu
+
+:create_server
+echo [INFO] [+] Launching MCP Server Creator...
+echo Create custom server configurations using templates.
+echo.
+powershell -File "%~dp0Create-MCPServer.ps1" -Interactive
+pause
+goto :show_main_menu
+
+:docker_manager
+echo [INFO] [D] Launching Docker Container Manager...
+echo Manage MCP servers running in Docker containers.
+echo.
+powershell -File "%~dp0Docker-Manager.ps1"
 pause
 goto :show_main_menu
 
@@ -135,7 +165,7 @@ pause
 goto :show_main_menu
 
 :gui_only
-echo [INFO] Launching GUI Installer...
+echo [INFO] [>] Launching Advanced GUI Installer...
 echo.
 powershell -File "%~dp0MCP-Auto-Installer.ps1"
 goto :cleanup
@@ -218,14 +248,18 @@ echo                  COMMAND LINE HELP
 echo ========================================================
 echo.
 echo FEATURES:
-echo   - Automatic system compatibility checking with auto-fix
-echo   - Auto-detection of IDEs (VS Code, Cursor, Claude Desktop, etc.)
-echo   - 21+ MCP servers across 9 categories
-echo   - Configuration profiles for different development scenarios
-echo   - Health monitoring and auto-updates
-echo   - Web-based dashboard for advanced management
-echo   - Automatic prerequisite installation with fallbacks
-echo   - System compatibility checking and auto-fixing
+echo   - [*] Setup Wizard for guided first-time installation
+echo   - [?] Auto-discovery of new MCP servers from multiple sources
+echo   - [+] Template-based custom server creation
+echo   - [D] Advanced Docker container management
+echo   - [!] Automatic system compatibility checking with auto-fix
+echo   - [^] Auto-detection of IDEs (VS Code, Cursor, Claude Desktop, etc.)
+echo   - [#] Expandable server catalog with 20+ servers across 7 categories
+echo   - [=] Configuration profiles for different development scenarios
+echo   - [i] Smart server recommendations based on your environment
+echo   - [~] Health monitoring and auto-updates
+echo   - [=] Web-based dashboard for advanced management
+echo   - [+] Automatic prerequisite installation with fallbacks
 echo.
 echo CONFIGURATION PROFILES:
 echo   - Web Development: Frontend and full-stack development

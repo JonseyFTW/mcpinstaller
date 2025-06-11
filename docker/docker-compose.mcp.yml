@@ -1,0 +1,140 @@
+# Docker Compose for MCP Servers
+# Provides isolated environments for each MCP server
+version: '3.8'
+
+services:
+  # Filesystem MCP Server
+  mcp-filesystem:
+    build:
+      context: .
+      dockerfile: Dockerfile.filesystem
+    container_name: mcp-filesystem
+    ports:
+      - "3001:3000"
+    volumes:
+      - "${MCP_WORKSPACE_PATH:-./workspace}:/mcp/workspace:rw"
+      - "${MCP_DATA_PATH:-./data}:/mcp/data:rw"
+    environment:
+      - MCP_SERVER_NAME=filesystem
+      - MCP_PORT=3000
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+  # Browser Automation MCP Server (Playwright)
+  mcp-browser:
+    build:
+      context: .
+      dockerfile: Dockerfile.playwright
+    container_name: mcp-browser
+    ports:
+      - "3002:3000"
+    environment:
+      - MCP_SERVER_NAME=browser
+      - MCP_PORT=3000
+      - DISPLAY=:99
+    restart: unless-stopped
+    networks:
+      - mcp-network
+    # Add shared memory for browser processes
+    shm_size: 2gb
+
+  # PostgreSQL MCP Server
+  mcp-postgres:
+    image: node:20-alpine
+    container_name: mcp-postgres
+    ports:
+      - "3003:3000"
+    environment:
+      - MCP_SERVER_NAME=postgres
+      - MCP_PORT=3000
+      - POSTGRES_CONNECTION_STRING=${POSTGRES_CONNECTION_STRING:-postgresql://localhost:5432/postgres}
+    command: >
+      sh -c "npm install -g @modelcontextprotocol/server-postgres@latest &&
+             npx @modelcontextprotocol/server-postgres"
+    restart: unless-stopped
+    networks:
+      - mcp-network
+    depends_on:
+      - postgres-db
+
+  # PostgreSQL Database (for postgres MCP server)
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: mcp-postgres-db
+    environment:
+      - POSTGRES_DB=mcp_database
+      - POSTGRES_USER=mcp_user
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-mcp_secure_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+  # GitHub MCP Server
+  mcp-github:
+    image: node:20-alpine
+    container_name: mcp-github
+    ports:
+      - "3004:3000"
+    environment:
+      - MCP_SERVER_NAME=github
+      - MCP_PORT=3000
+      - GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_TOKEN:-}
+    command: >
+      sh -c "npm install -g @modelcontextprotocol/server-github@latest &&
+             npx @modelcontextprotocol/server-github"
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+  # Web Search MCP Server (Brave)
+  mcp-web-search:
+    image: node:20-alpine
+    container_name: mcp-web-search
+    ports:
+      - "3005:3000"
+    environment:
+      - MCP_SERVER_NAME=web-search
+      - MCP_PORT=3000
+      - BRAVE_API_KEY=${BRAVE_API_KEY:-}
+    command: >
+      sh -c "npm install -g @modelcontextprotocol/server-brave-search@latest &&
+             npx @modelcontextprotocol/server-brave-search"
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+  # Memory MCP Server
+  mcp-memory:
+    image: node:20-alpine
+    container_name: mcp-memory
+    ports:
+      - "3006:3000"
+    volumes:
+      - memory_data:/app/memory
+    environment:
+      - MCP_SERVER_NAME=memory
+      - MCP_PORT=3000
+    command: >
+      sh -c "npm install -g @modelcontextprotocol/server-memory@latest &&
+             npx @modelcontextprotocol/server-memory /app/memory"
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+# Networks
+networks:
+  mcp-network:
+    driver: bridge
+    name: mcp-network
+
+# Volumes
+volumes:
+  postgres_data:
+    name: mcp-postgres-data
+  memory_data:
+    name: mcp-memory-data

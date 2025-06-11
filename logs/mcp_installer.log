@@ -1,0 +1,1260 @@
+2025-06-10 14:15:04 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:15:04 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:15:04 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:15:04.106417
+2025-06-10 14:15:04 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 14:15:04 | INFO     | main       | info                 | Platform: linux
+2025-06-10 14:15:04 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:17:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:17:00 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:17:00 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:17:00.542957
+2025-06-10 14:17:00 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 14:17:00 | INFO     | main       | info                 | Platform: win32
+2025-06-10 14:17:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:17:00 | INFO     | main       | info                 | Application initialization started
+2025-06-10 14:17:00 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 14:17:01 | INFO     | main       | info                 | Application started successfully
+2025-06-10 14:17:01 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 14:17:11 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 14:17:11 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 14:17:11 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 14:17:11 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 14:17:26 | INFO     | main       | info                 | Status: System not ready - please resolve critical issues
+2025-06-10 14:17:26 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:19:42 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-10 14:19:42 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:19:42 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-10 14:19:42 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:19:42.196895
+2025-06-10 14:19:42 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:25:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:25:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:25:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:25:48.787758
+2025-06-10 14:25:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 14:25:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 14:25:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:25:48 | INFO     | main       | info                 | Testing ASCII characters: [+] [X] [!] [?]
+2025-06-10 14:25:48 | INFO     | main       | info                 | Testing Unicode handling...
+2025-06-10 14:25:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:25:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:25:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:25:48.793072
+2025-06-10 14:25:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 14:25:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 14:25:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:25:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:25:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:25:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:25:48.796878
+2025-06-10 14:25:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 14:25:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 14:25:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:25:48 | INFO     | main       | info                 | Cline MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
+2025-06-10 14:25:48 | INFO     | main       | info                 | Roo MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/mcp_settings.json
+2025-06-10 14:27:05 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:27:05 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:27:05 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:27:05.088574
+2025-06-10 14:27:05 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 14:27:05 | INFO     | main       | info                 | Platform: win32
+2025-06-10 14:27:05 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:27:05 | INFO     | main       | info                 | Application initialization started
+2025-06-10 14:27:05 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 14:27:05 | INFO     | main       | info                 | Application started successfully
+2025-06-10 14:27:05 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 14:27:10 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-10 14:27:10 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-10 14:27:10 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-10 14:27:10 | INFO     | main       | info                 | Server discovery implementation coming soon...
+2025-06-10 14:27:12 | INFO     | main       | info                 | Server discovery completed
+2025-06-10 14:27:12 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:27:29 | INFO     | main       | info                 | USER ACTION: Install Server button clicked
+2025-06-10 14:27:29 | INFO     | main       | info                 | Opening server installation dialog...
+2025-06-10 14:27:29 | INFO     | main       | info                 | Server installer implementation coming soon...
+2025-06-10 14:27:29 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:27:45 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 14:27:45 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 14:27:45 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 14:27:45 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 14:29:10 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-10 14:29:10 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-10 14:29:10 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:29:23 | INFO     | main       | info                 | USER ACTION: Install Server button clicked
+2025-06-10 14:29:23 | INFO     | main       | info                 | Opening server installation dialog...
+2025-06-10 14:29:23 | INFO     | main       | info                 | Server installer implementation coming soon...
+2025-06-10 14:29:23 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:29:45 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-10 14:29:45 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:29:45 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-10 14:29:45 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:29:45.023590
+2025-06-10 14:29:45 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:41:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:41:13 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:41:13 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:41:13.748548
+2025-06-10 14:41:13 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 14:41:13 | INFO     | main       | info                 | Platform: linux
+2025-06-10 14:41:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:41:13 | INFO     | main       | info                 | Cline MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
+2025-06-10 14:41:13 | INFO     | main       | info                 | Roo MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/mcp_settings.json
+2025-06-10 14:42:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:42:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 14:42:21 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:42:21.226686
+2025-06-10 14:42:21 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 14:42:21 | INFO     | main       | info                 | Platform: win32
+2025-06-10 14:42:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:42:21 | INFO     | main       | info                 | Application initialization started
+2025-06-10 14:42:21 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 14:42:21 | INFO     | main       | info                 | Application started successfully
+2025-06-10 14:42:21 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 14:42:28 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-10 14:42:28 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-10 14:42:28 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-10 14:42:28 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-10 14:42:28 | INFO     | main       | info                 | USER ACTION: Server discovery started
+2025-06-10 14:42:29 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:44:42 | INFO     | main       | info                 | USER ACTION: Install Server button clicked
+2025-06-10 14:44:42 | INFO     | main       | info                 | Opening server installation dialog...
+2025-06-10 14:44:42 | INFO     | main       | info                 | Loading installed servers...
+2025-06-10 14:44:42 | WARNING  | main       | warning              | No MCP servers found. Use 'Discover Servers' to find and install servers.
+2025-06-10 14:44:42 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:44:55 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-10 14:44:55 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-10 14:44:55 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-10 14:44:55 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-10 14:44:55 | INFO     | main       | info                 | USER ACTION: Server discovery started
+2025-06-10 14:44:55 | INFO     | main       | info                 | Status: Ready
+2025-06-10 14:47:40 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-10 14:47:40 | INFO     | main       | info                 | ============================================================
+2025-06-10 14:47:40 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-10 14:47:40 | INFO     | main       | info                 | Timestamp: 2025-06-10T14:47:40.970679
+2025-06-10 14:47:40 | INFO     | main       | info                 | ============================================================
+2025-06-10 17:38:03 | INFO     | main       | info                 | ============================================================
+2025-06-10 17:38:03 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 17:38:03 | INFO     | main       | info                 | Timestamp: 2025-06-10T17:38:03.957999
+2025-06-10 17:38:03 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 17:38:03 | INFO     | main       | info                 | Platform: linux
+2025-06-10 17:38:03 | INFO     | main       | info                 | ============================================================
+2025-06-10 17:38:03 | INFO     | main       | info                 | Testing ASCII characters: [+] [X] [!] [?]
+2025-06-10 17:38:03 | INFO     | main       | info                 | Testing Unicode handling...
+2025-06-10 17:38:03 | INFO     | main       | info                 | ============================================================
+2025-06-10 17:38:03 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 17:38:03 | INFO     | main       | info                 | Timestamp: 2025-06-10T17:38:03.963290
+2025-06-10 17:38:03 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 17:38:03 | INFO     | main       | info                 | Platform: linux
+2025-06-10 17:38:03 | INFO     | main       | info                 | ============================================================
+2025-06-10 17:38:03 | INFO     | main       | info                 | ============================================================
+2025-06-10 17:38:03 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 17:38:03 | INFO     | main       | info                 | Timestamp: 2025-06-10T17:38:03.967539
+2025-06-10 17:38:03 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 17:38:03 | INFO     | main       | info                 | Platform: linux
+2025-06-10 17:38:03 | INFO     | main       | info                 | ============================================================
+2025-06-10 17:38:03 | INFO     | main       | info                 | Cline MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
+2025-06-10 17:38:03 | INFO     | main       | info                 | Roo MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/mcp_settings.json
+2025-06-10 18:55:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 18:55:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 18:55:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T18:55:48.135480
+2025-06-10 18:55:48 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 18:55:48 | INFO     | main       | info                 | Platform: win32
+2025-06-10 18:55:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 18:55:48 | INFO     | main       | info                 | Application initialization started
+2025-06-10 18:55:48 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 18:55:48 | INFO     | main       | info                 | Application started successfully
+2025-06-10 18:55:48 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 18:56:02 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 18:56:02 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 18:56:02 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 18:56:02 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 18:56:26 | ERROR    | main       | error                | [X] Critical checks failed: node_js
+2025-06-10 18:56:26 | INFO     | main       | info                 | Status: System not ready - please resolve critical issues
+2025-06-10 18:56:26 | INFO     | main       | info                 | Status: Ready
+2025-06-10 18:57:35 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-10 18:57:35 | INFO     | main       | info                 | ============================================================
+2025-06-10 18:57:35 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-10 18:57:35 | INFO     | main       | info                 | Timestamp: 2025-06-10T18:57:35.451292
+2025-06-10 18:57:35 | INFO     | main       | info                 | ============================================================
+2025-06-10 18:58:04 | INFO     | main       | info                 | ============================================================
+2025-06-10 18:58:04 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 18:58:04 | INFO     | main       | info                 | Timestamp: 2025-06-10T18:58:04.370102
+2025-06-10 18:58:04 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 18:58:04 | INFO     | main       | info                 | Platform: win32
+2025-06-10 18:58:04 | INFO     | main       | info                 | ============================================================
+2025-06-10 18:58:04 | INFO     | main       | info                 | Application initialization started
+2025-06-10 18:58:04 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 18:58:04 | INFO     | main       | info                 | Application started successfully
+2025-06-10 18:58:04 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 18:58:06 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 18:58:06 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 18:58:06 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 18:58:06 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 18:58:25 | ERROR    | main       | error                | [X] Critical checks failed: internet, node_js
+2025-06-10 18:58:25 | INFO     | main       | info                 | Status: System not ready - please resolve critical issues
+2025-06-10 18:58:25 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:02:13 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:02:13 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:02:13.331333
+2025-06-10 19:02:13 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:02:13 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:02:13 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:02:13 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:02:13.416789
+2025-06-10 19:02:13 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:02:13 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:02:13 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:02:13 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:02:13.795882
+2025-06-10 19:02:13 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:02:13 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:02:13 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:02:13 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:02:13.801912
+2025-06-10 19:02:13 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:02:13 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:02:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:07:58 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:07:58 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:07:58 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:07:58.958735
+2025-06-10 19:07:58 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:07:58 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:07:58 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:00 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:08:00 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:08:00.682092
+2025-06-10 19:08:00 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:08:00 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:08:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:00 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:08:00 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:08:00.968904
+2025-06-10 19:08:00 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:08:00 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:08:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:01 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:01 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:08:01 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:08:01.447219
+2025-06-10 19:08:01 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:08:01 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:08:01 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:08:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:08:48.284593
+2025-06-10 19:08:48 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 19:08:48 | INFO     | main       | info                 | Platform: win32
+2025-06-10 19:08:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:08:48 | INFO     | main       | info                 | Application initialization started
+2025-06-10 19:08:48 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 19:08:48 | INFO     | main       | info                 | Application started successfully
+2025-06-10 19:08:48 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 19:08:50 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 19:08:50 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 19:08:50 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 19:08:50 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 19:08:52 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-10 19:08:52 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-10 19:08:52 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:13:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:13:48.172963
+2025-06-10 19:13:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:13:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:13:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:13:48.178011
+2025-06-10 19:13:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:13:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:13:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:13:48.260527
+2025-06-10 19:13:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:13:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:13:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:13:48.346769
+2025-06-10 19:13:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:13:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | Cline MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
+2025-06-10 19:13:48 | INFO     | main       | info                 | Roo MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/mcp_settings.json
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:13:48 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:13:48 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:13:48.353897
+2025-06-10 19:13:48 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:13:48 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:13:48 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:14:29 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-10 19:14:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:14:29 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-10 19:14:29 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:14:29.963526
+2025-06-10 19:14:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:14:36 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:14:36 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:14:36 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:14:36.925242
+2025-06-10 19:14:36 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 19:14:36 | INFO     | main       | info                 | Platform: win32
+2025-06-10 19:14:36 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:14:36 | INFO     | main       | info                 | Application initialization started
+2025-06-10 19:14:36 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 19:14:37 | INFO     | main       | info                 | Application started successfully
+2025-06-10 19:14:37 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 19:14:39 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 19:14:39 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 19:14:39 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 19:14:39 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 19:14:51 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-10 19:14:51 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-10 19:14:51 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:19:24 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:24 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:19:24 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:19:24.872938
+2025-06-10 19:19:24 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:19:24 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:19:24 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:24 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:24 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:19:24 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:19:24.878241
+2025-06-10 19:19:24 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:19:24 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:19:24 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:24 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:24 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:19:24 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:19:24.885146
+2025-06-10 19:19:24 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:19:24 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:19:24 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:25 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:19:25 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:19:25.696081
+2025-06-10 19:19:25 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:19:25 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:19:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:26 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:19:26 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:19:26 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:19:26.510381
+2025-06-10 19:19:26 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:19:26 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:19:26 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:20:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:20:13 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:20:13 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:20:13.137176
+2025-06-10 19:20:13 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 19:20:13 | INFO     | main       | info                 | Platform: win32
+2025-06-10 19:20:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:20:13 | INFO     | main       | info                 | Application initialization started
+2025-06-10 19:20:13 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 19:20:13 | INFO     | main       | info                 | Application started successfully
+2025-06-10 19:20:13 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 19:20:15 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 19:20:15 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 19:20:15 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 19:20:15 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 19:20:21 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-10 19:20:21 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-10 19:20:21 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:21:17 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:21:17 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:21:17 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:21:17.062584
+2025-06-10 19:21:17 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 19:21:17 | INFO     | main       | info                 | Platform: win32
+2025-06-10 19:21:17 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:21:17 | INFO     | main       | info                 | Application initialization started
+2025-06-10 19:21:17 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 19:21:17 | INFO     | main       | info                 | Application started successfully
+2025-06-10 19:21:17 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 19:21:18 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 19:21:18 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 19:21:18 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 19:21:18 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 19:21:22 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 19:21:22 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 19:21:22 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 19:21:22 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 19:21:24 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-10 19:21:24 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-10 19:21:24 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:21:28 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-10 19:21:28 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-10 19:21:28 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:36:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:21 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:21.250270
+2025-06-10 19:36:21 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:21 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:21 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:21.254867
+2025-06-10 19:36:21 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:21 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:21 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:21.259360
+2025-06-10 19:36:21 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:21 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:21 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:22 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:22 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:22 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:22.403887
+2025-06-10 19:36:22 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:22 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:22 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:23 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:23 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:23 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:23.369963
+2025-06-10 19:36:23 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:23 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:23 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:29 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:29.343967
+2025-06-10 19:36:29 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:29 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:29 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:29.442674
+2025-06-10 19:36:29 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:29 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:29 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:29.618962
+2025-06-10 19:36:29 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:29 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:36:29 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:36:29 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:36:29.624257
+2025-06-10 19:36:29 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:36:29 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:36:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:37:25 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:37:25.676796
+2025-06-10 19:37:25 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:37:25 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:37:25 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:37:25.681402
+2025-06-10 19:37:25 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:37:25 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:37:25 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:37:25.685554
+2025-06-10 19:37:25 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:37:25 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:25 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:37:25 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:37:25.689775
+2025-06-10 19:37:25 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:37:25 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:37:25 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:26 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:37:26 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:37:26 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:37:26.537163
+2025-06-10 19:37:26 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:37:26 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:37:26 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:34 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:34 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:42:34 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:42:34.795778
+2025-06-10 19:42:34 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:42:34 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:42:34 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:34 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:34 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:42:34 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:42:34.801709
+2025-06-10 19:42:34 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:42:34 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:42:34 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:35 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:35 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:42:35 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:42:35.604614
+2025-06-10 19:42:35 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:42:35 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:42:35 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:37 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:42:37 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:42:37 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:42:37.197481
+2025-06-10 19:42:37 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:42:37 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:42:37 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:43:58 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:43:58 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:43:58 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:43:58.514184
+2025-06-10 19:43:58 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:43:58 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:43:58 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:43:58 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:43:58 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:43:58 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:43:58.519570
+2025-06-10 19:43:58 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:43:58 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:43:58 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:00 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:44:00 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:44:00.150639
+2025-06-10 19:44:00 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:44:00 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:44:00 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:02 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:02 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:44:02 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:44:02.547577
+2025-06-10 19:44:02 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:44:02 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:44:02 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:38 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:38 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:44:38 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:44:38.268805
+2025-06-10 19:44:38 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:44:38 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:44:38 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:38 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:38 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:44:38 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:44:38.274575
+2025-06-10 19:44:38 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:44:38 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:44:38 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:38 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:38 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:44:38 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:44:38.117105
+2025-06-10 19:44:38 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:44:38 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:44:38 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:40 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:44:40 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:44:40 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:44:40.582398
+2025-06-10 19:44:40 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:44:40 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:44:40 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:48:19 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:48:19 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:48:19 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:48:19.855599
+2025-06-10 19:48:19 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 19:48:19 | INFO     | main       | info                 | Platform: win32
+2025-06-10 19:48:19 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:48:19 | INFO     | main       | info                 | Application initialization started
+2025-06-10 19:48:19 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 19:48:20 | INFO     | main       | info                 | Application started successfully
+2025-06-10 19:48:20 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 19:48:22 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-10 19:48:22 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:48:22 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-10 19:48:22 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:48:22.509789
+2025-06-10 19:48:22 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:48:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:48:29 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:48:29 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:48:29.103068
+2025-06-10 19:48:29 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 19:48:29 | INFO     | main       | info                 | Platform: win32
+2025-06-10 19:48:29 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:48:29 | INFO     | main       | info                 | Application initialization started
+2025-06-10 19:48:29 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 19:48:29 | INFO     | main       | info                 | Application started successfully
+2025-06-10 19:48:29 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 19:48:31 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-10 19:48:31 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-10 19:48:31 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-10 19:48:31 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-10 19:48:52 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-10 19:48:52 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-10 19:48:52 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:49:03 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-10 19:49:03 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-10 19:49:03 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-10 19:49:03 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-10 19:49:04 | INFO     | main       | info                 | USER ACTION: Server discovery started
+2025-06-10 19:49:04 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:53:57 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:53:57 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:53:57 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:53:57.305766
+2025-06-10 19:53:57 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:53:57 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:53:57 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:53:59 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:53:59 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:53:59 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:53:59.809792
+2025-06-10 19:53:59 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:53:59 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:53:59 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:55:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:55:13 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:55:13 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:55:13.753084
+2025-06-10 19:55:13 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 19:55:13 | INFO     | main       | info                 | Platform: win32
+2025-06-10 19:55:13 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:55:13 | INFO     | main       | info                 | Application initialization started
+2025-06-10 19:55:13 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 19:55:13 | INFO     | main       | info                 | Application started successfully
+2025-06-10 19:55:13 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 19:55:16 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-10 19:55:16 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-10 19:55:16 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-10 19:55:16 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-10 19:56:13 | INFO     | main       | info                 | Status: Ready
+2025-06-10 19:56:16 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-10 19:56:16 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:56:16 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-10 19:56:16 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:56:16.038035
+2025-06-10 19:56:16 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:58:36 | INFO     | main       | info                 | ============================================================
+2025-06-10 19:58:36 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 19:58:36 | INFO     | main       | info                 | Timestamp: 2025-06-10T19:58:36.359523
+2025-06-10 19:58:36 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-10 19:58:36 | INFO     | main       | info                 | Platform: linux
+2025-06-10 19:58:36 | INFO     | main       | info                 | ============================================================
+2025-06-10 21:10:34 | INFO     | main       | info                 | ============================================================
+2025-06-10 21:10:34 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-10 21:10:34 | INFO     | main       | info                 | Timestamp: 2025-06-10T21:10:34.883057
+2025-06-10 21:10:34 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-10 21:10:34 | INFO     | main       | info                 | Platform: win32
+2025-06-10 21:10:34 | INFO     | main       | info                 | ============================================================
+2025-06-10 21:10:34 | INFO     | main       | info                 | Application initialization started
+2025-06-10 21:10:34 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-10 21:10:35 | INFO     | main       | info                 | Application started successfully
+2025-06-10 21:10:35 | INFO     | main       | info                 | Ready for user commands
+2025-06-10 21:10:41 | INFO     | main       | info                 | USER ACTION: Install Server button clicked
+2025-06-10 21:10:41 | INFO     | main       | info                 | Opening server installation dialog...
+2025-06-10 21:10:41 | INFO     | main       | info                 | Loading installed servers...
+2025-06-10 21:10:41 | WARNING  | main       | warning              | No MCP servers found. Use 'Discover Servers' to find and install servers.
+2025-06-10 21:10:41 | INFO     | main       | info                 | Status: Ready
+2025-06-10 21:10:45 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-10 21:10:45 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-10 21:10:45 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-10 21:10:45 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-10 21:10:47 | INFO     | main       | info                 | Status: Ready
+2025-06-10 21:10:59 | INFO     | main       | info                 | USER ACTION: Individual install requested: Browser Automation MCP Server
+2025-06-11 06:15:56 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 06:15:56 | INFO     | main       | info                 | ============================================================
+2025-06-11 06:15:56 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 06:15:56 | INFO     | main       | info                 | Timestamp: 2025-06-11T06:15:56.113308
+2025-06-11 06:15:56 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:52:58 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:52:58 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 07:52:58 | INFO     | main       | info                 | Timestamp: 2025-06-11T07:52:58.173112
+2025-06-11 07:52:58 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 07:52:58 | INFO     | main       | info                 | Platform: linux
+2025-06-11 07:52:58 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:53:01 | INFO     | main       | info                 | Cline MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
+2025-06-11 07:53:01 | INFO     | main       | info                 | Added Test Filesystem Server to cline configuration
+2025-06-11 07:53:01 | INFO     | main       | info                 | Roo MCP configuration not found at /home/jonsey/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/mcp_settings.json
+2025-06-11 07:53:01 | INFO     | main       | info                 | Added Test Filesystem Server to roo configuration
+2025-06-11 07:53:01 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:53:01 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 07:53:01 | INFO     | main       | info                 | Timestamp: 2025-06-11T07:53:01.903956
+2025-06-11 07:53:01 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 07:53:01 | INFO     | main       | info                 | Platform: linux
+2025-06-11 07:53:01 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:53:01 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:53:01 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 07:53:01 | INFO     | main       | info                 | Timestamp: 2025-06-11T07:53:01.912493
+2025-06-11 07:53:01 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 07:53:01 | INFO     | main       | info                 | Platform: linux
+2025-06-11 07:53:01 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:53:02 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:53:02 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 07:53:02 | INFO     | main       | info                 | Timestamp: 2025-06-11T07:53:02.006626
+2025-06-11 07:53:02 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 07:53:02 | INFO     | main       | info                 | Platform: linux
+2025-06-11 07:53:02 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:56:35 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:56:35 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 07:56:35 | INFO     | main       | info                 | Timestamp: 2025-06-11T07:56:35.745739
+2025-06-11 07:56:35 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 07:56:35 | INFO     | main       | info                 | Platform: linux
+2025-06-11 07:56:35 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:56:37 | INFO     | main       | info                 | Added Filesystem MCP Server to cline configuration
+2025-06-11 07:56:37 | INFO     | main       | info                 | Added Filesystem MCP Server to roo configuration
+2025-06-11 07:56:37 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:56:37 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 07:56:37 | INFO     | main       | info                 | Timestamp: 2025-06-11T07:56:37.200179
+2025-06-11 07:56:37 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 07:56:37 | INFO     | main       | info                 | Platform: linux
+2025-06-11 07:56:37 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:56:37 | INFO     | main       | info                 | USER ACTION: Test install button click
+2025-06-11 07:56:37 | ERROR    | main       | error                | Test installation error | Exception: Test error
+2025-06-11 07:56:37 | INFO     | main       | info                 | USER ACTION: Individual install requested: Test Server
+2025-06-11 07:57:27 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:57:27 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 07:57:27 | INFO     | main       | info                 | Timestamp: 2025-06-11T07:57:27.008865
+2025-06-11 07:57:27 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 07:57:27 | INFO     | main       | info                 | Platform: win32
+2025-06-11 07:57:27 | INFO     | main       | info                 | ============================================================
+2025-06-11 07:57:27 | INFO     | main       | info                 | Application initialization started
+2025-06-11 07:57:27 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 07:57:27 | INFO     | main       | info                 | Application started successfully
+2025-06-11 07:57:27 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 07:58:13 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 07:58:13 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 07:58:13 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 07:58:13 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 07:58:15 | INFO     | main       | info                 | Status: Ready
+2025-06-11 07:58:21 | INFO     | main       | info                 | USER ACTION: Install button clicked for: Browser Automation MCP Server
+2025-06-11 07:58:21 | INFO     | main       | info                 | USER ACTION: Individual install requested: Browser Automation MCP Server
+2025-06-11 08:02:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 08:02:09 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 08:02:09 | INFO     | main       | info                 | Timestamp: 2025-06-11T08:02:09.322627
+2025-06-11 08:02:09 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 08:02:09 | INFO     | main       | info                 | Platform: linux
+2025-06-11 08:02:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 08:02:11 | INFO     | main       | info                 | Added Filesystem MCP Server to cline configuration
+2025-06-11 08:02:11 | INFO     | main       | info                 | Added Filesystem MCP Server to roo configuration
+2025-06-11 08:02:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 08:02:11 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 08:02:11 | INFO     | main       | info                 | Timestamp: 2025-06-11T08:02:11.247959
+2025-06-11 08:02:11 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 08:02:11 | INFO     | main       | info                 | Platform: linux
+2025-06-11 08:02:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 08:02:11 | INFO     | main       | info                 | USER ACTION: Test install button click
+2025-06-11 08:02:11 | ERROR    | main       | error                | Test installation error | Exception: Test error
+2025-06-11 08:02:11 | INFO     | main       | info                 | USER ACTION: Individual install requested: Test Server
+2025-06-11 09:16:46 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 09:16:46 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:16:46 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 09:16:46 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:16:46.334383
+2025-06-11 09:16:46 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:17:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:17:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:17:21 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:17:21.689775
+2025-06-11 09:17:21 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 09:17:21 | INFO     | main       | info                 | Platform: win32
+2025-06-11 09:17:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:17:21 | INFO     | main       | info                 | Application initialization started
+2025-06-11 09:17:21 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 09:17:21 | INFO     | main       | info                 | Application started successfully
+2025-06-11 09:17:21 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 09:17:31 | INFO     | main       | info                 | USER ACTION: Install Server button clicked
+2025-06-11 09:17:31 | INFO     | main       | info                 | Opening server installation dialog...
+2025-06-11 09:17:31 | INFO     | main       | info                 | Loading installed servers...
+2025-06-11 09:17:31 | WARNING  | main       | warning              | No MCP servers found. Use 'Discover Servers' to find and install servers.
+2025-06-11 09:17:31 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:17:33 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 09:17:33 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 09:17:33 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 09:17:33 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 09:17:34 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:17:35 | INFO     | main       | info                 | USER ACTION: Install button clicked for: Filesystem MCP Server
+2025-06-11 09:17:35 | INFO     | main       | info                 | USER ACTION: Individual install requested: Filesystem MCP Server
+2025-06-11 09:18:17 | INFO     | main       | info                 | USER ACTION: Install Server button clicked
+2025-06-11 09:18:17 | INFO     | main       | info                 | Opening server installation dialog...
+2025-06-11 09:18:17 | INFO     | main       | info                 | Loading installed servers...
+2025-06-11 09:18:17 | WARNING  | main       | warning              | No MCP servers found. Use 'Discover Servers' to find and install servers.
+2025-06-11 09:18:17 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:18:20 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 09:18:20 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 09:18:20 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 09:18:20 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 09:18:22 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:18:28 | INFO     | main       | info                 | USER ACTION: Install button clicked for: Filesystem MCP Server
+2025-06-11 09:18:28 | INFO     | main       | info                 | USER ACTION: Individual install requested: Filesystem MCP Server
+2025-06-11 09:21:01 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:21:01 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:21:01 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:21:01.656800
+2025-06-11 09:21:01 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:21:01 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:21:01 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:21:03 | INFO     | main       | info                 | Added Test Direct Install Server to cline configuration
+2025-06-11 09:21:03 | INFO     | main       | info                 | Added Test Direct Install Server to roo configuration
+2025-06-11 09:21:49 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:21:49 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:21:49 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:21:49.939943
+2025-06-11 09:21:49 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 09:21:49 | INFO     | main       | info                 | Platform: win32
+2025-06-11 09:21:49 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:21:49 | INFO     | main       | info                 | Application initialization started
+2025-06-11 09:21:49 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 09:21:50 | INFO     | main       | info                 | Application started successfully
+2025-06-11 09:21:50 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 09:21:51 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 09:21:51 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 09:21:51 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 09:21:51 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 09:21:52 | ERROR    | main       | error                | Failed to create server entry 0 | Exception: cannot access local variable 'install_btn' where it is not associated with a value
+2025-06-11 09:21:52 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:22:03 | INFO     | main       | info                 | USER ACTION: Install Server button clicked
+2025-06-11 09:22:03 | INFO     | main       | info                 | Opening server installation dialog...
+2025-06-11 09:22:03 | INFO     | main       | info                 | Loading installed servers...
+2025-06-11 09:22:03 | WARNING  | main       | warning              | No MCP servers found. Use 'Discover Servers' to find and install servers.
+2025-06-11 09:22:03 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:22:07 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 09:22:07 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 09:22:07 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 09:22:07 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 09:22:07 | ERROR    | main       | error                | Failed to create server entry 0 | Exception: cannot access local variable 'install_btn' where it is not associated with a value
+2025-06-11 09:22:08 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:23:17 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:23:17 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:23:17 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:23:17.780202
+2025-06-11 09:23:17 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:23:17 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:23:17 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:23:18 | INFO     | main       | info                 | Added Test Direct Install Server to cline configuration
+2025-06-11 09:23:18 | INFO     | main       | info                 | Added Test Direct Install Server to roo configuration
+2025-06-11 09:27:20 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:27:20 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:27:20 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:27:20.960890
+2025-06-11 09:27:20 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:27:20 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:27:20 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:27:22 | INFO     | main       | info                 | Added Test Direct Install Server to cline configuration
+2025-06-11 09:27:22 | INFO     | main       | info                 | Added Test Direct Install Server to roo configuration
+2025-06-11 09:30:08 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:30:08 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:30:08 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:30:08.543442
+2025-06-11 09:30:08 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:30:08 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:30:08 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:30:08 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:30:08 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:30:08 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:30:08.551291
+2025-06-11 09:30:08 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:30:08 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:30:08 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:30:56 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:30:56 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:30:56 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:30:56.218700
+2025-06-11 09:30:56 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 09:30:56 | INFO     | main       | info                 | Platform: win32
+2025-06-11 09:30:56 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:30:56 | INFO     | main       | info                 | Application initialization started
+2025-06-11 09:30:56 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 09:30:56 | INFO     | main       | info                 | Application started successfully
+2025-06-11 09:30:56 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 09:30:58 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 09:30:58 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 09:30:58 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 09:30:58 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 09:30:59 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:31:06 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 09:31:06 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Installation error: [WinError 2] The system cannot find the file specified
+2025-06-11 09:31:17 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-11 09:31:17 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-11 09:31:17 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-11 09:31:17 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-11 09:31:33 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-11 09:31:33 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-11 09:31:33 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:31:40 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 09:31:40 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 09:31:40 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 09:31:40 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 09:31:41 | INFO     | main       | info                 | Status: Ready
+2025-06-11 09:31:45 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 09:31:45 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Installation error: [WinError 2] The system cannot find the file specified
+2025-06-11 09:33:12 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 09:33:12 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:33:12 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 09:33:12 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:33:12.431375
+2025-06-11 09:33:12 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:35:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:35:11 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:35:11 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:35:11.193027
+2025-06-11 09:35:11 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:35:11 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:35:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:35:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:35:11 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:35:11 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:35:11.897695
+2025-06-11 09:35:11 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:35:11 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:35:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:35:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:35:11 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:35:11 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:35:11.906135
+2025-06-11 09:35:11 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:35:11 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:35:11 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:36:22 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:36:22 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 09:36:22 | INFO     | main       | info                 | Timestamp: 2025-06-11T09:36:22.928394
+2025-06-11 09:36:22 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 09:36:22 | INFO     | main       | info                 | Platform: linux
+2025-06-11 09:36:22 | INFO     | main       | info                 | ============================================================
+2025-06-11 09:36:26 | INFO     | main       | info                 | Added Browser Automation MCP Server to cline configuration
+2025-06-11 09:36:26 | INFO     | main       | info                 | Added Browser Automation MCP Server to roo configuration
+2025-06-11 10:00:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:00:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:00:21 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:00:21.524880
+2025-06-11 10:00:21 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:00:21 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:00:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:00:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:00:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:00:21 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:00:21.532370
+2025-06-11 10:00:21 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:00:21 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:00:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:00:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:00:21 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:00:21 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:00:21.540411
+2025-06-11 10:00:21 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:00:21 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:00:21 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:07:39 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:07:39 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:07:39 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:07:39.790202
+2025-06-11 10:07:39 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 10:07:39 | INFO     | main       | info                 | Platform: win32
+2025-06-11 10:07:39 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:07:39 | INFO     | main       | info                 | Application initialization started
+2025-06-11 10:07:39 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 10:07:40 | INFO     | main       | info                 | Application started successfully
+2025-06-11 10:07:40 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 10:07:44 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 10:07:44 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 10:07:44 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 10:07:44 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 10:07:45 | INFO     | main       | info                 | Status: Ready
+2025-06-11 10:07:54 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 10:07:58 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 10:13:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:13:09 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:13:09 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:13:09.176591
+2025-06-11 10:13:09 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:13:09 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:13:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:13:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:13:09 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:13:09 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:13:09.185658
+2025-06-11 10:13:09 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:13:09 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:13:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:16:14 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:16:14 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:16:14 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:16:14.570746
+2025-06-11 10:16:14 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 10:16:14 | INFO     | main       | info                 | Platform: win32
+2025-06-11 10:16:14 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:16:14 | INFO     | main       | info                 | Application initialization started
+2025-06-11 10:16:14 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 10:16:14 | INFO     | main       | info                 | Application started successfully
+2025-06-11 10:16:14 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 10:16:17 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 10:16:17 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 10:16:17 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 10:16:17 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 10:16:18 | INFO     | main       | info                 | Status: Ready
+2025-06-11 10:16:21 | INFO     | main       | info                 | USER ACTION: Direct install started for: Filesystem MCP Server
+2025-06-11 10:16:24 | ERROR    | main       | error                | Installation failed for Filesystem MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 10:20:05 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:20:05 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:20:05 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:20:05.538710
+2025-06-11 10:20:05 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:20:05 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:20:05 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:20:05 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:20:05 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:20:05 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:20:05.546012
+2025-06-11 10:20:05 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:20:05 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:20:05 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:20:05 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:20:05 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:20:05 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:20:05.557911
+2025-06-11 10:20:05 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:20:05 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:20:05 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:25:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:25:53 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:25:53 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:25:53.771672
+2025-06-11 10:25:53 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:25:53 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:25:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:25:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:25:53 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:25:53 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:25:53.780051
+2025-06-11 10:25:53 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:25:53 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:25:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:25:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:25:53 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:25:53 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:25:53.788046
+2025-06-11 10:25:53 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:25:53 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:25:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:29:37 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:29:37 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:29:37 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:29:37.986756
+2025-06-11 10:29:37 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 10:29:37 | INFO     | main       | info                 | Platform: win32
+2025-06-11 10:29:37 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:29:37 | INFO     | main       | info                 | Application initialization started
+2025-06-11 10:29:37 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 10:29:38 | INFO     | main       | info                 | Application started successfully
+2025-06-11 10:29:38 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 10:29:43 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 10:29:43 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 10:29:43 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 10:29:43 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 10:29:44 | INFO     | main       | info                 | Status: Ready
+2025-06-11 10:29:54 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 10:30:00 | INFO     | main       | info                 | USER ACTION: Installation successful: Browser Automation MCP Server
+2025-06-11 10:34:50 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:34:50 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:34:50 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:34:50.197396
+2025-06-11 10:34:50 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:34:50 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:34:50 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:34:50 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:34:50 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:34:50 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:34:50.205224
+2025-06-11 10:34:50 | INFO     | main       | info                 | Python Version: 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0]
+2025-06-11 10:34:50 | INFO     | main       | info                 | Platform: linux
+2025-06-11 10:34:50 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:38:18 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:38:18 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 10:38:18 | INFO     | main       | info                 | Timestamp: 2025-06-11T10:38:18.685826
+2025-06-11 10:38:18 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 10:38:18 | INFO     | main       | info                 | Platform: win32
+2025-06-11 10:38:18 | INFO     | main       | info                 | ============================================================
+2025-06-11 10:38:18 | INFO     | main       | info                 | Application initialization started
+2025-06-11 10:38:18 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 10:38:18 | INFO     | main       | info                 | Application started successfully
+2025-06-11 10:38:18 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 10:38:20 | INFO     | main       | info                 | USER ACTION: System Check button clicked
+2025-06-11 10:38:20 | INFO     | main       | info                 | Starting system compatibility check...
+2025-06-11 10:38:20 | INFO     | main       | info                 | Status: Checking system compatibility...
+2025-06-11 10:38:20 | INFO     | main       | info                 | Running comprehensive system check...
+2025-06-11 10:38:40 | INFO     | main       | info                 | [+] All system checks passed!
+2025-06-11 10:38:40 | INFO     | main       | info                 | Status: System ready for MCP installation
+2025-06-11 10:38:40 | INFO     | main       | info                 | Status: Ready
+2025-06-11 10:38:45 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 10:38:45 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 10:38:45 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 10:38:45 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 10:38:46 | INFO     | main       | info                 | Status: Ready
+2025-06-11 10:38:51 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 10:38:59 | ERROR    | main       | error                | Failed to read Cline configuration | Exception: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+2025-06-11 10:38:59 | ERROR    | main       | error                | Failed to read Roo configuration | Exception: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+2025-06-11 10:38:59 | INFO     | main       | info                 | USER ACTION: Installation successful: Browser Automation MCP Server
+2025-06-11 12:53:17 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:53:17 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 12:53:17 | INFO     | main       | info                 | Timestamp: 2025-06-11T12:53:17.491113
+2025-06-11 12:53:17 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 12:53:17 | INFO     | main       | info                 | Platform: win32
+2025-06-11 12:53:17 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:53:17 | INFO     | main       | info                 | Application initialization started
+2025-06-11 12:53:17 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 12:53:17 | INFO     | main       | info                 | Application started successfully
+2025-06-11 12:53:17 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 12:53:23 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 12:53:23 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 12:53:23 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 12:53:23 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 12:53:25 | INFO     | main       | info                 | Status: Ready
+2025-06-11 12:53:30 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 12:53:33 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 12:53:43 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 12:53:43 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:53:43 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 12:53:43 | INFO     | main       | info                 | Timestamp: 2025-06-11T12:53:43.546944
+2025-06-11 12:53:43 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:55:22 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 12:55:22 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:55:22 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 12:55:22 | INFO     | main       | info                 | Timestamp: 2025-06-11T12:55:22.410210
+2025-06-11 12:55:22 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:57:43 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:57:43 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 12:57:43 | INFO     | main       | info                 | Timestamp: 2025-06-11T12:57:43.916648
+2025-06-11 12:57:43 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 12:57:43 | INFO     | main       | info                 | Platform: win32
+2025-06-11 12:57:43 | INFO     | main       | info                 | ============================================================
+2025-06-11 12:57:43 | INFO     | main       | info                 | Application initialization started
+2025-06-11 12:57:43 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 12:57:44 | INFO     | main       | info                 | Application started successfully
+2025-06-11 12:57:44 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 12:57:45 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 12:57:45 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 12:57:45 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 12:57:45 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 12:57:47 | INFO     | main       | info                 | Status: Ready
+2025-06-11 12:57:49 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 12:57:52 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 14:07:30 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:07:30 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 14:07:30 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:07:30.592856
+2025-06-11 14:07:30 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 14:07:30 | INFO     | main       | info                 | Platform: win32
+2025-06-11 14:07:30 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:07:30 | INFO     | main       | info                 | Application initialization started
+2025-06-11 14:07:30 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 14:07:30 | INFO     | main       | info                 | Application started successfully
+2025-06-11 14:07:30 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 14:07:35 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 14:07:35 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 14:07:35 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 14:07:35 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 14:07:37 | INFO     | main       | info                 | Status: Ready
+2025-06-11 14:07:41 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 14:07:41 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: No Docker image specified
+2025-06-11 14:08:02 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 14:08:02 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:08:02 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 14:08:02 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:08:02.805807
+2025-06-11 14:08:02 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:09:15 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:09:15 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 14:09:15 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:09:15.553239
+2025-06-11 14:09:15 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 14:09:15 | INFO     | main       | info                 | Platform: win32
+2025-06-11 14:09:15 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:09:15 | INFO     | main       | info                 | Application initialization started
+2025-06-11 14:09:15 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 14:09:15 | INFO     | main       | info                 | Application started successfully
+2025-06-11 14:09:15 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 14:09:19 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 14:09:19 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 14:09:19 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 14:09:19 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 14:09:20 | INFO     | main       | info                 | Status: Ready
+2025-06-11 14:09:24 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 14:09:57 | INFO     | main       | info                 | USER ACTION: Installation successful: Browser Automation MCP Server
+2025-06-11 14:29:53 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 14:29:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:29:53 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 14:29:53 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:29:53.716765
+2025-06-11 14:29:53 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:30:08 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:30:08 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 14:30:08 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:30:08.999297
+2025-06-11 14:30:09 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 14:30:09 | INFO     | main       | info                 | Platform: win32
+2025-06-11 14:30:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:30:09 | INFO     | main       | info                 | Application initialization started
+2025-06-11 14:30:09 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 14:30:09 | INFO     | main       | info                 | Application started successfully
+2025-06-11 14:30:09 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 14:30:19 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 14:30:19 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 14:30:19 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 14:30:19 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 14:30:21 | INFO     | main       | info                 | Status: Ready
+2025-06-11 14:30:25 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 14:30:25 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: No Docker image specified
+2025-06-11 14:30:38 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 14:30:38 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: No Docker image specified
+2025-06-11 14:32:33 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:32:33 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 14:32:33 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:32:33.942851
+2025-06-11 14:32:33 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 14:32:33 | INFO     | main       | info                 | Platform: win32
+2025-06-11 14:32:33 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:32:33 | INFO     | main       | info                 | Application initialization started
+2025-06-11 14:32:33 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 14:32:34 | INFO     | main       | info                 | Application started successfully
+2025-06-11 14:32:34 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 14:32:38 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 14:32:38 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 14:32:38 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 14:32:38 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 14:32:39 | INFO     | main       | info                 | Status: Ready
+2025-06-11 14:32:43 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 14:35:38 | INFO     | main       | info                 | USER ACTION: Installation successful: Browser Automation MCP Server
+2025-06-11 14:38:47 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:38:47 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 14:38:47 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:38:47.899278
+2025-06-11 14:38:47 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 14:38:47 | INFO     | main       | info                 | Platform: win32
+2025-06-11 14:38:47 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:38:47 | INFO     | main       | info                 | Application initialization started
+2025-06-11 14:38:47 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 14:38:48 | INFO     | main       | info                 | Application started successfully
+2025-06-11 14:38:48 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 14:38:52 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 14:38:52 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 14:38:52 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 14:38:52 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 14:38:53 | INFO     | main       | info                 | Status: Ready
+2025-06-11 14:38:57 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 14:39:01 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 14:51:28 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:51:28 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 14:51:28 | INFO     | main       | info                 | Timestamp: 2025-06-11T14:51:28.665678
+2025-06-11 14:51:28 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 14:51:28 | INFO     | main       | info                 | Platform: win32
+2025-06-11 14:51:28 | INFO     | main       | info                 | ============================================================
+2025-06-11 14:51:28 | INFO     | main       | info                 | Application initialization started
+2025-06-11 14:51:28 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 14:51:28 | INFO     | main       | info                 | Application started successfully
+2025-06-11 14:51:28 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 14:51:33 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 14:51:33 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 14:51:33 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 14:51:33 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 14:51:34 | INFO     | main       | info                 | Status: Ready
+2025-06-11 14:51:37 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 14:54:51 | INFO     | main       | info                 | USER ACTION: Installation successful: Browser Automation MCP Server
+2025-06-11 15:01:47 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:01:47 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 15:01:47 | INFO     | main       | info                 | Timestamp: 2025-06-11T15:01:47.390910
+2025-06-11 15:01:47 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 15:01:47 | INFO     | main       | info                 | Platform: win32
+2025-06-11 15:01:47 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:01:47 | INFO     | main       | info                 | Application initialization started
+2025-06-11 15:01:47 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 15:01:47 | INFO     | main       | info                 | Application started successfully
+2025-06-11 15:01:47 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 15:01:51 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 15:01:51 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 15:01:51 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 15:01:51 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 15:01:53 | INFO     | main       | info                 | Status: Ready
+2025-06-11 15:01:55 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 15:01:59 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 15:02:27 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:02:27 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 15:02:27 | INFO     | main       | info                 | Timestamp: 2025-06-11T15:02:27.557151
+2025-06-11 15:02:27 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 15:02:27 | INFO     | main       | info                 | Platform: win32
+2025-06-11 15:02:27 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:02:27 | INFO     | main       | info                 | Application initialization started
+2025-06-11 15:02:27 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 15:02:27 | INFO     | main       | info                 | Application started successfully
+2025-06-11 15:02:27 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 15:03:12 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 15:03:12 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 15:03:12 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 15:03:12 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 15:03:14 | INFO     | main       | info                 | Status: Ready
+2025-06-11 15:03:16 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 15:03:18 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Node.js/npm not found. Please install Node.js from https://nodejs.org/ and restart the application.
+2025-06-11 15:09:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:09:09 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 15:09:09 | INFO     | main       | info                 | Timestamp: 2025-06-11T15:09:09.484344
+2025-06-11 15:09:09 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 15:09:09 | INFO     | main       | info                 | Platform: win32
+2025-06-11 15:09:09 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:09:09 | INFO     | main       | info                 | Application initialization started
+2025-06-11 15:09:09 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 15:09:09 | INFO     | main       | info                 | Application started successfully
+2025-06-11 15:09:09 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 15:09:12 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 15:09:12 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 15:09:12 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 15:09:12 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 15:09:15 | INFO     | main       | info                 | Status: Ready
+2025-06-11 15:09:19 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 15:09:20 | ERROR    | main       | error                | Installation failed for Browser Automation MCP Server: Installation error: [WinError 2] The system cannot find the file specified
+2025-06-11 15:12:55 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:12:55 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 15:12:55 | INFO     | main       | info                 | Timestamp: 2025-06-11T15:12:55.098596
+2025-06-11 15:12:55 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 15:12:55 | INFO     | main       | info                 | Platform: win32
+2025-06-11 15:12:55 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:12:55 | INFO     | main       | info                 | Application initialization started
+2025-06-11 15:12:55 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 15:12:55 | INFO     | main       | info                 | Application started successfully
+2025-06-11 15:12:55 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 15:12:59 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 15:12:59 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 15:12:59 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 15:12:59 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 15:13:00 | INFO     | main       | info                 | Status: Ready
+2025-06-11 15:13:04 | INFO     | main       | info                 | USER ACTION: Direct install started for: Browser Automation MCP Server
+2025-06-11 15:13:10 | INFO     | main       | info                 | Added Browser Automation MCP Server to cline configuration
+2025-06-11 15:13:10 | INFO     | main       | info                 | Added Browser Automation MCP Server to roo configuration
+2025-06-11 15:13:10 | INFO     | main       | info                 | USER ACTION: Installation successful: Browser Automation MCP Server

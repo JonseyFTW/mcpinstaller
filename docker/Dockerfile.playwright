@@ -1,0 +1,95 @@
+# Enhanced Dockerfile for Playwright MCP Server - Based on proven working setup
+FROM node:18-bullseye-slim
+
+# Set environment variables for Playwright
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+ENV PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
+ENV NODE_ENV=production
+
+# Create app directory
+WORKDIR /app
+
+# Install system dependencies for Playwright
+RUN apt-get update && apt-get install -y \
+    # Basic tools
+    curl \
+    wget \
+    ca-certificates \
+    # Playwright dependencies for Chromium
+    libnss3 \
+    libnspr4 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm2 \
+    libgtk-3-0 \
+    libgdk-pixbuf2.0-0 \
+    libxss1 \
+    libxcomposite1 \
+    libxrandr2 \
+    libasound2 \
+    libpangocairo-1.0-0 \
+    libcairo-gobject2 \
+    libxdamage1 \
+    libxext6 \
+    libxfixes3 \
+    libxi6 \
+    libxrender1 \
+    libxtst6 \
+    libxshmfence1 \
+    libgbm1 \
+    # Font libraries
+    fonts-liberation \
+    fonts-noto-color-emoji \
+    fonts-noto-cjk \
+    # Additional libraries for headless Chrome
+    libxkbcommon0 \
+    libxrandr2 \
+    libasound2 \
+    libpangocairo-1.0-0 \
+    libatk1.0-0 \
+    libcairo-gobject2 \
+    libgtk-3-0 \
+    libgdk-pixbuf2.0-0 \
+    # Clean up
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get autoremove -y \
+    && apt-get autoclean
+
+# Install Playwright MCP server globally first
+RUN npm install -g @playwright/mcp@latest
+
+# CRITICAL: Install Playwright browsers BEFORE copying application code
+# This ensures browsers are always available
+RUN npx playwright install chromium --with-deps
+
+# Verify browser installation
+RUN npx playwright install-deps chromium
+RUN ls -la /ms-playwright/ || echo "Playwright path check"
+
+# Second verification - make sure chromium is properly installed
+RUN npx playwright install chromium
+RUN find /ms-playwright -name "*chrome*" -type f | head -10 || echo "Browser files check"
+
+# Create non-root user for security
+RUN groupadd -r mcpuser && useradd -r -g mcpuser -s /bin/false mcpuser
+
+# Set proper ownership and permissions
+RUN chown -R mcpuser:mcpuser /app
+RUN chown -R mcpuser:mcpuser /ms-playwright
+RUN chmod -R 755 /ms-playwright
+
+# Create cache directory with proper permissions
+RUN mkdir -p /home/mcpuser/.cache && chown -R mcpuser:mcpuser /home/mcpuser
+
+# Switch to non-root user
+USER mcpuser
+
+# Set environment variables for the user
+ENV HOME=/home/mcpuser
+
+# Final verification that browsers are accessible
+RUN ls -la $PLAYWRIGHT_BROWSERS_PATH/ || echo "Final browser check"
+
+# MCP servers run in stdio mode for Model Context Protocol
+CMD ["npx", "@playwright/mcp"]

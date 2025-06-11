@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "Bash(./Launch-Advanced-MCP.bat)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(cat:*)",
+      "Bash(echo $WSL_DISTRO_NAME)",
+      "Bash(ls:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(docker logs:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(docker stop:*)",
+      "Bash(docker rm:*)",
+      "Bash(docker build:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker inspect:*)",
+      "Bash(docker image rm:*)",
+      "Bash(npm --version)"
+    ],
+    "deny": []
+  }
+}

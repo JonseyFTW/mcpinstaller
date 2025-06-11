@@ -2,41 +2,41 @@
     "ides":  [
                  {
                      "detection_paths":  [
-                                             "C:\\Users\\cjones\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
-                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\Claude\\Claude.exe"
+                                             "%APPDATA%\\Claude\\claude_desktop_config.json",
+                                             "%LOCALAPPDATA%\\Programs\\Claude\\Claude.exe"
                                          ],
                      "config_key":  "mcpServers",
-                     "config_path":  "C:\\Users\\cjones\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+                     "config_path":  "%APPDATA%\\Claude\\claude_desktop_config.json",
                      "name":  "Claude Desktop",
                      "id":  "claude-desktop"
                  },
                  {
                      "detection_paths":  [
-                                             "C:\\Users\\cjones\\.cursor\\mcp.json",
-                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\cursor\\Cursor.exe"
+                                             "%USERPROFILE%\\.cursor\\mcp.json",
+                                             "%LOCALAPPDATA%\\Programs\\cursor\\Cursor.exe"
                                          ],
                      "config_key":  "mcpServers",
-                     "config_path":  "C:\\Users\\cjones\\.cursor\\mcp.json",
+                     "config_path":  "%USERPROFILE%\\.cursor\\mcp.json",
                      "name":  "Cursor",
                      "id":  "cursor"
                  },
                  {
                      "detection_paths":  [
-                                             "C:\\Users\\cjones\\AppData\\Roaming\\Code\\User\\settings.json",
-                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+                                             "%APPDATA%\\Code\\User\\settings.json",
+                                             "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe"
                                          ],
                      "config_key":  "mcp.servers",
-                     "config_path":  "C:\\Users\\cjones\\AppData\\Roaming\\Code\\User\\settings.json",
+                     "config_path":  "%APPDATA%\\Code\\User\\settings.json",
                      "name":  "Visual Studio Code",
                      "id":  "vscode"
                  },
                  {
                      "detection_paths":  [
-                                             "C:\\Users\\cjones\\AppData\\Roaming\\Windsurf\\User\\settings.json",
-                                             "C:\\Users\\cjones\\AppData\\Local\\Programs\\Windsurf\\Windsurf.exe"
+                                             "%APPDATA%\\Windsurf\\User\\settings.json",
+                                             "%LOCALAPPDATA%\\Programs\\Windsurf\\Windsurf.exe"
                                          ],
                      "config_key":  "mcp.servers",
-                     "config_path":  "C:\\Users\\cjones\\AppData\\Roaming\\Windsurf\\User\\settings.json",
+                     "config_path":  "%APPDATA%\\Windsurf\\User\\settings.json",
                      "name":  "Windsurf",
                      "id":  "windsurf"
                  }
@@ -106,7 +106,7 @@
                                                           "C:\\mcp-tools\\memory-service\\memory_wrapper.py"
                                                       ],
                                              "env":  {
-                                                         "MCP_MEMORY_CHROMA_PATH":  "C:\\Users\\cjones\\AppData\\Local\\mcp-memory\\chroma_db"
+                                                         "MCP_MEMORY_CHROMA_PATH":  "%LOCALAPPDATA%\\mcp-memory\\chroma_db"
                                                      },
                                              "command":  "python"
                                          },
@@ -181,8 +181,8 @@
                                                           "postgresql://localhost:5432/mydb"
                                                       ],
                                              "env":  {
-                                                         "PGUSER":  "username",
-                                                         "PGPASSWORD":  "password"
+                                                         "PGUSER":  "${PROMPT:Enter PostgreSQL username}",
+                                                         "PGPASSWORD":  "${PROMPT:Enter PostgreSQL password}"
                                                      },
                                              "command":  "postgres-mcp-pro"
                                          },
@@ -213,7 +213,7 @@
                                                           "ghcr.io/github/github-mcp-server"
                                                       ],
                                              "env":  {
-                                                         "GITHUB_PERSONAL_ACCESS_TOKEN":  "your-token-here"
+                                                         "GITHUB_PERSONAL_ACCESS_TOKEN":  "${PROMPT:Enter GitHub Personal Access Token}"
                                                      },
                                              "command":  "docker"
                                          },

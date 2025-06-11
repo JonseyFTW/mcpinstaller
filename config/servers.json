@@ -1,0 +1,228 @@
+{
+  "servers": {
+    "filesystem": {
+      "name": "Filesystem MCP Server",
+      "description": "Provides secure file system operations for MCP clients",
+      "type": "npm",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "category": "core",
+      "prerequisites": ["node"],
+      "configuration": {
+        "command": "npx",
+        "args": ["@modelcontextprotocol/server-filesystem", "${MCP_WORKSPACE_PATH:-./workspace}"]
+      },
+      "fallback": {
+        "type": "docker",
+        "image": "mcp-filesystem:latest",
+        "prerequisites": ["docker"],
+        "configuration": {
+          "ports": ["3001:3000"],
+          "volumes": ["${MCP_WORKSPACE_PATH:-./workspace}:/mcp/workspace:rw"],
+          "environment": {
+            "MCP_SERVER_NAME": "filesystem"
+          }
+        }
+      },
+      "tags": ["file-operations", "essential", "stdio"],
+      "difficulty": "beginner"
+    },
+    "git": {
+      "name": "Git MCP Server",
+      "description": "Git repository operations and version control",
+      "type": "python",
+      "package": "mcp-server-git",
+      "category": "development",
+      "prerequisites": ["python", "git"],
+      "configuration": {
+        "command": "uvx",
+        "args": ["mcp-server-git", "--repository", "path/to/git/repository"]
+      },
+      "tags": ["git", "version-control"],
+      "difficulty": "beginner"
+    },
+    "postgres": {
+      "name": "PostgreSQL MCP Server",
+      "description": "Database operations for PostgreSQL",
+      "type": "npm",
+      "package": "@modelcontextprotocol/server-postgres",
+      "category": "database",
+      "prerequisites": ["node", "postgresql"],
+      "configuration": {
+        "env": {
+          "POSTGRES_CONNECTION_STRING": "postgresql://user:password@localhost:5432/database"
+        }
+      },
+      "tags": ["database", "postgresql"],
+      "difficulty": "intermediate"
+    },
+    "github": {
+      "name": "GitHub MCP Server",
+      "description": "GitHub API integration for repository management",
+      "type": "npm",
+      "package": "@modelcontextprotocol/server-github",
+      "category": "api",
+      "prerequisites": ["node"],
+      "configuration": {
+        "env": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "your_github_token_here"
+        }
+      },
+      "tags": ["github", "api", "repository"],
+      "difficulty": "intermediate"
+    },
+    "web-search": {
+      "name": "Web Search MCP Server",
+      "description": "Web search capabilities using Brave Search API",
+      "type": "npm",
+      "package": "@modelcontextprotocol/server-brave-search",
+      "category": "web",
+      "prerequisites": ["node"],
+      "configuration": {
+        "env": {
+          "BRAVE_API_KEY": "your_brave_api_key_here"
+        }
+      },
+      "tags": ["search", "web", "api", "brave"],
+      "difficulty": "intermediate"
+    },
+    "docker": {
+      "name": "Docker MCP Server",
+      "description": "Docker container management and operations",
+      "type": "docker",
+      "image": "mcp/docker-server",
+      "category": "devops",
+      "prerequisites": ["docker"],
+      "configuration": {
+        "ports": ["8080:8080"],
+        "volumes": ["/var/run/docker.sock:/var/run/docker.sock"]
+      },
+      "tags": ["docker", "containers", "devops"],
+      "difficulty": "advanced"
+    },
+    "kubernetes": {
+      "name": "Kubernetes MCP Server",
+      "description": "Kubernetes cluster management and operations",
+      "type": "python",
+      "repository": "https://github.com/modelcontextprotocol/server-kubernetes.git",
+      "category": "devops",
+      "prerequisites": ["python", "kubectl"],
+      "configuration": {
+        "env": {
+          "KUBECONFIG": "path/to/kubeconfig"
+        }
+      },
+      "tags": ["kubernetes", "k8s", "devops"],
+      "difficulty": "advanced"
+    },
+    "memory": {
+      "name": "Memory MCP Server",
+      "description": "Persistent memory and context storage",
+      "type": "npm",
+      "package": "@modelcontextprotocol/server-memory",
+      "category": "memory",
+      "prerequisites": ["node"],
+      "configuration": {
+        "args": ["memory-store-path"]
+      },
+      "tags": ["memory", "storage", "context"],
+      "difficulty": "beginner"
+    },
+    "browser-automation": {
+      "name": "Browser Automation MCP Server",
+      "description": "Web browser automation using Playwright",
+      "type": "npm",
+      "package": "@playwright/mcp",
+      "category": "automation",
+      "prerequisites": ["node"],
+      "configuration": {
+        "command": "npx",
+        "args": ["@playwright/mcp"]
+      },
+      "docker_option": {
+        "name": "Browser Automation MCP Server (Docker)",
+        "description": "Web browser automation using Playwright in Docker container",
+        "type": "docker",
+        "image": "mcp-browser:latest",
+        "dockerfile": "docker/Dockerfile.playwright",
+        "build_context": ".",
+        "note": "Docker version available but stdio-based MCP servers work better with direct NPM installation"
+      },
+      "tags": ["browser", "automation", "playwright"],
+      "difficulty": "intermediate"
+    }
+  },
+  "categories": {
+    "core": {
+      "name": "Core Services",
+      "description": "Essential MCP servers for basic functionality",
+      "icon": "🔧"
+    },
+    "development": {
+      "name": "Development Tools",
+      "description": "Tools for software development and version control",
+      "icon": "💻"
+    },
+    "database": {
+      "name": "Database Access",
+      "description": "Database connectivity and operations",
+      "icon": "🗄️"
+    },
+    "api": {
+      "name": "API Integration",
+      "description": "External API and service integrations",
+      "icon": "🌐"
+    },
+    "web": {
+      "name": "Web Services",
+      "description": "Web-related services and utilities",
+      "icon": "🕸️"
+    },
+    "devops": {
+      "name": "DevOps & Infrastructure",
+      "description": "Container and infrastructure management",
+      "icon": "🚀"
+    },
+    "memory": {
+      "name": "Memory & Storage",
+      "description": "Data persistence and memory services",
+      "icon": "💾"
+    },
+    "automation": {
+      "name": "Automation",
+      "description": "Automated processes and workflows",
+      "icon": "🤖"
+    }
+  },
+  "profiles": {
+    "web-developer": {
+      "name": "Web Developer",
+      "description": "Essential tools for web development",
+      "servers": ["filesystem", "git", "github", "web-search", "browser-automation"],
+      "recommended": true
+    },
+    "data-scientist": {
+      "name": "Data Scientist",
+      "description": "Tools for data analysis and machine learning",
+      "servers": ["filesystem", "postgres", "memory"],
+      "recommended": true
+    },
+    "devops-engineer": {
+      "name": "DevOps Engineer",
+      "description": "Infrastructure and container management",
+      "servers": ["git", "docker", "kubernetes", "github"],
+      "recommended": true
+    },
+    "full-stack": {
+      "name": "Full-Stack Developer",
+      "description": "Complete development environment",
+      "servers": ["filesystem", "git", "github", "postgres", "web-search", "memory"],
+      "recommended": true
+    },
+    "minimal": {
+      "name": "Minimal Setup",
+      "description": "Basic functionality only",
+      "servers": ["filesystem", "memory"],
+      "recommended": false
+    }
+  }
+}

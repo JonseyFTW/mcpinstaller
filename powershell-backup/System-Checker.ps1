@@ -5,22 +5,22 @@ param(
 
 function Write-Success { 
     param($Message) 
-    Write-Host "✅ $Message" -ForegroundColor Green 
+    Write-Host "[+] $Message" -ForegroundColor Green 
 }
 
 function Write-Warning { 
     param($Message) 
-    Write-Host "⚠️  $Message" -ForegroundColor Yellow 
+    Write-Host "[!] $Message" -ForegroundColor Yellow 
 }
 
 function Write-Error { 
     param($Message) 
-    Write-Host "❌ $Message" -ForegroundColor Red 
+    Write-Host "[X] $Message" -ForegroundColor Red 
 }
 
 function Write-Info { 
     param($Message) 
-    Write-Host "ℹ️  $Message" -ForegroundColor Cyan 
+    Write-Host "[i] $Message" -ForegroundColor Cyan 
 }
 
 function Update-GUI {
@@ -183,7 +183,7 @@ function Test-VSCodeExtensions {
 }
 
 function Test-WingetInstallation {
-    Write-Host "`n🔍 Checking Windows Package Manager (winget)..." -ForegroundColor Blue
+    Write-Host "`n[?] Checking Windows Package Manager (winget)..." -ForegroundColor Blue
     
     try {
         $wingetVersion = winget --version 2>$null
@@ -237,7 +237,7 @@ function Test-WingetInstallation {
 }
 
 function Test-NodeJSInstallation {
-    Write-Host "`n🔍 Checking Node.js installation..." -ForegroundColor Blue
+    Write-Host "`n[?] Checking Node.js installation..." -ForegroundColor Blue
     
     try {
         $nodeVersion = node --version 2>$null
@@ -273,16 +273,18 @@ function Test-NodeJSInstallation {
         try {
             winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements
             
-            # Fixed PATH refresh - use proper string concatenation
+            # Fixed PATH refresh - use proper string concatenation (PS 5.1 compatible)
             $machinePath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine')
             $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User')
-            $env:PATH = $machinePath + ";" + $userPath
+            if (-not $machinePath) { $machinePath = "" }
+            if (-not $userPath) { $userPath = "" }
+            $env:PATH = "$machinePath;$userPath"
             
             Start-Sleep -Seconds 5
             
             $nodeVersion = node --version 2>$null
             if ($nodeVersion) {
-                Write-Success ("Node.js installed successfully: " + $nodeVersion)
+                Write-Success "Node.js installed successfully: $nodeVersion"
                 return $true
             }
         }
@@ -340,7 +342,7 @@ function Test-NodeJSInstallation {
 }
 
 function Test-PowerShellCompatibility {
-    Write-Host "`n🔍 Checking PowerShell compatibility..." -ForegroundColor Blue
+    Write-Host "`n[?] Checking PowerShell compatibility..." -ForegroundColor Blue
     
     $psVersion = $PSVersionTable.PSVersion
     Write-Info "PowerShell version: $($psVersion.ToString())"
@@ -386,7 +388,7 @@ function Test-PowerShellCompatibility {
 }
 
 function Test-SystemRequirements {
-    Write-Host "`n🔍 Checking system requirements..." -ForegroundColor Blue
+    Write-Host "`n[?] Checking system requirements..." -ForegroundColor Blue
     
     $osVersion = [System.Environment]::OSVersion.Version
     Write-Info "Windows version: $($osVersion.ToString())"
@@ -430,7 +432,7 @@ function Test-SystemRequirements {
     return $true
 }
 function Test-IDEInstallations {
-    Write-Host "`n🔍 Checking IDE installations..." -ForegroundColor Blue
+    Write-Host "`n[?] Checking IDE installations..." -ForegroundColor Blue
     
     $ideResults = @{}
     
@@ -444,7 +446,7 @@ function Test-IDEInstallations {
         if ($extensions.Count -gt 0) {
             Write-Info "Found VS Code MCP extensions:"
             foreach ($ext in $extensions) {
-                Write-Success "  ✅ $($ext.name) ($($ext.version))"
+                Write-Success "  [+] $($ext.name) ($($ext.version))"
                 Write-Info "     Config: $($ext.configPath)"
             }
         } else {
@@ -527,11 +529,11 @@ function Show-Summary {
     Write-Host "`n================================================================" -ForegroundColor Blue
     
     if ($allPassed) {
-        Write-Success "🎉 Your system is ready for MCP Server installation!"
+        Write-Success "[+] Your system is ready for MCP Server installation!"
         Write-Info "You can now run the main MCP installer with confidence."
     }
     else {
-        Write-Error "❌ System compatibility issues detected!"
+        Write-Error "[X] System compatibility issues detected!"
         Write-Info "Please resolve the issues above before running the MCP installer."
         Write-Info "You can run this script with -AutoFix to attempt automatic fixes."
     }
@@ -540,7 +542,7 @@ function Show-Summary {
 }
 
 # Main execution
-Write-Host "🚀 MCP System Compatibility Checker" -ForegroundColor Blue
+Write-Host "[>] MCP System Compatibility Checker" -ForegroundColor Blue
 Write-Host "Checking if your system is ready for MCP Server installation..." -ForegroundColor Gray
 
 if ($AutoFix) {
@@ -565,14 +567,14 @@ if ($CheckIDEs) {
 
 $systemReady = Show-Summary -Results $results -IDEResults $ideResults
 
-Write-Host "`n📋 NEXT STEPS:" -ForegroundColor Blue
+Write-Host "`n[#] NEXT STEPS:" -ForegroundColor Blue
 if ($results.Values -contains $false) {
     Write-Info "1. Resolve the issues listed above"
     Write-Info "2. Run this script again to verify fixes"
     Write-Info "3. Once all checks pass, run the main MCP installer"
     
     if (-not $AutoFix) {
-        Write-Info "`n💡 TIP: Run this script with -AutoFix to automatically resolve common issues:"
+        Write-Info "`n[i] TIP: Run this script with -AutoFix to automatically resolve common issues:"
         Write-Host "   .\System-Checker.ps1 -AutoFix" -ForegroundColor Yellow
     }
 }
@@ -582,14 +584,14 @@ else {
     Write-Info "3. Select configuration profiles that match your needs"
     
     if ($CheckIDEs -and $ideResults["Visual Studio Code"]) {
-        Write-Info "`n💡 VS Code detected! The installer can configure:"
+        Write-Info "`n[i] VS Code detected! The installer can configure:"
         Write-Info "   - Main VS Code settings"
         Write-Info "   - Cline extension (if installed)"
         Write-Info "   - Roo extension (if installed)"
     }
 }
 
-Write-Host "`n📖 For more help, check the documentation or run the installer help option." -ForegroundColor Gray
+Write-Host "`n[i] For more help, check the documentation or run the installer help option." -ForegroundColor Gray
 
 if ($systemReady) {
     exit 0

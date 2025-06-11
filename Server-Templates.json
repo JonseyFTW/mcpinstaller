@@ -1,0 +1,324 @@
+{
+    "templates": {
+        "npm-server": {
+            "name": "NPM Package Server Template",
+            "description": "Template for MCP servers distributed via NPM",
+            "template": {
+                "id": "${SERVER_ID}",
+                "name": "${SERVER_NAME}",
+                "description": "${SERVER_DESCRIPTION}",
+                "category": "${CATEGORY:Development}",
+                "type": "npm",
+                "installation": {
+                    "command": "${COMMAND:npx}",
+                    "args": ["${PACKAGE_NAME}"]
+                },
+                "prerequisites": ["node18+"],
+                "supported_ides": ["claude-desktop", "cursor", "vscode"],
+                "requires_docker": false
+            },
+            "prompts": [
+                {
+                    "key": "SERVER_ID",
+                    "prompt": "Enter server ID (lowercase, no spaces)",
+                    "validation": "^[a-z0-9-]+$"
+                },
+                {
+                    "key": "SERVER_NAME",
+                    "prompt": "Enter server display name"
+                },
+                {
+                    "key": "SERVER_DESCRIPTION",
+                    "prompt": "Enter server description"
+                },
+                {
+                    "key": "PACKAGE_NAME",
+                    "prompt": "Enter NPM package name (e.g., @username/package-name)"
+                },
+                {
+                    "key": "CATEGORY",
+                    "prompt": "Enter category",
+                    "default": "Development",
+                    "options": ["Development", "Database", "DevOps", "Documentation", "Memory", "Core", "API"]
+                }
+            ]
+        },
+        "python-server": {
+            "name": "Python Package Server Template",
+            "description": "Template for MCP servers distributed via pip/uvx",
+            "template": {
+                "id": "${SERVER_ID}",
+                "name": "${SERVER_NAME}",
+                "description": "${SERVER_DESCRIPTION}",
+                "category": "${CATEGORY:Development}",
+                "type": "python",
+                "installation": {
+                    "command": "${COMMAND:uvx}",
+                    "args": ["${PACKAGE_NAME}"]
+                },
+                "prerequisites": ["python38+"],
+                "supported_ides": ["claude-desktop", "cursor", "vscode"],
+                "requires_docker": false
+            },
+            "prompts": [
+                {
+                    "key": "SERVER_ID",
+                    "prompt": "Enter server ID (lowercase, no spaces)",
+                    "validation": "^[a-z0-9-]+$"
+                },
+                {
+                    "key": "SERVER_NAME",
+                    "prompt": "Enter server display name"
+                },
+                {
+                    "key": "SERVER_DESCRIPTION",
+                    "prompt": "Enter server description"
+                },
+                {
+                    "key": "PACKAGE_NAME",
+                    "prompt": "Enter Python package name"
+                },
+                {
+                    "key": "COMMAND",
+                    "prompt": "Installation command",
+                    "default": "uvx",
+                    "options": ["uvx", "pip", "python"]
+                },
+                {
+                    "key": "CATEGORY",
+                    "prompt": "Enter category",
+                    "default": "Development",
+                    "options": ["Development", "Database", "DevOps", "Documentation", "Memory", "Core", "API"]
+                }
+            ]
+        },
+        "docker-server": {
+            "name": "Docker Container Server Template",
+            "description": "Template for MCP servers running in Docker containers",
+            "template": {
+                "id": "${SERVER_ID}",
+                "name": "${SERVER_NAME}",
+                "description": "${SERVER_DESCRIPTION}",
+                "category": "${CATEGORY:DevOps}",
+                "type": "docker",
+                "installation": {
+                    "command": "docker",
+                    "args": ["run", "-i", "--rm", "${DOCKER_IMAGE}"],
+                    "env": {
+                        "${ENV_VAR_NAME}": "${PROMPT:Enter ${ENV_VAR_DESCRIPTION}}"
+                    }
+                },
+                "prerequisites": ["docker"],
+                "supported_ides": ["claude-desktop", "cursor", "vscode"],
+                "requires_docker": true
+            },
+            "prompts": [
+                {
+                    "key": "SERVER_ID",
+                    "prompt": "Enter server ID (lowercase, no spaces)",
+                    "validation": "^[a-z0-9-]+$"
+                },
+                {
+                    "key": "SERVER_NAME",
+                    "prompt": "Enter server display name"
+                },
+                {
+                    "key": "SERVER_DESCRIPTION",
+                    "prompt": "Enter server description"
+                },
+                {
+                    "key": "DOCKER_IMAGE",
+                    "prompt": "Enter Docker image name (e.g., username/image:tag)"
+                },
+                {
+                    "key": "ENV_VAR_NAME",
+                    "prompt": "Enter environment variable name (optional, or press Enter to skip)",
+                    "optional": true
+                },
+                {
+                    "key": "ENV_VAR_DESCRIPTION",
+                    "prompt": "Enter description for environment variable",
+                    "condition": "ENV_VAR_NAME"
+                },
+                {
+                    "key": "CATEGORY",
+                    "prompt": "Enter category",
+                    "default": "DevOps",
+                    "options": ["Development", "Database", "DevOps", "Documentation", "Memory", "Core", "API"]
+                }
+            ]
+        },
+        "git-server": {
+            "name": "Git Repository Server Template",
+            "description": "Template for MCP servers installed from Git repositories",
+            "template": {
+                "id": "${SERVER_ID}",
+                "name": "${SERVER_NAME}",
+                "description": "${SERVER_DESCRIPTION}",
+                "category": "${CATEGORY:Development}",
+                "type": "python",
+                "installation": {
+                    "command": "python",
+                    "args": ["C:\\mcp-tools\\${SERVER_ID}\\${MAIN_SCRIPT}"],
+                    "env": {
+                        "${ENV_VAR_NAME}": "${PROMPT:Enter ${ENV_VAR_DESCRIPTION}}"
+                    }
+                },
+                "prerequisites": ["python38+", "git"],
+                "git_repo": "${GIT_REPO_URL}",
+                "supported_ides": ["claude-desktop", "cursor", "vscode"],
+                "requires_docker": false
+            },
+            "prompts": [
+                {
+                    "key": "SERVER_ID",
+                    "prompt": "Enter server ID (lowercase, no spaces)",
+                    "validation": "^[a-z0-9-]+$"
+                },
+                {
+                    "key": "SERVER_NAME",
+                    "prompt": "Enter server display name"
+                },
+                {
+                    "key": "SERVER_DESCRIPTION",
+                    "prompt": "Enter server description"
+                },
+                {
+                    "key": "GIT_REPO_URL",
+                    "prompt": "Enter Git repository URL"
+                },
+                {
+                    "key": "MAIN_SCRIPT",
+                    "prompt": "Enter main script filename (e.g., main.py)",
+                    "default": "main.py"
+                },
+                {
+                    "key": "ENV_VAR_NAME",
+                    "prompt": "Enter environment variable name (optional, or press Enter to skip)",
+                    "optional": true
+                },
+                {
+                    "key": "ENV_VAR_DESCRIPTION",
+                    "prompt": "Enter description for environment variable",
+                    "condition": "ENV_VAR_NAME"
+                },
+                {
+                    "key": "CATEGORY",
+                    "prompt": "Enter category",
+                    "default": "Development",
+                    "options": ["Development", "Database", "DevOps", "Documentation", "Memory", "Core", "API"]
+                }
+            ]
+        },
+        "url-only-server": {
+            "name": "URL-Only Server Template",
+            "description": "Template for MCP servers that only require a URL connection",
+            "template": {
+                "id": "${SERVER_ID}",
+                "name": "${SERVER_NAME}",
+                "description": "${SERVER_DESCRIPTION}",
+                "category": "${CATEGORY:API}",
+                "type": "url",
+                "installation": {
+                    "url": "${SERVER_URL}",
+                    "auth": {
+                        "type": "${AUTH_TYPE:none}",
+                        "token": "${PROMPT:Enter API token (if required)}"
+                    }
+                },
+                "prerequisites": [],
+                "supported_ides": ["claude-desktop", "cursor", "vscode"],
+                "requires_docker": false
+            },
+            "prompts": [
+                {
+                    "key": "SERVER_ID",
+                    "prompt": "Enter server ID (lowercase, no spaces)",
+                    "validation": "^[a-z0-9-]+$"
+                },
+                {
+                    "key": "SERVER_NAME",
+                    "prompt": "Enter server display name"
+                },
+                {
+                    "key": "SERVER_DESCRIPTION",
+                    "prompt": "Enter server description"
+                },
+                {
+                    "key": "SERVER_URL",
+                    "prompt": "Enter server URL (e.g., https://api.example.com/mcp)"
+                },
+                {
+                    "key": "AUTH_TYPE",
+                    "prompt": "Authentication type",
+                    "default": "none",
+                    "options": ["none", "bearer", "api-key", "basic"]
+                },
+                {
+                    "key": "CATEGORY",
+                    "prompt": "Enter category",
+                    "default": "API",
+                    "options": ["Development", "Database", "DevOps", "Documentation", "Memory", "Core", "API"]
+                }
+            ]
+        }
+    },
+    "categories": [
+        {
+            "id": "Development",
+            "name": "Development Tools",
+            "description": "File operations, Git, terminal access, browser tools",
+            "icon": "🔧"
+        },
+        {
+            "id": "Database",
+            "name": "Database Access",
+            "description": "PostgreSQL, MongoDB, SQLite, and other databases",
+            "icon": "🗄️"
+        },
+        {
+            "id": "DevOps",
+            "name": "DevOps & Infrastructure",
+            "description": "Docker, Kubernetes, CI/CD, monitoring",
+            "icon": "⚙️"
+        },
+        {
+            "id": "Documentation",
+            "name": "Documentation & Help",
+            "description": "Context-aware help, documentation search",
+            "icon": "📚"
+        },
+        {
+            "id": "Memory",
+            "name": "Memory & Storage",
+            "description": "Persistent memory, vector databases, caching",
+            "icon": "🧠"
+        },
+        {
+            "id": "Core",
+            "name": "Core Functionality",
+            "description": "Essential system operations and utilities",
+            "icon": "⭐"
+        },
+        {
+            "id": "API",
+            "name": "Web APIs & Services",
+            "description": "REST APIs, GraphQL, web services integration",
+            "icon": "🌐"
+        }
+    ],
+    "validation_rules": {
+        "server_id": {
+            "pattern": "^[a-z0-9-]+$",
+            "message": "Server ID must contain only lowercase letters, numbers, and hyphens"
+        },
+        "url": {
+            "pattern": "^https?://",
+            "message": "URL must start with http:// or https://"
+        },
+        "git_repo": {
+            "pattern": "^https://github\\.com/",
+            "message": "Git repository must be a GitHub URL"
+        }
+    }
+}

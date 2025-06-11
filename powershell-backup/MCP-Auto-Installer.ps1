@@ -773,12 +773,12 @@ function Detect-InstalledIDEs {
                 $rooExtension = Test-VSCodeExtension -ExtensionId "rooveterinaryinc.roo-cline" -ExtensionName "Roo"
                 
                 if ($clineExtension.installed) {
-                    Write-Host "  ✅ Cline extension detected: $($clineExtension.version)" -ForegroundColor Green
+                    Write-Host "  [+] Cline extension detected: $($clineExtension.version)" -ForegroundColor Green
                     $extensions += $clineExtension
                 }
                 
                 if ($rooExtension.installed) {
-                    Write-Host "  ✅ Roo extension detected: $($rooExtension.version)" -ForegroundColor Green
+                    Write-Host "  [+] Roo extension detected: $($rooExtension.version)" -ForegroundColor Green
                     $extensions += $rooExtension
                 }
                 
@@ -909,10 +909,10 @@ function Install-NodeJSFallback {
             
             # Add to PATH - Fixed syntax
             $currentPath = [Environment]::GetEnvironmentVariable('PATH', 'Machine')
-            if ($currentPath -notlike "*$installDir*") {
-                $newPath = "$currentPath;$installDir"
+            if ($currentPath -and $currentPath -notlike "*$installDir*") {
+                $newPath = $currentPath + ";" + $installDir
                 [Environment]::SetEnvironmentVariable('PATH', $newPath, 'Machine')
-                $env:PATH = "$env:PATH;$installDir"
+                $env:PATH = $env:PATH + ";" + $installDir
             }
             
             Write-Host "Node.js installed successfully" -ForegroundColor Green
@@ -1063,9 +1063,11 @@ function Install-Prerequisites {
                     try {
                         winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements
                         
-                        # Refresh PATH - Fixed syntax
+                        # Refresh PATH - PS 5.1 compatible
                         $machinePath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine')
                         $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User')
+                        if (-not $machinePath) { $machinePath = "" }
+                        if (-not $userPath) { $userPath = "" }
                         $env:PATH = "$machinePath;$userPath"
                         
                         # Verify installation
@@ -1160,43 +1162,244 @@ function Install-Prerequisites {
     }
 }
 
-# MCP Server Installation Functions
+# Enhanced One-Click Installation Functions
+function Resolve-EnvironmentVariables {
+    param([string]$Value)
+    
+    if (-not $Value) { return $Value }
+    
+    # Handle prompt placeholders
+    if ($Value -match '\$\{PROMPT:(.+?)\}') {
+        $promptText = $matches[1]
+        $userInput = Read-Host $promptText
+        $Value = $Value -replace [regex]::Escape($matches[0]), $userInput
+    }
+    
+    # Expand environment variables
+    return [System.Environment]::ExpandEnvironmentVariables($Value)
+}
+
+function Install-MCPServerOneClick {
+    param(
+        $Server,
+        [hashtable]$PromptedValues = @{}
+    )
+    
+    Write-Host "[>] One-Click Installing $($Server.name)..." -ForegroundColor Green
+    
+    try {
+        # Step 1: Auto-install prerequisites
+        if ($Server.prerequisites) {
+            Write-Host "[?] Checking prerequisites..." -ForegroundColor Cyan
+            $prereqCheck = Check-Prerequisites -PrereqList $Server.prerequisites
+            if ($prereqCheck.missing.Count -gt 0) {
+                Write-Host "[!] Auto-installing prerequisites: $($prereqCheck.missing -join ', ')" -ForegroundColor Yellow
+                Install-Prerequisites -Missing $prereqCheck.missing
+                
+                # Refresh environment
+                $machinePath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine')
+                $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User')
+                if (-not $machinePath) { $machinePath = "" }
+                if (-not $userPath) { $userPath = "" }
+                $env:PATH = "$machinePath;$userPath"
+            } else {
+                Write-Host "[+] All prerequisites satisfied" -ForegroundColor Green
+            }
+        }
+        
+        # Step 2: Handle environment variables and prompts
+        $resolvedServer = $Server.PSObject.Copy()
+        if ($Server.installation.env) {
+            $resolvedEnv = @{}
+            foreach ($envVar in $Server.installation.env.GetEnumerator()) {
+                $resolvedValue = Resolve-EnvironmentVariables -Value $envVar.Value
+                $resolvedEnv[$envVar.Key] = $resolvedValue
+            }
+            $resolvedServer.installation.env = $resolvedEnv
+        }
+        
+        # Step 3: Install based on server type
+        switch ($Server.type) {
+            "npm" {
+                Write-Host "[+] Installing NPM package..." -ForegroundColor Cyan
+                Install-NPMServerEnhanced -Server $resolvedServer
+            }
+            "python" {
+                Write-Host "[+] Installing Python package..." -ForegroundColor Cyan
+                if ($Server.git_repo) {
+                    Install-PythonGitServerEnhanced -Server $resolvedServer
+                } else {
+                    Install-PythonServerEnhanced -Server $resolvedServer
+                }
+            }
+            "docker" {
+                Write-Host "[D] Setting up Docker container..." -ForegroundColor Cyan
+                Install-DockerServerEnhanced -Server $resolvedServer
+            }
+        }
+        
+        Write-Host "[+] $($Server.name) installed successfully!" -ForegroundColor Green
+        return $true
+        
+    } catch {
+        Write-Host "[X] Failed to install $($Server.name): $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
 function Install-MCPServer {
     param($Server)
     
-    Write-Host "Installing $($Server.name)..." -ForegroundColor Yellow
+    return Install-MCPServerOneClick -Server $Server
+}
+
+# Enhanced Installation Functions
+function Install-NPMServerEnhanced {
+    param($Server)
     
-    # Check prerequisites
-    if ($Server.prerequisites) {
-        $prereqCheck = Check-Prerequisites -PrereqList $Server.prerequisites
-        if ($prereqCheck.missing.Count -gt 0) {
-            Write-Host "Installing missing prerequisites: $($prereqCheck.missing -join ', ')" -ForegroundColor Yellow
-            Install-Prerequisites -Missing $prereqCheck.missing
-            
-            # Refresh environment variables after installation
-            $env:PATH = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine') + ";" + [System.Environment]::GetEnvironmentVariable('PATH', 'User')
+    try {
+        $npmVersion = npm --version 2>$null
+        if (-not $npmVersion) {
+            throw "npm not found. Please ensure Node.js is properly installed."
         }
+        
+        $packageName = $Server.installation.args[0]
+        if ($packageName.EndsWith("@latest")) {
+            $packageName = $packageName -replace "@latest", ""
+        }
+        
+        Write-Host "[+] Installing: $packageName" -ForegroundColor Gray
+        
+        if ($Server.installation.command -eq "npx") {
+            Write-Host "[+] $($Server.name) will be available via npx" -ForegroundColor Green
+        } else {
+            npm install -g $packageName
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "[+] $($Server.name) installed globally" -ForegroundColor Green
+            } else {
+                throw "npm install failed with exit code $LASTEXITCODE"
+            }
+        }
+        
+        return $true
+    } catch {
+        Write-Host "[X] Failed to install $($Server.name): $_" -ForegroundColor Red
+        return $false
     }
+}
+
+function Install-PythonServerEnhanced {
+    param($Server)
     
-    # Handle special installation cases
-    switch ($Server.type) {
-        "npm" {
-            if ($Server.id -eq "browser-tools") {
-                Install-BrowserTools
+    try {
+        $pythonVersion = python --version 2>$null
+        if (-not $pythonVersion) {
+            throw "Python not found. Please ensure Python is properly installed."
+        }
+        
+        $packageName = $Server.installation.args[0]
+        Write-Host "[+] Installing: $packageName" -ForegroundColor Gray
+        
+        if ($Server.installation.command -eq "uvx") {
+            # Install uv if needed
+            python -m pip install uv -q
+            if ($LASTEXITCODE -eq 0) {
+                uvx $packageName
             } else {
-                Install-NPMServer -Server $Server
+                pip install $packageName
             }
+        } else {
+            pip install $packageName
         }
-        "python" {
-            if ($Server.git_repo) {
-                Install-PythonGitServer -Server $Server
-            } else {
-                Install-PythonServer -Server $Server
-            }
+        
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "[+] $($Server.name) installed successfully" -ForegroundColor Green
+            return $true
+        } else {
+            throw "Python package installation failed with exit code $LASTEXITCODE"
         }
-        "docker" {
-            Install-DockerServer -Server $Server
+    } catch {
+        Write-Host "[X] Failed to install $($Server.name): $_" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Install-PythonGitServerEnhanced {
+    param($Server)
+    
+    $installDir = "C:\mcp-tools\$($Server.id)"
+    
+    try {
+        Write-Host "[#] Cloning repository to: $installDir" -ForegroundColor Gray
+        
+        if (Test-Path $installDir) {
+            Remove-Item $installDir -Recurse -Force
         }
+        
+        git clone $Server.git_repo $installDir
+        if ($LASTEXITCODE -ne 0) {
+            throw "Git clone failed"
+        }
+        
+        Set-Location $installDir
+        
+        # Create virtual environment
+        Write-Host "[!] Setting up Python virtual environment" -ForegroundColor Gray
+        python -m venv venv
+        & ".\venv\Scripts\Activate.ps1"
+        
+        # Install requirements
+        if (Test-Path "requirements.txt") {
+            pip install -r requirements.txt
+        }
+        if (Test-Path "install.py") {
+            python install.py
+        }
+        
+        Write-Host "[+] $($Server.name) installed successfully" -ForegroundColor Green
+        return $true
+    } catch {
+        Write-Host "[X] Failed to install $($Server.name): $_" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Install-DockerServerEnhanced {
+    param($Server)
+    
+    try {
+        # Check if Docker is running
+        $dockerVersion = docker --version 2>$null
+        if (-not $dockerVersion) {
+            throw "Docker not found. Please ensure Docker Desktop is installed and running."
+        }
+        
+        Write-Host "[D] Docker version: $dockerVersion" -ForegroundColor Gray
+        
+        $imageName = $Server.installation.args[-1]
+        Write-Host "[D] Pulling Docker image: $imageName" -ForegroundColor Gray
+        
+        docker pull $imageName
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "[+] $($Server.name) Docker image ready" -ForegroundColor Green
+            
+            # Create a run script for easy container management
+            $runScript = @"
+@echo off
+echo Starting $($Server.name) Docker container...
+docker $($Server.installation.args -join ' ')
+"@
+            $scriptPath = "C:\mcp-tools\run-$($Server.id).bat"
+            $runScript | Set-Content $scriptPath
+            Write-Host "[>] Run script created: $scriptPath" -ForegroundColor Cyan
+            
+            return $true
+        } else {
+            throw "Docker pull failed with exit code $LASTEXITCODE"
+        }
+    } catch {
+        Write-Host "[X] Failed to setup Docker for $($Server.name): $_" -ForegroundColor Red
+        return $false
     }
 }
 
@@ -1483,26 +1686,157 @@ function Install-DockerServer {
     }
 }
 
-# Configuration Management
+# Enhanced Configuration Management
+function Update-IDEConfigurationOneClick {
+    param(
+        $IDE,
+        $Server
+    )
+    
+    Write-Host "[!] Configuring $($Server.name) for $($IDE.name)..." -ForegroundColor Cyan
+    
+    try {
+        # Expand environment variables in config path
+        $configPath = [System.Environment]::ExpandEnvironmentVariables($IDE.config_path)
+        
+        # Create directory if it doesn't exist
+        $configDir = Split-Path $configPath -Parent
+        if (-not (Test-Path $configDir)) {
+            New-Item -ItemType Directory -Path $configDir -Force | Out-Null
+            Write-Host "[#] Created config directory: $configDir" -ForegroundColor Gray
+        }
+        
+        # Load or create configuration
+        $config = @{}
+        if (Test-Path $configPath) {
+            try {
+                $jsonContent = Get-Content $configPath -Raw
+                if ($jsonContent.Trim()) {
+                    $config = $jsonContent | ConvertFrom-Json -AsHashtable
+                }
+            } catch {
+                Write-Host "[!] Existing config file corrupted, creating backup..." -ForegroundColor Yellow
+                Copy-Item $configPath "$configPath.backup.$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+                $config = @{}
+            }
+        }
+        
+        # Initialize MCP servers section
+        $configParts = $IDE.config_key.Split('.')
+        $currentSection = $config
+        
+        for ($i = 0; $i -lt $configParts.Length - 1; $i++) {
+            if (-not $currentSection.ContainsKey($configParts[$i])) {
+                $currentSection[$configParts[$i]] = @{}
+            }
+            $currentSection = $currentSection[$configParts[$i]]
+        }
+        
+        $finalKey = $configParts[-1]
+        if (-not $currentSection.ContainsKey($finalKey)) {
+            $currentSection[$finalKey] = @{}
+        }
+        
+        # Create server configuration
+        $serverConfig = @{
+            command = $Server.installation.command
+            args = $Server.installation.args
+            enabled = $true
+        }
+        
+        # Add environment variables if present
+        if ($Server.installation.env) {
+            $serverConfig.env = $Server.installation.env
+        }
+        
+        # Add the server to configuration
+        $currentSection[$finalKey][$Server.id] = $serverConfig
+        
+        # Save configuration with proper formatting
+        $config | ConvertTo-Json -Depth 10 | Set-Content $configPath -Encoding UTF8
+        
+        Write-Host "[+] $($IDE.name) configured for $($Server.name)" -ForegroundColor Green
+        
+        # Configure extensions if VS Code
+        if ($IDE.extensions -and $IDE.extensions.Count -gt 0) {
+            foreach ($extension in $IDE.extensions) {
+                Update-ExtensionConfigOneClick -Extension $extension -Server $Server
+            }
+        }
+        
+        return $true
+    } catch {
+        Write-Host "[X] Failed to configure $($IDE.name): $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Update-ExtensionConfigOneClick {
+    param($Extension, $Server)
+    
+    if (-not $Extension.configPath) {
+        return $false
+    }
+    
+    try {
+        $configPath = [System.Environment]::ExpandEnvironmentVariables($Extension.configPath)
+        $configDir = Split-Path $configPath -Parent
+        
+        # Create config directory if needed
+        if (-not (Test-Path $configDir)) {
+            New-Item -ItemType Directory -Path $configDir -Force | Out-Null
+            Write-Host "[#] Created extension config directory: $configDir" -ForegroundColor Gray
+        }
+        
+        # Load or create extension configuration
+        $config = @{}
+        if (Test-Path $configPath) {
+            try {
+                $jsonContent = Get-Content $configPath -Raw
+                if ($jsonContent.Trim()) {
+                    $config = $jsonContent | ConvertFrom-Json -AsHashtable
+                }
+            } catch {
+                $config = @{}
+            }
+        }
+        
+        # Initialize mcpServers section
+        if (-not $config.ContainsKey('mcpServers')) {
+            $config['mcpServers'] = @{}
+        }
+        
+        # Add server configuration
+        $serverConfig = @{
+            command = $Server.installation.command
+            args = $Server.installation.args
+            enabled = $true
+        }
+        
+        if ($Server.installation.env) {
+            $serverConfig.env = $Server.installation.env
+        }
+        
+        $config['mcpServers'][$Server.id] = $serverConfig
+        
+        # Save configuration
+        $config | ConvertTo-Json -Depth 10 | Set-Content $configPath -Encoding UTF8
+        
+        Write-Host "[+] $($Extension.name) extension configured for $($Server.name)" -ForegroundColor Green
+        return $true
+    } catch {
+        Write-Host "[X] Failed to configure $($Extension.name) extension: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
 function Update-IDEConfiguration {
     param(
         $IDE,
         $Server
     )
     
-    try {
-        # Update main IDE configuration
-        Update-MainIDEConfig -IDE $IDE -Server $Server
-        
-        # Update extension configurations if VS Code with extensions
-        if ($IDE.extensions -and $IDE.extensions.Count -gt 0) {
-            foreach ($extension in $IDE.extensions) {
-                Update-ExtensionConfig -Extension $extension -Server $Server -IDE $IDE
-            }
-        }
-    } catch {
-        Write-Host "Failed to update $($IDE.name) configuration: $_" -ForegroundColor Red
-    }
+    return Update-IDEConfigurationOneClick -IDE $IDE -Server $Server
 }
 
 function Update-MainIDEConfig {
@@ -1700,40 +2034,58 @@ function Show-MainGUI {
     
     # New buttons for advanced features
     $webDashboardButton = New-Object System.Windows.Forms.Button
-    $webDashboardButton.Location = New-Object System.Drawing.Point(570, 60)
-    $webDashboardButton.Size = New-Object System.Drawing.Size(120, 23)
-    $webDashboardButton.Text = "Web Dashboard"
+    $webDashboardButton.Location = New-Object System.Drawing.Point(450, 60)
+    $webDashboardButton.Size = New-Object System.Drawing.Size(100, 23)
+    $webDashboardButton.Text = "Dashboard"
     $form.Controls.Add($webDashboardButton)
     
+    $discoverButton = New-Object System.Windows.Forms.Button
+    $discoverButton.Location = New-Object System.Drawing.Point(560, 60)
+    $discoverButton.Size = New-Object System.Drawing.Size(100, 23)
+    $discoverButton.Text = "Discover Servers"
+    $form.Controls.Add($discoverButton)
+    
+    $createServerButton = New-Object System.Windows.Forms.Button
+    $createServerButton.Location = New-Object System.Drawing.Point(670, 60)
+    $createServerButton.Size = New-Object System.Drawing.Size(100, 23)
+    $createServerButton.Text = "Create Server"
+    $form.Controls.Add($createServerButton)
+    
+    $dockerButton = New-Object System.Windows.Forms.Button
+    $dockerButton.Location = New-Object System.Drawing.Point(450, 90)
+    $dockerButton.Size = New-Object System.Drawing.Size(100, 23)
+    $dockerButton.Text = "Docker Manager"
+    $form.Controls.Add($dockerButton)
+    
     $checkUpdatesButton = New-Object System.Windows.Forms.Button
-    $checkUpdatesButton.Location = New-Object System.Drawing.Point(700, 60)
+    $checkUpdatesButton.Location = New-Object System.Drawing.Point(560, 90)
     $checkUpdatesButton.Size = New-Object System.Drawing.Size(100, 23)
     $checkUpdatesButton.Text = "Check Updates"
     $form.Controls.Add($checkUpdatesButton)
     
     # Configuration Profiles Section
     $profileLabel = New-Object System.Windows.Forms.Label
-    $profileLabel.Location = New-Object System.Drawing.Point(20, 100)
+    $profileLabel.Location = New-Object System.Drawing.Point(20, 120)
     $profileLabel.Size = New-Object System.Drawing.Size(200, 23)
     $profileLabel.Text = "Configuration Profiles:"
     $profileLabel.Font = New-Object System.Drawing.Font("Arial", 10, [System.Drawing.FontStyle]::Bold)
     $form.Controls.Add($profileLabel)
     
     $profileCombo = New-Object System.Windows.Forms.ComboBox
-    $profileCombo.Location = New-Object System.Drawing.Point(20, 130)
+    $profileCombo.Location = New-Object System.Drawing.Point(20, 150)
     $profileCombo.Size = New-Object System.Drawing.Size(200, 23)
     $profileCombo.DropDownStyle = "DropDownList"
     $form.Controls.Add($profileCombo)
     
     $applyProfileButton = New-Object System.Windows.Forms.Button
-    $applyProfileButton.Location = New-Object System.Drawing.Point(230, 130)
+    $applyProfileButton.Location = New-Object System.Drawing.Point(230, 150)
     $applyProfileButton.Size = New-Object System.Drawing.Size(100, 23)
     $applyProfileButton.Text = "Apply Profile"
     $form.Controls.Add($applyProfileButton)
     
     # Detected IDEs section
     $ideLabel = New-Object System.Windows.Forms.Label
-    $ideLabel.Location = New-Object System.Drawing.Point(20, 170)
+    $ideLabel.Location = New-Object System.Drawing.Point(20, 190)
     $ideLabel.Size = New-Object System.Drawing.Size(200, 23)
     $ideLabel.Text = "Detected IDEs:"
     $ideLabel.Font = New-Object System.Drawing.Font("Arial", 10, [System.Drawing.FontStyle]::Bold)
@@ -1948,6 +2300,51 @@ function Show-MainGUI {
         }
     })
     
+    # Discover Servers button event
+    $discoverButton.Add_Click({
+        try {
+            $discoveryScript = Join-Path $PSScriptRoot "MCP-Discovery.ps1"
+            if (Test-Path $discoveryScript) {
+                Start-Process powershell -ArgumentList "-File `"$discoveryScript`" -Interactive" -WindowStyle Normal
+                $statusLabel.Text = "MCP Server Discovery tool launched"
+            } else {
+                [System.Windows.Forms.MessageBox]::Show("MCP-Discovery.ps1 not found in script directory.", "File Not Found", "OK", "Warning")
+            }
+        } catch {
+            [System.Windows.Forms.MessageBox]::Show("Failed to launch discovery tool: $_", "Error", "OK", "Error")
+        }
+    })
+    
+    # Create Server button event
+    $createServerButton.Add_Click({
+        try {
+            $createScript = Join-Path $PSScriptRoot "Create-MCPServer.ps1"
+            if (Test-Path $createScript) {
+                Start-Process powershell -ArgumentList "-File `"$createScript`" -Interactive" -WindowStyle Normal
+                $statusLabel.Text = "MCP Server Creator launched"
+            } else {
+                [System.Windows.Forms.MessageBox]::Show("Create-MCPServer.ps1 not found in script directory.", "File Not Found", "OK", "Warning")
+            }
+        } catch {
+            [System.Windows.Forms.MessageBox]::Show("Failed to launch server creator: $_", "Error", "OK", "Error")
+        }
+    })
+    
+    # Docker Manager button event
+    $dockerButton.Add_Click({
+        try {
+            $dockerScript = Join-Path $PSScriptRoot "Docker-Manager.ps1"
+            if (Test-Path $dockerScript) {
+                Start-Process powershell -ArgumentList "-File `"$dockerScript`"" -WindowStyle Normal
+                $statusLabel.Text = "Docker Container Manager launched"
+            } else {
+                [System.Windows.Forms.MessageBox]::Show("Docker-Manager.ps1 not found in script directory.", "File Not Found", "OK", "Warning")
+            }
+        } catch {
+            [System.Windows.Forms.MessageBox]::Show("Failed to launch Docker manager: $_", "Error", "OK", "Error")
+        }
+    })
+    
     # Check Updates button event
     $checkUpdatesButton.Add_Click({
         if ($Global:ConfigData -and $Global:ConfigData.servers) {
@@ -1960,7 +2357,7 @@ function Show-MainGUI {
                 if ($updates.Count -gt 0) {
                     $updateMessage = "Updates available for:`n"
                     foreach ($update in $updates.GetEnumerator()) {
-                        $updateMessage += "- $($update.Key): $($update.Value.current) → $($update.Value.latest)`n"
+                        $updateMessage += "- $($update.Key): $($update.Value.current) -> $($update.Value.latest)`n"
                     }
                     
                     $result = [System.Windows.Forms.MessageBox]::Show($updateMessage + "`nUpdate selected servers?", "Updates Available", "YesNo", "Question")
@@ -2024,9 +2421,9 @@ $checkHealthButton.Add_Click({
                 $isRunning = Get-Random -Minimum 0 -Maximum 2
                 if ($isRunning) {
                     $runningCount++
-                    $healthResults += "✅ $($server.name): Running"
+                    $healthResults += "[+] $($server.name): Running"
                 } else {
-                    $healthResults += "❌ $($server.name): Stopped"
+                    $healthResults += "[X] $($server.name): Stopped"
                 }
                 
                 Start-Sleep -Milliseconds 200
@@ -2178,47 +2575,66 @@ Description: $($selectedServer.description)
     $installButton.Enabled = $false
     $installButton.Text = "Installing..."
     
-    # FIXED: Ensure we don't divide by zero
-    $maxSteps = [Math]::Max(1, $selectedServerIndices.Count * ($selectedIDENames.Count + 1))
-    $currentStep = 0
-    
-    # Use a timer to simulate progress and keep GUI responsive
-    $installTimer = New-Object System.Windows.Forms.Timer
-    $installTimer.Interval = 1000
-    
-    $installTimer.Add_Tick({
-        $currentStep++
+    # Start actual installation process
+    try {
+        $totalServers = [Math]::Max(1, $selectedServerIndices.Count)
+        $totalIDEs = [Math]::Max(1, $selectedIDENames.Count)
+        $maxSteps = $totalServers * ($totalIDEs + 1)
+        $currentStep = 0
         
-        # FIXED: Protect against divide by zero
-        if ($maxSteps -gt 0) {
-            $progressPercent = [Math]::Min(($currentStep / $maxSteps) * 100, 95)
-            $progressBar.Style = "Blocks"
-            $progressBar.Value = [Math]::Min([Math]::Max($progressPercent, 0), 100)
-        } else {
-            $progressBar.Style = "Marquee"
+        $progressBar.Style = "Blocks"
+        $progressBar.Minimum = 0
+        $progressBar.Maximum = 100
+        
+        foreach ($serverIndex in $selectedServerIndices) {
+            $server = $Global:ConfigData.servers[$serverIndex]
+            $statusLabel.Text = "Installing $($server.name)..."
+            Update-GUI -Form $form
+            
+            # Install the server
+            Install-MCPServer -Server $server
+            $currentStep++
+            
+            if ($maxSteps -gt 0) {
+                $progressPercent = [Math]::Min(($currentStep / $maxSteps) * 100, 95)
+                $progressBar.Value = [Math]::Max([Math]::Min($progressPercent, 100), 0)
+            }
+            Update-GUI -Form $form
+            
+            # Configure for each selected IDE
+            foreach ($ideName in $selectedIDENames) {
+                $ide = $Global:DetectedIDEs.Values | Where-Object { $_.name -like "$ideName*" } | Select-Object -First 1
+                if ($ide) {
+                    $statusLabel.Text = "Configuring $($server.name) for $($ide.name)..."
+                    Update-GUI -Form $form
+                    
+                    Update-IDEConfiguration -IDE $ide -Server $server
+                    $currentStep++
+                    
+                    if ($maxSteps -gt 0) {
+                        $progressPercent = [Math]::Min(($currentStep / $maxSteps) * 100, 95)
+                        $progressBar.Value = [Math]::Max([Math]::Min($progressPercent, 100), 0)
+                    }
+                    Update-GUI -Form $form
+                }
+            }
         }
         
-        Update-GUI -Form $form -StatusLabel $statusLabel -Message "Installing... Step $currentStep of $maxSteps"
+        # Finalize installation
+        $progressBar.Value = 100
+        $statusLabel.Text = "Installation completed successfully!"
         
-        # Complete installation after reasonable time
-        if ($currentStep -ge $maxSteps) {
-            $installTimer.Stop()
-            $installTimer.Dispose()
-            
-            # Finalize installation
-            $progressBar.Value = 100
-            $statusLabel.Text = "Installation completed successfully!"
-            
-            # Re-enable controls
-            $installButton.Enabled = $true
-            $installButton.Text = "Install Selected"
-            $progressBar.Style = "Blocks"
-            
-            [System.Windows.Forms.MessageBox]::Show("Installation completed successfully!", "Complete", "OK", "Information")
-        }
-    })
-    
-    $installTimer.Start()
+        [System.Windows.Forms.MessageBox]::Show("Installation completed successfully!", "Complete", "OK", "Information")
+        
+    } catch {
+        $statusLabel.Text = "Installation failed: $($_.Exception.Message)"
+        [System.Windows.Forms.MessageBox]::Show("Installation failed: $($_.Exception.Message)", "Error", "OK", "Error")
+    } finally {
+        # Re-enable controls
+        $installButton.Enabled = $true
+        $installButton.Text = "Install Selected"
+        $progressBar.Style = "Blocks"
+    }
 })
 
     
@@ -2292,7 +2708,7 @@ function Test-SystemCompatibility {
     if ($issues.Count -gt 0) {
         Write-Host "`nSYSTEM ISSUES FOUND:" -ForegroundColor Red
         foreach ($issue in $issues) {
-            Write-Host "  ❌ $issue" -ForegroundColor Red
+            Write-Host "  [X] $issue" -ForegroundColor Red
         }
         return $false
     }
@@ -2300,11 +2716,11 @@ function Test-SystemCompatibility {
     if ($warnings.Count -gt 0) {
         Write-Host "`nSYSTEM WARNINGS:" -ForegroundColor Yellow
         foreach ($warning in $warnings) {
-            Write-Host "  ⚠️  $warning" -ForegroundColor Yellow
+            Write-Host "  [!]  $warning" -ForegroundColor Yellow
         }
     }
     
-    Write-Host "`n✅ System compatibility check passed" -ForegroundColor Green
+    Write-Host "`n[+] System compatibility check passed" -ForegroundColor Green
     return $true
 }
 
