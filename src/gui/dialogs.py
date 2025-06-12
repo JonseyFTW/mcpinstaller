@@ -510,21 +510,40 @@ class ServerDiscoveryDialog:
             action_section = ctk.CTkFrame(server_frame, fg_color="transparent")
             action_section.pack(side="right", padx=15, pady=10)
             
-            # Install button with Docker awareness
-            if requires_docker and not docker_available:
+            # Check server installation status
+            installation_status = self.server_manager.get_server_installation_status(server)
+            
+            # Determine button text and color based on installation status
+            if installation_status["status"] == "installed":
+                install_text = "✓ Installed"
+                install_color = "green"
+                install_hover = "dark green"
+                button_width = 90
+                is_installed = True
+            elif installation_status["status"] == "installed_not_configured":
+                install_text = "[⚠] Configure"
+                install_color = "orange"
+                install_hover = "dark orange"
+                button_width = 90
+                is_installed = False
+            elif requires_docker and not docker_available:
                 install_text = "[+] Install + Docker"
                 install_color = "orange"
                 install_hover = "dark orange"
+                button_width = 120
+                is_installed = False
             else:
                 install_text = "[+] Install"
                 install_color = None  # Default color
                 install_hover = None  # Default hover
+                button_width = 80
+                is_installed = False
             
-            # Create install button first to ensure it's defined
+            # Create install button
             install_btn = ctk.CTkButton(
                 action_section,
                 text=install_text,
-                width=90 if requires_docker and not docker_available else 80,
+                width=button_width,
                 height=32,
                 font=ctk.CTkFont(size=11),
                 fg_color=install_color,
@@ -532,15 +551,37 @@ class ServerDiscoveryDialog:
                 command=None  # Set command separately to avoid closure issues
             )
             
-            # Define command function with proper closure
-            def create_install_command():
-                current_server = server.copy()  # Capture server data
-                current_btn = install_btn
-                return lambda: self._install_directly_with_button_feedback(current_server, current_btn)
+            # Define command function based on installation status
+            if is_installed:
+                # For installed servers, add a reinstall option
+                def create_reinstall_command():
+                    current_server = server.copy()
+                    current_btn = install_btn
+                    return lambda: self._reinstall_server_with_confirmation(current_server, current_btn)
+                install_btn.configure(command=create_reinstall_command())
+            else:
+                # For not installed servers, use regular install
+                def create_install_command():
+                    current_server = server.copy()
+                    current_btn = install_btn
+                    return lambda: self._install_directly_with_button_feedback(current_server, current_btn)
+                install_btn.configure(command=create_install_command())
             
-            # Set the command after button creation
-            install_btn.configure(command=create_install_command())
             install_btn.pack(pady=2)
+            
+            # Add reinstall button for installed servers
+            if is_installed:
+                reinstall_btn = ctk.CTkButton(
+                    action_section,
+                    text="[↻] Reinstall",
+                    width=80,
+                    height=28,
+                    font=ctk.CTkFont(size=10),
+                    fg_color="gray50",
+                    hover_color="gray40",
+                    command=lambda s=server: self._reinstall_server_with_confirmation(s, None)
+                )
+                reinstall_btn.pack(pady=2)
             
             # Details button (for more info)
             details_btn = ctk.CTkButton(
@@ -798,6 +839,98 @@ class ServerDiscoveryDialog:
             width=100
         )
         install_btn.pack(side="left", padx=10)
+        
+        cancel_btn = ctk.CTkButton(
+            button_frame,
+            text="Cancel",
+            command=confirm_dialog.destroy,
+            width=80,
+            fg_color="gray40",
+            hover_color="gray30"
+        )
+        cancel_btn.pack(side="right", padx=10)
+    
+    def _reinstall_server_with_confirmation(self, server: Dict, button):
+        """Reinstall a server with confirmation dialog"""
+        server_name = server.get('name', 'Unknown')
+        
+        # Create confirmation dialog
+        confirm_dialog = ctk.CTkToplevel(self.dialog)
+        confirm_dialog.title("Reinstall Server")
+        confirm_dialog.geometry("400x250")
+        confirm_dialog.transient(self.dialog)
+        confirm_dialog.grab_set()
+        
+        # Center dialog
+        confirm_dialog.update_idletasks()
+        x = (confirm_dialog.winfo_screenwidth() - confirm_dialog.winfo_width()) // 2
+        y = (confirm_dialog.winfo_screenheight() - confirm_dialog.winfo_height()) // 2
+        confirm_dialog.geometry(f"+{x}+{y}")
+        
+        # Content
+        message_label = ctk.CTkLabel(
+            confirm_dialog,
+            text=f"Reinstall {server_name}?",
+            font=ctk.CTkFont(size=16, weight="bold")
+        )
+        message_label.pack(pady=20)
+        
+        desc_label = ctk.CTkLabel(
+            confirm_dialog,
+            text="This will reinstall the server and update its configuration in all IDEs.",
+            font=ctk.CTkFont(size=12),
+            wraplength=350
+        )
+        desc_label.pack(pady=10)
+        
+        status_label = ctk.CTkLabel(
+            confirm_dialog,
+            text="Ready to reinstall",
+            font=ctk.CTkFont(size=11),
+            text_color="gray"
+        )
+        status_label.pack(pady=10)
+        
+        # Buttons
+        button_frame = ctk.CTkFrame(confirm_dialog, fg_color="transparent")
+        button_frame.pack(pady=20)
+        
+        def start_reinstall():
+            status_label.configure(text="Reinstalling...", text_color="orange")
+            reinstall_btn.configure(state="disabled")
+            cancel_btn.configure(state="disabled")
+            
+            def reinstall_thread():
+                try:
+                    # Force reinstall by calling install_server
+                    success, message = self.server_manager.install_server(server)
+                    confirm_dialog.after(0, lambda: reinstall_complete(success, message))
+                except Exception as e:
+                    confirm_dialog.after(0, lambda: reinstall_complete(False, str(e)))
+            
+            threading.Thread(target=reinstall_thread, daemon=True).start()
+        
+        def reinstall_complete(success, message):
+            if success:
+                status_label.configure(text="✓ Reinstall successful!", text_color="green")
+                reinstall_btn.configure(text="Done")
+                self.status_label.configure(text=f"✓ {server_name} reinstalled successfully")
+                # Refresh the server list to update button states
+                self._load_local_only()
+            else:
+                status_label.configure(text=f"✗ Reinstall failed: {message}", text_color="red")
+                reinstall_btn.configure(text="Failed")
+                self.status_label.configure(text=f"✗ {server_name} reinstall failed")
+        
+        reinstall_btn = ctk.CTkButton(
+            button_frame,
+            text="[↻] Reinstall",
+            command=start_reinstall,
+            width=100,
+            fg_color="orange",
+            hover_color="dark orange"
+        )
+        reinstall_btn.pack(side="left", padx=10)
         
         cancel_btn = ctk.CTkButton(
             button_frame,

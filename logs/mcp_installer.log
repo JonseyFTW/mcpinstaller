@@ -1258,3 +1258,57 @@
 2025-06-11 15:13:10 | INFO     | main       | info                 | Added Browser Automation MCP Server to cline configuration
 2025-06-11 15:13:10 | INFO     | main       | info                 | Added Browser Automation MCP Server to roo configuration
 2025-06-11 15:13:10 | INFO     | main       | info                 | USER ACTION: Installation successful: Browser Automation MCP Server
+2025-06-11 15:25:08 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:25:08 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-11 15:25:08 | INFO     | main       | info                 | Timestamp: 2025-06-11T15:25:08.443463
+2025-06-11 15:25:08 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-11 15:25:08 | INFO     | main       | info                 | Platform: win32
+2025-06-11 15:25:08 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:25:08 | INFO     | main       | info                 | Application initialization started
+2025-06-11 15:25:08 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-11 15:25:08 | INFO     | main       | info                 | Application started successfully
+2025-06-11 15:25:08 | INFO     | main       | info                 | Ready for user commands
+2025-06-11 15:25:12 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-11 15:25:12 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-11 15:25:12 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-11 15:25:12 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-11 15:25:14 | INFO     | main       | info                 | Status: Ready
+2025-06-11 15:25:24 | INFO     | main       | info                 | USER ACTION: Direct install started for: GitHub MCP Server
+2025-06-11 15:25:28 | INFO     | main       | info                 | Added GitHub MCP Server to cline configuration
+2025-06-11 15:25:28 | INFO     | main       | info                 | Added GitHub MCP Server to roo configuration
+2025-06-11 15:25:28 | INFO     | main       | info                 | USER ACTION: Installation successful: GitHub MCP Server
+2025-06-11 15:34:47 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-11 15:34:47 | INFO     | main       | info                 | ============================================================
+2025-06-11 15:34:47 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-11 15:34:47 | INFO     | main       | info                 | Timestamp: 2025-06-11T15:34:47.305439
+2025-06-11 15:34:47 | INFO     | main       | info                 | ============================================================
+2025-06-12 08:18:51 | INFO     | main       | info                 | ============================================================
+2025-06-12 08:18:51 | INFO     | main       | info                 | MCP INSTALLER SESSION STARTED
+2025-06-12 08:18:51 | INFO     | main       | info                 | Timestamp: 2025-06-12T08:18:51.656236
+2025-06-12 08:18:51 | INFO     | main       | info                 | Python Version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-06-12 08:18:51 | INFO     | main       | info                 | Platform: win32
+2025-06-12 08:18:51 | INFO     | main       | info                 | ============================================================
+2025-06-12 08:18:51 | INFO     | main       | info                 | Application initialization started
+2025-06-12 08:18:51 | INFO     | main       | info                 | USER ACTION: Application started
+2025-06-12 08:18:52 | INFO     | main       | info                 | Application started successfully
+2025-06-12 08:18:52 | INFO     | main       | info                 | Ready for user commands
+2025-06-12 08:18:58 | INFO     | main       | info                 | USER ACTION: Discover Servers button clicked
+2025-06-12 08:18:58 | INFO     | main       | info                 | Starting MCP server discovery...
+2025-06-12 08:18:58 | INFO     | main       | info                 | Status: Discovering available MCP servers...
+2025-06-12 08:18:58 | INFO     | main       | info                 | Opening server discovery dialog...
+2025-06-12 08:19:02 | INFO     | main       | info                 | Status: Ready
+2025-06-12 08:19:37 | INFO     | main       | info                 | USER ACTION: Direct install started for: Web Search MCP Server
+2025-06-12 08:19:40 | INFO     | main       | info                 | Added Web Search MCP Server to cline configuration
+2025-06-12 08:19:40 | INFO     | main       | info                 | Added Web Search MCP Server to roo configuration
+2025-06-12 08:19:40 | INFO     | main       | info                 | Added Web Search MCP Server to Claude Desktop configuration
+2025-06-12 08:19:40 | INFO     | main       | info                 | USER ACTION: Installation successful: Web Search MCP Server
+2025-06-12 08:25:05 | INFO     | main       | info                 | USER ACTION: Direct install started for: Memory MCP Server
+2025-06-12 08:25:09 | INFO     | main       | info                 | Added Memory MCP Server to cline configuration
+2025-06-12 08:25:09 | INFO     | main       | info                 | Added Memory MCP Server to roo configuration
+2025-06-12 08:25:09 | INFO     | main       | info                 | Added Memory MCP Server to Claude Desktop configuration
+2025-06-12 08:25:09 | INFO     | main       | info                 | USER ACTION: Installation successful: Memory MCP Server
+2025-06-12 08:28:17 | INFO     | main       | info                 | USER ACTION: Application closing
+2025-06-12 08:28:17 | INFO     | main       | info                 | ============================================================
+2025-06-12 08:28:17 | INFO     | main       | info                 | MCP INSTALLER SESSION ENDED
+2025-06-12 08:28:17 | INFO     | main       | info                 | Timestamp: 2025-06-12T08:28:17.601366
+2025-06-12 08:28:17 | INFO     | main       | info                 | ============================================================

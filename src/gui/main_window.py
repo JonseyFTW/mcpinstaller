@@ -48,6 +48,9 @@ class MCPInstallerGUI:
         
         # Bind window close event
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
+        
+        # Run startup initialization
+        self.run_startup_checks()
     
     def center_window(self):
         """Center the window on screen"""
@@ -543,6 +546,38 @@ class MCPInstallerGUI:
                 self.add_log_entry(f"  - {server.get('name', 'Unknown')} ({server.get('type', 'unknown')})")
         else:
             self.add_log_entry("No servers selected from discovery")
+    
+    def run_startup_checks(self):
+        """Run system checks and IDE detection on startup"""
+        def startup_task():
+            try:
+                self.update_status("Initializing system checks...")
+                self.logger.info("Running startup system checks")
+                
+                # Run system info check
+                self.update_status("Checking system information...")
+                system_info = self.system_checker.get_system_info()
+                
+                # Check IDE installations
+                self.update_status("Detecting installed IDEs...")
+                ide_status = self.server_manager.vscode_config.get_extension_status()
+                
+                # Log detected IDEs
+                for ide_name, status in ide_status.items():
+                    if status['installed']:
+                        display_name = status['name']
+                        server_count = status['server_count']
+                        self.add_log_entry(f"Detected {display_name} with {server_count} MCP servers configured")
+                    
+                self.update_status("Startup checks completed")
+                self.logger.info("Startup system checks completed successfully")
+                
+            except Exception as e:
+                self.logger.error(f"Startup checks failed: {str(e)}")
+                self.update_status("Startup checks failed")
+        
+        # Run in background thread to avoid blocking UI
+        self.run_in_thread(startup_task)
     
     def on_closing(self):
         """Handle application closing"""

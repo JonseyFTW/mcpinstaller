@@ -451,3 +451,46 @@ added 94 packages in 5s
 
 2025-06-11 15:13:10 | INFO     | install    | info                 | NPM installation successful for @playwright/mcp
 2025-06-11 15:13:10 | INFO     | install    | info                 | SERVER INSTALL: Browser Automation MCP Server | Result: Success
+2025-06-11 15:25:12 | INFO     | install    | info                 | Loaded servers dict with 9 entries: ['filesystem', 'git', 'postgres', 'github', 'web-search', 'docker', 'kubernetes', 'memory', 'browser-automation']
+2025-06-11 15:25:12 | INFO     | install    | info                 | Converted to 9 server objects
+2025-06-11 15:25:12 | INFO     | install    | info                 | Local-only discovery completed: 9 servers
+2025-06-11 15:25:24 | INFO     | install    | info                 | SERVER INSTALL: GitHub MCP Server | Result: Starting
+2025-06-11 15:25:24 | INFO     | install    | info                 | Found npm version: 11.3.0
+2025-06-11 15:25:24 | INFO     | install    | info                 | Installing NPM package: @modelcontextprotocol/server-github
+2025-06-11 15:25:24 | INFO     | install    | info                 | Executing command: npm install -g @modelcontextprotocol/server-github
+2025-06-11 15:25:28 | ERROR    | install    | error                | COMMAND: npm install -g @modelcontextprotocol/server-github | Exit Code: 0 | Output: 
+added 46 packages in 3s
+
+9 packages are looking for funding
+  run `npm fund` for details
+ | Error: npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+2025-06-11 15:25:28 | INFO     | install    | info                 | NPM installation successful for @modelcontextprotocol/server-github
+2025-06-11 15:25:28 | INFO     | install    | info                 | SERVER INSTALL: GitHub MCP Server | Result: Success
+2025-06-12 08:18:59 | INFO     | install    | info                 | Loaded servers dict with 9 entries: ['filesystem', 'git', 'postgres', 'github', 'web-search', 'docker', 'kubernetes', 'memory', 'browser-automation']
+2025-06-12 08:18:59 | INFO     | install    | info                 | Converted to 9 server objects
+2025-06-12 08:18:59 | INFO     | install    | info                 | Local-only discovery completed: 9 servers
+2025-06-12 08:19:37 | INFO     | install    | info                 | SERVER INSTALL: Web Search MCP Server | Result: Starting
+2025-06-12 08:19:38 | INFO     | install    | info                 | Found npm version: 11.3.0
+2025-06-12 08:19:38 | INFO     | install    | info                 | Installing NPM package: @modelcontextprotocol/server-brave-search
+2025-06-12 08:19:38 | INFO     | install    | info                 | Executing command: npm install -g @modelcontextprotocol/server-brave-search
+2025-06-12 08:19:40 | INFO     | install    | info                 | COMMAND: npm install -g @modelcontextprotocol/server-brave-search | Exit Code: 0 | Output: 
+added 15 packages in 2s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+2025-06-12 08:19:40 | INFO     | install    | info                 | NPM installation successful for @modelcontextprotocol/server-brave-search
+2025-06-12 08:19:40 | INFO     | install    | info                 | SERVER INSTALL: Web Search MCP Server | Result: Success
+2025-06-12 08:25:05 | INFO     | install    | info                 | SERVER INSTALL: Memory MCP Server | Result: Starting
+2025-06-12 08:25:06 | INFO     | install    | info                 | Found npm version: 11.3.0
+2025-06-12 08:25:06 | INFO     | install    | info                 | Installing NPM package: @modelcontextprotocol/server-memory
+2025-06-12 08:25:06 | INFO     | install    | info                 | Executing command: npm install -g @modelcontextprotocol/server-memory
+2025-06-12 08:25:09 | INFO     | install    | info                 | COMMAND: npm install -g @modelcontextprotocol/server-memory | Exit Code: 0 | Output: 
+added 15 packages in 2s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+2025-06-12 08:25:09 | INFO     | install    | info                 | NPM installation successful for @modelcontextprotocol/server-memory
+2025-06-12 08:25:09 | INFO     | install    | info                 | SERVER INSTALL: Memory MCP Server | Result: Success

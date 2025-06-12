@@ -31,6 +31,12 @@ class VSCodeExtensionConfig:
                 "id": "rooveterinaryinc.roo-cline",
                 "config_path": self._get_roo_config_path(),
                 "config_file": "mcp_settings.json"
+            },
+            "claude_desktop": {
+                "name": "Claude Desktop",
+                "id": "claude-desktop",
+                "config_path": self._get_claude_desktop_config_path(),
+                "config_file": "claude_desktop_config.json"
             }
         }
     
@@ -67,6 +73,20 @@ class VSCodeExtensionConfig:
             # Linux/Mac paths
             home = Path.home()
             return str(home / ".config" / "Code" / "User" / "globalStorage" / "rooveterinaryinc.roo-cline" / "settings")
+    
+    def _get_claude_desktop_config_path(self) -> str:
+        """Get Claude Desktop MCP configuration path"""
+        if platform.system() == "Windows":
+            appdata = os.environ.get("APPDATA", "")
+            return os.path.join(appdata, "Claude")
+        elif platform.system() == "Darwin":
+            # macOS
+            home = Path.home()
+            return str(home / "Library" / "Application Support" / "Claude")
+        else:
+            # Linux
+            home = Path.home()
+            return str(home / ".config" / "Claude")
     
     def get_extension_config(self, extension: str) -> Optional[Dict]:
         """Read MCP configuration for a specific extension"""
@@ -119,6 +139,8 @@ class VSCodeExtensionConfig:
                 config["mcpServers"] = self._format_servers_for_cline(mcp_servers)
             elif extension == "roo":
                 config["mcpServers"] = self._format_servers_for_roo(mcp_servers)
+            elif extension == "claude_desktop":
+                config["mcpServers"] = self._format_servers_for_claude_desktop(mcp_servers)
             
             # Write updated configuration
             with open(config_file, 'w', encoding='utf-8') as f:
@@ -152,6 +174,28 @@ class VSCodeExtensionConfig:
         # Roo uses similar format to Cline
         return self._format_servers_for_cline(servers)
     
+    def _format_servers_for_claude_desktop(self, servers: List[Dict]) -> Dict:
+        """Format server configurations for Claude Desktop"""
+        formatted_servers = {}
+        
+        for server in servers:
+            server_name = server.get("name", "unknown")
+            # Claude Desktop uses safe keys (lowercase, underscores)
+            server_key = server_name.lower().replace(" ", "_").replace("-", "_")
+            
+            server_config = {
+                "command": server.get("command", ""),
+                "args": server.get("args", [])
+            }
+            
+            # Only add env if it exists and is not empty
+            if server.get("env"):
+                server_config["env"] = server.get("env", {})
+            
+            formatted_servers[server_key] = server_config
+        
+        return formatted_servers
+    
     def add_server_to_extension(self, extension: str, server_config: Dict) -> bool:
         """Add a single MCP server to an extension's configuration"""
         current_config = self.get_extension_config(extension)
@@ -177,6 +221,16 @@ class VSCodeExtensionConfig:
                 "args": server_config.get("args", []),
                 "env": server_config.get("env", {})
             }
+        elif extension == "claude_desktop":
+            # Claude Desktop uses a slightly different format - create a safe server key
+            server_key = server_name.lower().replace(" ", "_").replace("-", "_")
+            current_config["mcpServers"][server_key] = {
+                "command": server_config.get("command", ""),
+                "args": server_config.get("args", [])
+            }
+            # Add env only if it exists and is not empty
+            if server_config.get("env"):
+                current_config["mcpServers"][server_key]["env"] = server_config.get("env", {})
         
         # Save the updated configuration
         return self._save_extension_config(extension, current_config)
@@ -235,8 +289,13 @@ class VSCodeExtensionConfig:
             config_dir = Path(ext_info["config_path"])
             config_file = config_dir / ext_info["config_file"]
             
-            # Check if extension directory exists (indicates extension is installed)
-            extension_installed = config_dir.parent.exists()
+            # Check if extension/application is installed
+            if ext_name == "claude_desktop":
+                # For Claude Desktop, check if the application directory exists
+                extension_installed = config_dir.exists()
+            else:
+                # For VS Code extensions, check if extension directory exists
+                extension_installed = config_dir.parent.exists()
             
             # Check if MCP configuration exists
             config_exists = config_file.exists()

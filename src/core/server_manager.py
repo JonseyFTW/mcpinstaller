@@ -772,13 +772,15 @@ class MCPServerManager:
                     "env": config.get("env", {})
                 }
                 
-                # Try to add to both Cline and Roo if they exist
-                for extension in ["cline", "roo"]:
+                # Try to add to Cline, Roo, and Claude Desktop if they exist
+                for extension in ["cline", "roo", "claude_desktop"]:
                     try:
                         self.vscode_config.add_server_to_extension(extension, vscode_config)
-                        self.logger.info(f"Added {server_name} to {extension} configuration")
+                        extension_name = "Claude Desktop" if extension == "claude_desktop" else extension
+                        self.logger.info(f"Added {server_name} to {extension_name} configuration")
                     except Exception as e:
-                        self.logger.debug(f"Could not add to {extension}: {e}")
+                        extension_name = "Claude Desktop" if extension == "claude_desktop" else extension
+                        self.logger.debug(f"Could not add to {extension_name}: {e}")
             
         except Exception as e:
             self.logger.warning(f"Failed to configure server in VS Code: {e}")
@@ -813,6 +815,59 @@ class MCPServerManager:
             self.logger.debug(f"Could not check npm packages: {e}")
         
         return installed
+    
+    def get_server_installation_status(self, server_config: Dict) -> Dict:
+        """Check if a server is installed and configured in IDEs"""
+        server_name = server_config.get("name", "Unknown")
+        server_type = server_config.get("type", "")
+        package = server_config.get("package", "")
+        
+        status = {
+            "installed": False,
+            "configured_in": [],
+            "package_installed": False,
+            "status": "not_installed"
+        }
+        
+        try:
+            # Check if package is installed
+            if server_type == "npm" and package:
+                installed_servers = self.get_installed_servers()
+                for installed in installed_servers:
+                    if installed["name"] == package:
+                        status["package_installed"] = True
+                        break
+            
+            # Check if configured in IDEs
+            ide_status = self.vscode_config.get_extension_status()
+            for ide_name, ide_info in ide_status.items():
+                if ide_info["installed"]:
+                    configured_servers = ide_info.get("servers", [])
+                    
+                    # Check if this server is in the IDE's configuration
+                    for configured_server in configured_servers:
+                        # Match by server name or package name
+                        if (configured_server.lower().replace(" ", "_").replace("-", "_") == 
+                            server_name.lower().replace(" ", "_").replace("-", "_")) or \
+                           (package and package in configured_server):
+                            status["configured_in"].append(ide_info["name"])
+                            break
+            
+            # Determine overall status
+            if status["package_installed"] and status["configured_in"]:
+                status["installed"] = True
+                status["status"] = "installed"
+            elif status["package_installed"]:
+                status["status"] = "installed_not_configured"
+            elif status["configured_in"]:
+                status["status"] = "configured_not_installed"
+            else:
+                status["status"] = "not_installed"
+                
+        except Exception as e:
+            self.logger.debug(f"Could not check server status for {server_name}: {e}")
+        
+        return status
     
     def uninstall_server(self, server_config: Dict) -> Tuple[bool, str]:
         """Uninstall a MCP server"""
